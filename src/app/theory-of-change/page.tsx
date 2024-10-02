@@ -41,11 +41,11 @@ const TheoryOfChangePage = () => {
           </CardHeader>
           <CardContent>
             <p className="text-xs sm:text-sm md:text-base">
-              This page outlines, justifies, and evidences the creation of an
-              initial theory of change for the proposed organisation. It breaks
-              down the columns in a typical theory of change diagram and talks
-              about the events involved in the organisation&apos;s initial
-              intended route to impact.
+              This page outlines, justifies, and evidences the creation of the
+              initial theory of change for the organisation. It breaks down the
+              columns in a typical theory of change diagram and talks about the
+              events involved in the organisation&apos;s initial intended route
+              to impact.
             </p>
           </CardContent>
         </Card>
