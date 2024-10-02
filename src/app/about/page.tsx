@@ -43,7 +43,7 @@ const AboutPage = () => {
           <CardContent>
             <p className="text-xs sm:text-sm md:text-base">
               Nick Bostrom thought about AGI and lock-in in 2014, but there has
-              been almost no empirical work on it since. I&apos;m starting
+              been almost no empirical work on it since. We&apos;re starting
               Formation Research to minimise lock-in risk, the outcome being
               reduced likelihood that humanity ends up in a lock-in in the
               future.

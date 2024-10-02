@@ -61,14 +61,14 @@ const Main: React.FC = () => {
                   "Conducting conceptual and empirical lock-in risk research, developing quantitative models of lock-in and methods for measuring and reducing lock-in risk.",
               },
               {
-                title: "Collaboration",
+                title: "Threat Modelling",
                 description:
-                  "We plan to collaborate with other organisations with similar theories of change, such as the Centre for the Governance of AI and the Centre for Long-Term Risk.",
+                  "We plan to develop and continuously update our most important threat models for lock-in, examining worlds in which lock-in happens, and developing interventions to mitigate the manifestation of these worlds",
               },
               {
-                title: "Intervention",
+                title: "Innovation",
                 description:
-                  "We plan to develop impactful lock-in interventions and solutions that minimise the likelihood humanity ends up in a lock-in.",
+                  "We plan to build interventions and products targeting the problem of lock-in, using the results from our research and threat modelling",
               },
             ].map((item, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-md">
