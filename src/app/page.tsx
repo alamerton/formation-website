@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import lockInImage from "@/images/lock-in.png";
+import Link from "next/link";
 
 const Main: React.FC = () => {
   return (
@@ -18,12 +19,14 @@ const Main: React.FC = () => {
               shape a safer future for humanity.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button
-                size="lg"
-                className="bg-customPurple hover:bg-blue-700 text-white"
-              >
-                Learn More
-              </Button>
+              <Link href="/about">
+                <Button
+                  size="lg"
+                  className="bg-customPurple hover:bg-blue-700 text-white"
+                >
+                  Learn More
+                </Button>
+              </Link>
               <Button
                 size="lg"
                 variant="outline"
@@ -45,29 +48,41 @@ const Main: React.FC = () => {
         </div>
       </div>
 
-      {/* Our Approach Section */}
       <div className=" py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
             Our Approach
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {["Research", "Collaboration", "Innovation"].map((item, index) => (
+            {[
+              {
+                title: "Research",
+                description:
+                  "Conducting conceptual and empirical lock-in risk research, developing quantitative models of lock-in and methods for measuring and reducing lock-in risk.",
+              },
+              {
+                title: "Collaboration",
+                description:
+                  "We plan to collaborate with other organisations with similar theories of change, such as the Centre for the Governance of AI and the Centre for Long-Term Risk.",
+              },
+              {
+                title: "Intervention",
+                description:
+                  "We plan to develop impactful lock-in interventions and solutions that minimise the likelihood humanity ends up in a lock-in.",
+              },
+            ].map((item, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-md">
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                  {item}
+                  {item.title}
                 </h3>
-                <p className="text-gray-700">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
+                <p className="text-gray-700">{item.description}</p>
               </div>
             ))}
           </div>
         </div>
       </div>
 
-      <div className="bg-blue-600 py-16 text-white text-center">
+      <div className="bg-orange-400 py-16 text-white text-center">
         <h2 className="text-xl md:text-2xl font-bold mb-4">
           Join Us in Shaping the Future
         </h2>
@@ -79,7 +94,6 @@ const Main: React.FC = () => {
         </Button>
       </div>
 
-      {/* Footer Section */}
       <footer className="bg-gray-800 py-6 mt-auto">
         <div className="container mx-auto px-4 text-center text-white">
           <p>
