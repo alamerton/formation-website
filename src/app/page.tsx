@@ -15,8 +15,8 @@ const Main: React.FC = () => {
               Welcome to <span className="text-customPurple">Formation</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-8">
-              We're on a mission to minimize lock-in risks from AI systems to
-              shape a safer future for humanity.
+              We&apos;re on a mission to minimize lock-in risks from AI systems
+              to shape a safer future for humanity.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/about">

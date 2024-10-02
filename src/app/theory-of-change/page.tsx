@@ -44,8 +44,8 @@ const TheoryOfChangePage = () => {
               This page outlines, justifies, and evidences the creation of an
               initial theory of change for the proposed organisation. It breaks
               down the columns in a typical theory of change diagram and talks
-              about the events involved in the organisation's initial intended
-              route to impact.
+              about the events involved in the organisation&apos;s initial
+              intended route to impact.
             </p>
           </CardContent>
         </Card>
@@ -105,8 +105,8 @@ const TheoryOfChangePage = () => {
                     organisation evolves, more teams will be created that
                     contribute to the sphere of interest. Those teams will be
                     added as new rows to the theory of change, starting with the
-                    organisation's goal and mapping the causal pathway backwards
-                    to team design.
+                    organisation&apos;s goal and mapping the causal pathway
+                    backwards to team design.
                   </p>
                 </>
               ),

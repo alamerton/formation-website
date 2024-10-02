@@ -128,20 +128,20 @@ const AboutPage = () => {
                   <ul className="list-disc list-inside mt-2 space-y-2">
                     <li className="ml-4">
                       <strong>Undesired dystopia:</strong> Refers to a situation
-                      where "people don&apos;t want that world, yet the
+                      where &ldquo;people don&apos;t want that world, yet the
                       structure of society makes it almost impossible for them
-                      to coordinate to change it".
+                      to coordinate to change it&ldquo;.
                     </li>
                     <li className="ml-4">
-                      <strong>Enforced dystopia:</strong> Occurs when "only a
-                      small group wants that world but enforces it against the
-                      wishes of the rest".
+                      <strong>Enforced dystopia:</strong> Occurs when
+                      &ldquo;only a small group wants that world but enforces it
+                      against the wishes of the rest&ldquo;.
                     </li>
                     <li className="ml-4">
                       <strong>Desired dystopia:</strong> Refers to a situation
-                      where people "do want that world, yet they are misguided
-                      and the world falls far short of what they could have
-                      achieved."
+                      where people &ldquo;do want that world, yet they are
+                      misguided and the world falls far short of what they could
+                      have achieved.&ldquo;
                     </li>
                   </ul>
                   <h4 className="text-md font-semibold mt-2 mb-1">
@@ -151,9 +151,9 @@ const AboutPage = () => {
                     In an interview with Future Matters, Lukas Finnveden, main
                     author on AGI and Lock-In, and research analyst at Open
                     Philanthropy, defines lock-in in terms of predictable
-                    stability. He states, "Some property of the world is locked
-                    in if it's very probable that the property of the world will
-                    hold true for a very large amount of time".
+                    stability. He states, &ldquo;Some property of the world is
+                    locked in if it's very probable that the property of the
+                    world will hold true for a very large amount of time&ldquo;.
                   </p>
                   <h4 className="text-md font-semibold mt-2 mb-1">
                     Jess Riedel
@@ -161,12 +161,13 @@ const AboutPage = () => {
                   <p>
                     Jess Riedel, co-author of AGI and lock-in, physicist at NTT
                     Research, uses the term singleton introduced by Nick Bostrom
-                    in "What is a Singleton?" to create a definition of lock-in.
-                    If there is an AGI singleton (world order in which there is
-                    a single decision-making agency at the highest level) with
-                    stable values (its values do not change over time), then
-                    those values are locked-in. This can be further defined as
-                    global lock-in if it applies to all earth-originating life.
+                    in &ldquo;What is a Singleton?&ldquo; to create a definition
+                    of lock-in. If there is an AGI singleton (world order in
+                    which there is a single decision-making agency at the
+                    highest level) with stable values (its values do not change
+                    over time), then those values are locked-in. This can be
+                    further defined as global lock-in if it applies to all
+                    earth-originating life.
                   </p>
                   <h4 className="text-md font-semibold mt-2 mb-1">
                     Carl Shulman
@@ -198,8 +199,8 @@ const AboutPage = () => {
                     locked into values which require continuous sacrifice, e.g.,
                     resource exploitation requiring constant environmental
                     degradation. Scott Alexander lists 10 real-world examples of
-                    multipolar traps in "Meditations on Moloch" to illustrate
-                    this analogy.
+                    multipolar traps in &ldquo;Meditations on Moloch&ldquo; to
+                    illustrate this analogy.
                   </p>
 
                   <h4 className="text-md font-semibold mt-4 mb-1">
@@ -207,11 +208,12 @@ const AboutPage = () => {
                   </h4>
                   <p>
                     A static society is characterised by minimal change or
-                    evolution over long periods. In "The Beginning of Infinity",
-                    David Deutsche describes societies as static (values held in
-                    place with little variation for long periods) and dynamic
-                    (inversely, values updating in the direction of what we call
-                    progress over short periods with no defined endpoint).
+                    evolution over long periods. In &ldquo;The Beginning of
+                    Infinity&ldquo;, David Deutsche describes societies as
+                    static (values held in place with little variation for long
+                    periods) and dynamic (inversely, values updating in the
+                    direction of what we call progress over short periods with
+                    no defined endpoint).
                   </p>
 
                   <h4 className="text-md font-semibold mt-4 mb-1">
@@ -241,10 +243,10 @@ const AboutPage = () => {
                     For our purposes, we define lock-in as a situation where a
                     feature of the world is stable for a long time. Our
                     definition of lock-in follows from, and is most aligned
-                    with, Lukas Finnveden's definition because that definition
-                    targets the long-term and neutral nature of what we consider
-                    to be a lock-in, and we believe this is the best explanation
-                    for what a lock-in is.
+                    with, Lukas Finnveden&apos;s definition because that
+                    definition targets the long-term and neutral nature of what
+                    we consider to be a lock-in, and we believe this is the best
+                    explanation for what a lock-in is.
                   </p>
 
                   <h4 className="text-md font-semibold mt-4 mb-1">
@@ -254,7 +256,7 @@ const AboutPage = () => {
                     Following on from this definition, we can observe that many
                     things can be considered lock-ins. For example, Earth's
                     temperature is a feature of the world that has been stable
-                    for a long time. But we don't mind that feature being
+                    for a long time. But we don&apos;t mind that feature being
                     locked-in. Therefore, along with our definition, we need to
                     define our scope of interest.
                   </p>
@@ -276,11 +278,12 @@ const AboutPage = () => {
                   </h4>
                   <p>
                     So now the definition looks something like bad situations
-                    for our culture that last a long time. But what about Ord's
-                    focus on desirability, and Jess Riedel's focus on AGI? Our
-                    definition now attempts to unify these attributes by
-                    categorising lock-ins. Let's start by distinguishing between
-                    positive, negative, and neutral lock-ins.
+                    for our culture that last a long time. But what about
+                    Ord&apos;s focus on desirability, and Jess Riedel&apos;s
+                    focus on AGI? Our definition now attempts to unify these
+                    attributes by categorising lock-ins. Let&apos;s start by
+                    distinguishing between positive, negative, and neutral
+                    lock-ins.
                   </p>
 
                   <h5 className="text-sm font-semibold mt-3 mb-1">
@@ -288,14 +291,14 @@ const AboutPage = () => {
                   </h5>
                   <p>
                     Positive lock-ins are tricky, because as MacAskill points
-                    out, today's positive lock-in might be considered parochial
-                    and suboptimal by future generations. Just as locking in the
-                    values of slavery would be seen as a terrible idea today, so
-                    locking in some values of today might be seen as a terrible
-                    idea in the future. This is ultimately a paradox, because in
-                    a society that makes constant progress towards an improved
-                    version of itself, there may never be a point at which we
-                    can be comfortable locking in anything.
+                    out, today&apos;s positive lock-in might be considered
+                    parochial and suboptimal by future generations. Just as
+                    locking in the values of slavery would be seen as a terrible
+                    idea today, so locking in some values of today might be seen
+                    as a terrible idea in the future. This is ultimately a
+                    paradox, because in a society that makes constant progress
+                    towards an improved version of itself, there may never be a
+                    point at which we can be comfortable locking in anything.
                   </p>
                   <p>
                     However, there is a small space of potential solutions where
@@ -333,9 +336,9 @@ const AboutPage = () => {
                       individuals
                     </li>
                     <li className="ml-4">
-                      Oppressive: suppressing individuals' freedom, autonomy,
-                      speech, or opportunities, or the continued evolution of
-                      culture
+                      Oppressive: suppressing individuals&apos; freedom,
+                      autonomy, speech, or opportunities, or the continued
+                      evolution of culture
                     </li>
                     <li className="ml-4">Ultimate: long-term or final</li>
                     <li className="ml-4">
@@ -352,9 +355,9 @@ const AboutPage = () => {
                   </h4>
                   <p>
                     So we have established a categorisation of lock-in in terms
-                    of the desirability of outcomes for individuals. Now let's
-                    factor in AI. As most key thinkers identify, AI, and
-                    especially AGI, plays an important role in hypothetical
+                    of the desirability of outcomes for individuals. Now
+                    let&apos;s factor in AI. As most key thinkers identify, AI,
+                    and especially AGI, plays an important role in hypothetical
                     future lock-ins. There are many reasons for this, such as
                     improved surveillance, error correction, human longevity and
                     immortality, and power-seeking behaviour and instrumental
