@@ -152,8 +152,9 @@ const AboutPage = () => {
                     author on AGI and Lock-In, and research analyst at Open
                     Philanthropy, defines lock-in in terms of predictable
                     stability. He states, &ldquo;Some property of the world is
-                    locked in if it's very probable that the property of the
-                    world will hold true for a very large amount of time&ldquo;.
+                    locked in if it&apos;s very probable that the property of
+                    the world will hold true for a very large amount of
+                    time&ldquo;.
                   </p>
                   <h4 className="text-md font-semibold mt-2 mb-1">
                     Jess Riedel
@@ -254,7 +255,7 @@ const AboutPage = () => {
                   </h4>
                   <p>
                     Following on from this definition, we can observe that many
-                    things can be considered lock-ins. For example, Earth's
+                    things can be considered lock-ins. For example, Earth&apos;s
                     temperature is a feature of the world that has been stable
                     for a long time. But we don&apos;t mind that feature being
                     locked-in. Therefore, along with our definition, we need to
