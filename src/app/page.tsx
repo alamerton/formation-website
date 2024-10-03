@@ -89,9 +89,14 @@ const Main: React.FC = () => {
         <p className="mb-6">
           Be part of our mission to create safer AI systems.
         </p>
-        <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-200">
-          Get Involved
-        </Button>
+        <Link href="https://manifund.org/projects/formation-research">
+          <Button
+            size="lg"
+            className="bg-white text-blue-600 hover:bg-gray-200"
+          >
+            Get Involved
+          </Button>
+        </Link>
       </div>
 
       <footer className="bg-gray-800 py-6 mt-auto">

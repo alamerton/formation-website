@@ -10,15 +10,14 @@ const AboutPage = () => {
     { value: "vision", label: "Vision" },
     { value: "team", label: "Team" },
     { value: "approach", label: "Approach" },
-    { value: "history", label: "History" },
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white">
-      <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8">
+      <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8 max-w-3xl">
         <div className="container mx-auto px-4 py-8">
           <div className="flex flex-col items-center">
-            <div className="w-full sm:w-3/4 md:w-2/3 lg:w-1/2 mb-8">
+            <div className="w-full sm:w-2/3 md:w-1/2 lg:w-1/3 mb-8">
               <Image
                 src={aboutImage}
                 alt="Diagram outlining our theory of change"
@@ -56,14 +55,16 @@ const AboutPage = () => {
               competition, and improved individual freedom. Lock-in may prevent
               any or all of these properties from being true in the future. The
               nature of lock-in prevents people from doing anything about it
-              once it happens. <br />
+              once it happens.
               <br />
-              Example 1: an AGI may gain strategic control of humanity,
-              enforcing a dystopian scenario where the AGI competently pursues
-              some goal, preventing human intervention. Example 2: a human
-              dictator may leverage AI systems to improve their own lifespan and
-              implement mass worldwide surveillance, leading to a long-term
-              totalitarian regime.
+              <br />
+              <strong>Example 1:</strong> an AGI may gain strategic control of
+              humanity, enforcing a dystopian scenario where the AGI competently
+              pursues some goal, preventing human intervention.
+              <br />
+              <strong>Example 2:</strong> a human dictator may leverage AI
+              systems to improve their own lifespan and implement mass worldwide
+              surveillance, leading to a long-term totalitarian regime.
             </p>
           </CardContent>
         </Card>
@@ -402,67 +403,159 @@ const AboutPage = () => {
               value: "vision",
               title: "Our Vision",
               content: (
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum.
-                </p>
+                <div>
+                  <p className="mb-4">Our vision is twofold:</p>
+                  <ol className="list-decimal list-inside space-y-4">
+                    <li>
+                      <span className="font-semibold">
+                        Minimising lock-in risks:
+                      </span>{" "}
+                      To minimise the likelihood that negative elements of
+                      culture become stable to the extent that they are harmful,
+                      oppressive, ultimate, parochial, or large, either
+                      accidentally or deliberately, as a result of humans and AI
+                      systems. Or, more concisely, minimising lock-in risks.
+                    </li>
+                    <li>
+                      <span className="font-semibold">
+                        Promoting a dynamic future:
+                      </span>
+                      We envision a future where lock-ins are prevented as
+                      having:
+                      <ul className="list-disc list-inside mt-2 ml-6 space-y-2">
+                        <li>Continued technological and cultural evolution</li>
+                        <li>Economic growth</li>
+                        <li>Sustainable competition</li>
+                        <li>Improved individual freedom</li>
+                      </ul>
+                    </li>
+                  </ol>
+                  <p className="mt-4">
+                    Lock-in may prevent any or all of these properties from
+                    being true in the future. The nature of lock-in prevents
+                    people from doing anything about it once it happens.
+                  </p>
+                </div>
               ),
             },
             {
               value: "team",
               title: "Our Team",
               content: (
-                <>
-                  <p className="mb-4">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum.
+                <div>
+                  <h4 className="text-md font-semibold mt-4 mb-1">
+                    Research Lead
+                  </h4>
+                  <h5 className="text-sm font-semibold mt-2">Alfie Lamerton</h5>
+                  <p>
+                    Alfie Lamerton is the research lead for the project. Alfie
+                    holds a computer science BSc and has completed an artificial
+                    intelligence MSc, covering topics relevant to the project's
+                    target problem. Alfie is currently working towards
+                    publishing his MSc individual project in JAMIA, a medical
+                    informatics journal with an NLP professor and bioinformatics
+                    data scientist at King's College London, has previously
+                    published two AI alignment blog posts, and participated in
+                    12 AI safety projects, such as AI safety fundamentals, SPAR,
+                    and MARS. Alfie has previously been awarded a grant by the
+                    Long-Term Future Fund for his research.
                   </p>
-                  {/* Add team member profiles here */}
-                  <ul className="list-disc list-inside">
-                    <li>Alfie Lamerton - AI Safety Researcher</li>
-                    {/* Add more team members as needed */}
-                  </ul>
-                </>
+
+                  <h4 className="text-md font-semibold mt-4 mb-1">Advisor</h4>
+                  <h5 className="text-sm font-semibold mt-2">Adam Jones</h5>
+                </div>
               ),
             },
             {
               value: "approach",
               title: "Our Approach",
               content: (
-                <ul className="list-disc list-inside">
-                  <li>Lorem ipsum dolor sit amet,</li>
-                  <li>Duis aute irure dolor in reprehenderit</li>
-                  <li>Lorem ipsum dolor sit amet,</li>
-                  <li>Lorem ipsum dolor sit amet,</li>
-                </ul>
-              ),
-            },
-            {
-              value: "history",
-              title: "Our History",
-              content: (
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum.
-                </p>
+                <div>
+                  <p>
+                    As we outline in the theory of change, the type of research
+                    our organisation will initially conduct is defined by the
+                    following values: first-principles, bottom-up,
+                    collaborative, scientific and technical research into the
+                    behaviours of AI systems and the potential usage of such
+                    systems.
+                  </p>
+
+                  <h4 className="text-md font-semibold mt-4 mb-1">
+                    First Principles
+                  </h4>
+                  <p>
+                    This is a nascent area of study, and in the spirit of
+                    rationality, we believe that thinking about lock-in risks
+                    from first principles is the best way to keep unhelpful
+                    biases from clouding our research. This is not the same as
+                    only using the knowledge we create, that is not realistic.
+                    It means forming our own conceptual and theoretical models
+                    of the world based on our understanding of the laws of
+                    physics and computation, and testing the assumptions
+                    borrowed from other fields before employing them.
+                  </p>
+
+                  <h4 className="text-md font-semibold mt-4 mb-1">
+                    Bottom-up Research
+                  </h4>
+                  <p>
+                    Building theoretical and conceptual models of lock-in based
+                    on simple facts about AI systems and game theory, rather
+                    than resting on the conceptual models of other fields or
+                    organisations. For example, we would not just implement
+                    existing risk management protocols, alignment strategies, or
+                    follow the s-risk template in our research.
+                  </p>
+
+                  <h4 className="text-md font-semibold mt-4 mb-1">
+                    Collaborative Research
+                  </h4>
+                  <p>
+                    We aim to be a collaborative organisation that works with AI
+                    safety research organisations with overlapping goals. We
+                    also expect to conduct interdisciplinary work with
+                    organisations that conduct other kinds of research, e.g.,
+                    think tanks which conduct economic research who may approach
+                    lock-in from a different point of view.
+                  </p>
+
+                  <h4 className="text-md font-semibold mt-4 mb-1">
+                    Scientific Research
+                  </h4>
+                  <p>
+                    We plan to use the scientific method in our research with
+                    the goal of creating fundamental knowledge about lock-in
+                    risks. We plan to use:
+                  </p>
+                  <ul className="list-disc list-inside mt-2 space-y-2">
+                    <li className="ml-4">
+                      Conjecture with first principles, forecasting, and
+                      estimation,
+                    </li>
+                    <li className="ml-4">
+                      Criticism through feedback, peer review, and publication,
+                    </li>
+                    <li className="ml-4">
+                      Error-correction by updating our world models in light of
+                      feedback and review,
+                    </li>
+                  </ul>
+                  <p className="mt-2">
+                    to make scientific progress on lock-in with good
+                    explanations.
+                  </p>
+
+                  <h4 className="text-md font-semibold mt-4 mb-1">
+                    Technical Research
+                  </h4>
+                  <p>
+                    We will also use the scientific method with real-world
+                    applications in mind. We want to create applicable knowledge
+                    that can solve problems. We want to use the existing and
+                    created knowledge to develop interventions and innovate
+                    solutions to lock-in risks.
+                  </p>
+                </div>
               ),
             },
           ].map((tab) => (

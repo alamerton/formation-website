@@ -3,6 +3,9 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Image from "next/image";
 import theoryOfChangeImage from "@/images/theory-of-change.png";
+import sphereOfControlImage from "@/images/sphere-of-control.png";
+import sphereOfInfluenceImage from "@/images/sphere-of-influence.png";
+import sphereOfInterestImage from "@/images/sphere-of-interest.png";
 
 const TheoryOfChangePage = () => {
   const tabs = [
@@ -16,13 +19,13 @@ const TheoryOfChangePage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white">
-      <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8">
+      <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8 max-w-3xl">
         <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8">
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4">
             Our Theory of Change
           </h1>
           <div className="flex justify-center">
-            <div className="w-full sm:w-11/12 md:w-5/6 lg:w-3/4 xl:w-2/3">
+            <div className="w-full sm:w-full md:w-full lg:w-full xl:w-full">
               <Image
                 src={theoryOfChangeImage}
                 alt="Diagram outlining our theory of change"
@@ -32,7 +35,6 @@ const TheoryOfChangePage = () => {
             </div>
           </div>
         </div>
-
         <Card className="mb-4 sm:mb-8">
           <CardHeader>
             <h2 className="text-lg sm:text-xl md:text-2xl font-semibold">
@@ -49,7 +51,6 @@ const TheoryOfChangePage = () => {
             </p>
           </CardContent>
         </Card>
-
         <Tabs defaultValue="introduction" className="space-y-4">
           <TabsList className="grid grid-cols-3 gap-1 sm:flex sm:flex-wrap sm:justify-start sm:gap-2">
             {tabs.map((tab) => (
@@ -116,6 +117,16 @@ const TheoryOfChangePage = () => {
               title: "Sphere of Control",
               content: (
                 <>
+                  <div className="flex justify-center">
+                    <div className="w-full sm:w-10/12 md:w-2/3 lg:w-1/2 xl:w-1/3 pb-4">
+                      <Image
+                        src={sphereOfControlImage}
+                        alt="Diagram outlining our theory of change"
+                        layout="responsive"
+                        priority
+                      />
+                    </div>
+                  </div>
                   <p>
                     The sphere of control contains the inputs of the
                     organisation – the activities conducted by the research
@@ -156,6 +167,16 @@ const TheoryOfChangePage = () => {
               title: "Sphere of Influence",
               content: (
                 <>
+                  <div className="flex justify-center">
+                    <div className="w-full sm:w-10/12 md:w-2/3 lg:w-1/2 xl:w-1/3 pb-4">
+                      <Image
+                        src={sphereOfInfluenceImage}
+                        alt="Diagram outlining our theory of change"
+                        layout="responsive"
+                        priority
+                      />
+                    </div>
+                  </div>
                   <p>
                     The sphere of influence contains the measurable effects of
                     the activities conducted by the research team – these will
@@ -192,6 +213,16 @@ const TheoryOfChangePage = () => {
               title: "Sphere of Interest",
               content: (
                 <>
+                  <div className="flex justify-center">
+                    <div className="w-full sm:w-10/12 md:w-2/3 lg:w-1/2 xl:w-1/3 pb-4">
+                      <Image
+                        src={sphereOfInterestImage}
+                        alt="Diagram outlining our theory of change"
+                        layout="responsive"
+                        priority
+                      />
+                    </div>
+                  </div>
                   <p>
                     The sphere of interest specifies the events the organisation
                     is trying to elicit in the world; it contains two columns in
@@ -291,7 +322,6 @@ const TheoryOfChangePage = () => {
             </TabsContent>
           ))}
         </Tabs>
-
         <Card className="mt-8">
           <CardHeader>
             <h2 className="text-xl md:text-2xl font-semibold">Conclusion</h2>
