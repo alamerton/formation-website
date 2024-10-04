@@ -95,7 +95,7 @@ const TheoryOfChangePage = () => {
           </CardHeader>
           <CardContent>
             <div className="flex justify-center">
-              <div className="w-full sm:w-10/12 md:w-2/3 lg:w-1/2 xl:w-1/3 pb-4">
+              <div className="w-2/3 md:w-2/3 lg:w-1/2 xl:w-2/5 pb-4">
                 <Image
                   src={sphereOfControlImage}
                   alt="Diagram outlining our theory of change"
@@ -145,7 +145,7 @@ const TheoryOfChangePage = () => {
           </CardHeader>
           <CardContent>
             <div className="flex justify-center">
-              <div className="w-full sm:w-10/12 md:w-2/3 lg:w-1/2 xl:w-1/3 pb-4">
+              <div className="w-2/3 md:w-2/3 lg:w-1/2 xl:w-2/5 pb-4">
                 <Image
                   src={sphereOfInfluenceImage}
                   alt="Diagram outlining our theory of change"
@@ -191,7 +191,7 @@ const TheoryOfChangePage = () => {
           </CardHeader>
           <CardContent>
             <div className="flex justify-center">
-              <div className="w-full sm:w-10/12 md:w-10/12 lg:w-10/12 xl:w-10/12 pb-4">
+              <div className="w-2/3 pb-4">
                 <Image
                   src={sphereOfInterestImage}
                   alt="Diagram outlining our theory of change"
