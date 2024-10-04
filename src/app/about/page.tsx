@@ -450,15 +450,16 @@ const AboutPage = () => {
                   <p>
                     Alfie Lamerton is the research lead for the project. Alfie
                     holds a computer science BSc and has completed an artificial
-                    intelligence MSc, covering topics relevant to the project's
-                    target problem. Alfie is currently working towards
-                    publishing his MSc individual project in JAMIA, a medical
-                    informatics journal with an NLP professor and bioinformatics
-                    data scientist at King's College London, has previously
-                    published two AI alignment blog posts, and participated in
-                    12 AI safety projects, such as AI safety fundamentals, SPAR,
-                    and MARS. Alfie has previously been awarded a grant by the
-                    Long-Term Future Fund for his research.
+                    intelligence MSc, covering topics relevant to the
+                    project&apos;s target problem. Alfie is currently working
+                    towards publishing his MSc individual project in JAMIA, a
+                    medical informatics journal with an NLP professor and
+                    bioinformatics data scientist at King&apos;s College London,
+                    has previously published two AI alignment blog posts, and
+                    participated in 12 AI safety projects, such as AI safety
+                    fundamentals, SPAR, and MARS. Alfie has previously been
+                    awarded a grant by the Long-Term Future Fund for his
+                    research.
                   </p>
 
                   <h4 className="text-md font-semibold mt-4 mb-1">Advisor</h4>
@@ -581,7 +582,7 @@ const AboutPage = () => {
           <CardContent>
             <p className="text-sm md:text-base">
               We welcome collaboration and support from individuals and
-              organizations who share our vision. Whether you're a researcher,
+              organizations who share our vision. Whether you&apos;re a researcher,
               developer, policymaker, or simply someone passionate about AI
               safety, there are many ways to contribute to our mission.
             </p>
