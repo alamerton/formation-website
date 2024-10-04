@@ -6,7 +6,7 @@ const teamMembers = [
   {
     name: "Alfie Lamerton",
     role: "Research Lead",
-    bio: "Alfie Lamerton is organisation's research lead. Alfie holds a computer science BSc and has completed an artificial intelligence MSc, covering topics relevant to the project’s target problem. Alfie has published AI alignment blog posts, participated in AI safety projects such as AI safety fundamentals, SPAR, and MARS, and has been awarded a grant by the Long-Term Future Fund for his research.",
+    bio: "Alfie Lamerton is organisations research lead. Alfie holds a computer science BSc and has completed an artificial intelligence MSc, covering topics relevant to the project’s target problem. Alfie has published AI alignment blog posts, participated in AI safety projects such as AI safety fundamentals, SPAR, and MARS, and has been awarded a grant by the Long-Term Future Fund for his research.",
     image: alfie,
     email: "alfie@example.com",
     linkedin: "https://www.linkedin.com/in/alfiebrown/",
@@ -42,8 +42,8 @@ const ContactPage = () => {
 
             <div className="w-full sm:w-4/5 md:w-3/4 lg:w-2/3">
               <p className="text-center text-xl mb-8">
-                We'd love to hear from you! Get in touch with our team for any
-                inquiries or collaborations.
+                We&apos;d love to hear from you! Get in touch with our team for
+                any inquiries or collaborations.
               </p>
             </div>
           </div>

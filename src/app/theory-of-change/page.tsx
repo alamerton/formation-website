@@ -7,15 +7,6 @@ import sphereOfInfluenceImage from "@/images/sphere-of-influence.png";
 import sphereOfInterestImage from "@/images/sphere-of-interest.png";
 
 const TheoryOfChangePage = () => {
-  const tabs = [
-    { value: "introduction", label: "Intro" },
-    { value: "team", label: "Team" },
-    { value: "control", label: "Control" },
-    { value: "influence", label: "Influence" },
-    { value: "interest", label: "Interest" },
-    { value: "assumptions", label: "Assumptions" },
-  ];
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white">
       <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8 max-w-3xl">
