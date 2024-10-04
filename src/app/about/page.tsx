@@ -3,15 +3,9 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Image from "next/image";
 import aboutImage from "@/images/about-image.png";
+import productCycleImage from "@/images/product-cycle.png";
 
 const AboutPage = () => {
-  const tabs = [
-    { value: "definition", label: "Definition" },
-    { value: "vision", label: "Vision" },
-    { value: "team", label: "Team" },
-    { value: "approach", label: "Approach" },
-  ];
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white">
       <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8 max-w-3xl">
@@ -198,6 +192,34 @@ const AboutPage = () => {
                 knowledge to develop interventions and innovate solutions to
                 lock-in risks.
               </p>
+
+              <h4 className="text-md font-semibold mt-4 mb-1">
+                Validated Learning
+              </h4>
+              <p>
+                We believe in the build, measure, learn approach to creating and
+                scaling solutions to problems. In the context of lock-in
+                minimisation, this entails continuously updating our theory of
+                change, research agneda, and interventions upon updates to our
+                world models. We aim to always use evidence and reason to update
+                those world models.
+                <br />
+                <br />
+                We plan to update our products and interventions in an iterative
+                cycle, using conjecture, criticism, and error correction, as
+                follows:
+              </p>
+
+              <div className="w-full flex justify-center mb-8">
+                <div className="w-full sm:w-10/12 md:w-10/12 lg:w-10/12">
+                  <Image
+                    src={productCycleImage}
+                    alt="Diagram outlining our iterative approach to effective research and intervention"
+                    layout="responsive"
+                    priority
+                  />
+                </div>
+              </div>
             </div>
           </CardContent>
         </Card>
