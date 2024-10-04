@@ -27,13 +27,15 @@ const Main: React.FC = () => {
                   Learn More
                 </Button>
               </Link>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-blue-600 text-blue-600 hover:bg-blue-50"
-              >
-                Theory of Change
-              </Button>
+              <Link href="/theory-of-change">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-blue-600 text-blue-600 hover:bg-blue-50"
+                >
+                  Theory of Change
+                </Button>
+              </Link>
             </div>
           </div>
           <div className="lg:w-1/2">

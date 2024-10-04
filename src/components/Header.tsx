@@ -51,7 +51,7 @@ const Header: React.FC = () => {
         <ul
           className={`${
             isMenuOpen ? "block" : "hidden"
-          } md:flex md:space-x-8 w-full md:w-auto justify-center md:justify-end mt-4 md:mt-0 text-[20px] font-roboto`}
+          } md:flex md:space-x-8 w-full md:w-auto justify-center md:justify-end mt-4 md:mt-0 text-[20px]`}
         >
           {["Home", "About", "Theory of Change", "Contact"].map((item) => (
             <li key={item}>

@@ -1,4 +1,4 @@
-import alfie from "@/images/alfie.png";
+import alfieImage from "@/images/alfie.png";
 import Image from "next/image";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
@@ -7,9 +7,9 @@ const teamMembers = [
     name: "Alfie Lamerton",
     role: "Research Lead",
     bio: "Alfie Lamerton is organisations research lead. Alfie holds a computer science BSc and has completed an artificial intelligence MSc, covering topics relevant to the project’s target problem. Alfie has published AI alignment blog posts, participated in AI safety projects such as AI safety fundamentals, SPAR, and MARS, and has been awarded a grant by the Long-Term Future Fund for his research.",
-    image: alfie,
-    email: "alfie@example.com",
-    linkedin: "https://www.linkedin.com/in/alfiebrown/",
+    image: alfieImage,
+    email: "alfie.david.lamerton@gmail.com",
+    linkedin: "https://www.linkedin.com/in/alfie-lamerton/",
   },
   //   {
   //     name: "Adam Jones",
@@ -72,8 +72,8 @@ const ContactPage = () => {
                     <Image
                       src={member.image}
                       alt={member.name}
-                      width={150}
-                      height={150}
+                      width={250}
+                      height={250}
                       className="rounded-full mb-4"
                     />
                     <h3 className="text-xl font-semibold">{member.name}</h3>
@@ -88,7 +88,7 @@ const ContactPage = () => {
                         >
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            className="h-6 w-6"
+                            className="h-10 w-10 text-customPurple"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
@@ -111,7 +111,7 @@ const ContactPage = () => {
                         >
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            className="h-6 w-6"
+                            className="h-10 w-10 text-customPurple"
                             fill="currentColor"
                             viewBox="0 0 24 24"
                           >
