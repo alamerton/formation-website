@@ -1,6 +1,5 @@
 import React from "react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Image from "next/image";
 import aboutImage from "@/images/about-image.png";
 import productCycleImage from "@/images/product-cycle.png";

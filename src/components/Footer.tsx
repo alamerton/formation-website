@@ -1,8 +1,5 @@
 "use client";
 import React from "react";
-import Link from "next/link";
-import Image from "next/image";
-import logo from "@/images/logo.png";
 
 const Footer: React.FC = () => {
   return (

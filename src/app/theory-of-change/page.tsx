@@ -1,6 +1,5 @@
 import React from "react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Image from "next/image";
 import theoryOfChangeImage from "@/images/theory-of-change.png";
 import sphereOfControlImage from "@/images/sphere-of-control.png";

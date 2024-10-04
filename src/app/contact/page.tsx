@@ -1,4 +1,3 @@
-import logo from "@/images/logo.png";
 import alfie from "@/images/alfie.png";
 import Image from "next/image";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
