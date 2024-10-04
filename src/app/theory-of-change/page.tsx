@@ -72,11 +72,11 @@ const TheoryOfChangePage = () => {
                 <>
                   <p>
                     This page documents the initial theory of change for the
-                    proposed organisation. The purpose of the theory of change
-                    is to specify the activities conducted by the organisation,
-                    the intended effects of those activities, and the
-                    justification for the belief that those activities will
-                    bring about those effects.
+                    organisation. The purpose of the theory of change is to
+                    specify the activities conducted by the organisation, the
+                    intended effects of those activities, and the justification
+                    for the belief that those activities will bring about those
+                    effects.
                   </p>
                   <p className="mt-4">
                     The structure of a theory of change typically consists of a
@@ -95,7 +95,7 @@ const TheoryOfChangePage = () => {
               content: (
                 <>
                   <p>
-                    The proposed org consists only of one individual at present,
+                    The organisation consists only of one individual at present,
                     Alfie Lamerton. Alfie will have other roles at the
                     organisation, but those roles are not relevant for the
                     theory of change at this time.
@@ -214,7 +214,7 @@ const TheoryOfChangePage = () => {
               content: (
                 <>
                   <div className="flex justify-center">
-                    <div className="w-full sm:w-10/12 md:w-2/3 lg:w-1/2 xl:w-1/3 pb-4">
+                    <div className="w-full sm:w-10/12 md:w-10/12 lg:w-10/12 xl:w-10/12 pb-4">
                       <Image
                         src={sphereOfInterestImage}
                         alt="Diagram outlining our theory of change"
@@ -324,17 +324,17 @@ const TheoryOfChangePage = () => {
         </Tabs>
         <Card className="mt-8">
           <CardHeader>
-            <h2 className="text-xl md:text-2xl font-semibold">Conclusion</h2>
+            <h2 className="text-xl md:text-2xl font-semibold">Summary</h2>
           </CardHeader>
           <CardContent>
             <p className="text-sm md:text-base">
-              This report aims to make the case for the existence of the
-              potential organisation by decomposing its initial theory of change
-              and explaining each element in detail. It also identifies the
-              assumptions on which the theory of change rests, outlines the
-              bases for these assumptions and expresses a confidence level in
-              each of them. Lastly, the report illuminates potential next steps
-              for the improvement of the theory of change.
+              This page aims to purpose and operation of the organisation by
+              decomposing its initial theory of change and explaining each
+              element in detail. It also identifies the assumptions on which the
+              theory of change rests, outlines the bases for these assumptions
+              and expresses a confidence level in each of them. Lastly, the
+              report illuminates potential next steps for the improvement of the
+              theory of change.
             </p>
           </CardContent>
         </Card>
