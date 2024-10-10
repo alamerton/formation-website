@@ -27,7 +27,7 @@ const TheoryOfChangePage = () => {
         </div>
       </div>
       <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8 max-w-3xl">
-        <Card className="mb-4 sm:mb-8">
+        {/* <Card className="mb-4 sm:mb-8">
           <CardHeader>
             <h2 className="text-lg sm:text-xl md:text-2xl font-semibold">
               TL;DR
@@ -42,7 +42,7 @@ const TheoryOfChangePage = () => {
               to impact.
             </p>
           </CardContent>
-        </Card>
+        </Card> */}
         <Card className="mb-4 sm:mb-8">
           <CardHeader>
             <h2 className="text-lg sm:text-xl md:text-2xl font-semibold">
