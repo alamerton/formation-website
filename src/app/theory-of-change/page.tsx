@@ -154,7 +154,7 @@ const TheoryOfChangePage = () => {
           </CardHeader>
           <CardContent>
             <div className="flex justify-center">
-              <div className="w-2/3 pb-4">
+              <div className="w-6/7 pb-4">
                 <Image
                   src={sphereOfInterestImage}
                   alt="Diagram outlining our theory of change"
