@@ -9,7 +9,7 @@ import sphereOfInterestImage from "@/images/sphere-of-interest.png";
 const TheoryOfChangePage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white">
-      <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8 max-w-3xl">
+      <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8 max-w-6xl">
         <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8">
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4">
             Our Theory of Change
@@ -25,6 +25,8 @@ const TheoryOfChangePage = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8 max-w-3xl">
         <Card className="mb-4 sm:mb-8">
           <CardHeader>
             <h2 className="text-lg sm:text-xl md:text-2xl font-semibold">
@@ -107,34 +109,12 @@ const TheoryOfChangePage = () => {
             <p>
               The sphere of control contains the inputs of the organisation –
               the activities conducted by the research team. The research team
-              will conduct scientific and technical research in accordance with
-              the research agenda.
+              will calculate a forecast for lock-in risk using primary and
+              secondary data, brainstorm lock-in threat models, build an
+              evaluation framework and benchmark for lock-in risk in frontier
+              models, and conduct technical cooperative AI and AI control
+              research.
             </p>
-            <h3 className="text-lg font-semibold mt-4 mb-2">
-              Specific research activities:
-            </h3>
-            <ol className="list-decimal list-inside text-sm space-y-2">
-              <li>
-                Analysing multi-disciplinary literature for insights about
-                lock-in risks from AI systems
-              </li>
-              <li>
-                Forming original opinions on AI safety, challenging assumptions,
-                and creating models of lock-in risk from first-principles
-              </li>
-              <li>
-                Creating and testing hypotheses via conjecture, criticism, and
-                error-correction
-              </li>
-              <li>
-                Practising methods of rationality and the decomposition of
-                research objectives
-              </li>
-              <li>
-                Collaborating with other scientific research teams to improve
-                epistemic foundations
-              </li>
-            </ol>
           </CardContent>
         </Card>
         <Card className="mb-4 sm:mb-8">
@@ -156,30 +136,13 @@ const TheoryOfChangePage = () => {
             </div>
             <p>
               The sphere of influence contains the measurable effects of the
-              activities conducted by the research team – these will be called
-              the products of the organisation. The research activities will be
-              channelled into two types of product:
-            </p>
-            <h3 className="text-lg font-semibold mt-4 mb-2">
-              1. Scientific Research Papers
-            </h3>
-            <p className="text-sm">
-              The purpose of these products will be to create knowledge about
-              lock-in risks from AI systems. Scientific research is believed to
-              be necessary because the scientific method provides a framework
-              for creating reliable knowledge with high epistemic validity.
-            </p>
-            <h3 className="text-lg font-semibold mt-4 mb-2">
-              2. Technical reports creating recommendations for key
-              decision-makers
-            </h3>
-            <p className="text-sm">
-              The purpose of these products is to communicate knowledge about
-              lock-in risks using a different structure. The reports will
-              discuss lock-in at a different level of analysis to the scientific
-              research papers – they will take existing knowledge and the
-              knowledge created by the research to create recommendations to key
-              decision-makers in the field.
+              activities conducted by the research team – these are the products
+              of the organisation. The research activities will be channelled
+              into publishing a lock-in risk forecast, creating threat models
+              for lock-in and maintaining a public list of threat models,
+              publishing a lock-in evaluation framework and benchmark, producing
+              technical research papers, and producing reports making
+              recommendations about lock-in risk reduction.
             </p>
           </CardContent>
         </Card>
@@ -207,28 +170,9 @@ const TheoryOfChangePage = () => {
               outputs, and the goal – the main objective of the theory of
               change.
             </p>
-            <h3 className="text-lg font-semibold mt-4 mb-2">Outcomes</h3>
-            <p className="text-sm">
-              The first intended effect of the outputs is that decision-makers
-              have access to lock-in risk knowledge. The target demographics for
-              the outputs are:
-            </p>
-            <ul className="list-disc list-inside mt-2 text-sm space-y-1">
-              <li>Tech company executives</li>
-              <li>Investors and venture capitalists</li>
-              <li>Policymakers</li>
-              <li>Public intellectuals and academics</li>
-            </ul>
-            <h3 className="text-lg font-semibold mt-4 mb-2">Goal</h3>
-            <p className="text-sm">
-              The goal of the organisation is to minimise lock-in risks from AI
-              systems. The organisation is operating on the assumption that
-              lock-in risks would develop as a consequence of the behaviour and
-              usage of AI systems.
-            </p>
           </CardContent>
         </Card>
-        <Card className="mb-4 sm:mb-8">
+        {/* <Card className="mb-4 sm:mb-8">
           <CardHeader>
             <h2 className="text-lg sm:text-xl md:text-2xl font-semibold">
               Assumptions and Evidence
@@ -283,7 +227,7 @@ const TheoryOfChangePage = () => {
               </div>
             ))}
           </CardContent>
-        </Card>
+        </Card> */}
 
         <Card className="mt-8">
           <CardHeader>
