@@ -84,7 +84,7 @@ const AboutPage = () => {
                 <li>
                   <span className="font-semibold">
                     Promoting a dynamic future:
-                  </span>
+                  </span>{" "}
                   We envision a future where lock-ins are prevented as having:
                   <ul className="list-disc list-inside mt-2 ml-6 space-y-2">
                     <li>Continued technological and cultural evolution</li>
