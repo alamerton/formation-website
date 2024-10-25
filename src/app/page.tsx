@@ -68,7 +68,7 @@ const Main: React.FC = () => {
                   "We plan to develop and continuously update our most important threat models for lock-in, examining worlds in which lock-in happens, and developing interventions to mitigate the manifestation of these worlds",
               },
               {
-                title: "Innovation",
+                title: "Interventions",
                 description:
                   "We plan to build interventions and products targeting the problem of lock-in, using the results from our research and threat modelling",
               },
