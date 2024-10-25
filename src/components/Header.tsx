@@ -51,22 +51,24 @@ const Header: React.FC = () => {
         <ul
           className={`${
             isMenuOpen ? "block" : "hidden"
-          } md:flex md:space-x-8 w-full md:w-auto justify-center md:justify-end mt-4 md:mt-0 text-[20px]`}
+          } md:flex md:space-x-8 w-full md:w-auto justify-center md:justify-end mt-4 md:mt-0 text-[20px] font-serif`}
         >
-          {["Home", "About", "Theory of Change", "Contact"].map((item) => (
-            <li key={item}>
-              <Link
-                href={
-                  item === "Home"
-                    ? "/"
-                    : `/${item.toLowerCase().replace(/ /g, "-")}`
-                }
-                className="block py-2 md:py-0 hover:text-gray-300 transition duration-300"
-              >
-                {item}
-              </Link>
-            </li>
-          ))}
+          {["Home", "About", "Theory of Change", "Contact", "Research"].map(
+            (item) => (
+              <li key={item}>
+                <Link
+                  href={
+                    item === "Home"
+                      ? "/"
+                      : `/${item.toLowerCase().replace(/ /g, "-")}`
+                  }
+                  className="block py-2 md:py-0 hover:text-gray-300 transition duration-300"
+                >
+                  {item}
+                </Link>
+              </li>
+            )
+          )}
         </ul>
       </nav>
     </header>

@@ -9,7 +9,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        kameron: ["Kameron", "serif"],
+        sans: ["var(--font-lato)", "sans-serif"],
+        serif: ["var(--font-kameron)", "serif"],
       },
       borderRadius: {
         lg: "var(--radius)",

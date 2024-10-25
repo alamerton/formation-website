@@ -6,6 +6,11 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+:root {
+  --font-lato: 'Lato', sans-serif;
+  --font-kameron: 'Kameron', serif;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
