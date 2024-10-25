@@ -8,6 +8,7 @@ const AboutPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white">
       <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8 max-w-3xl">
+        {/* About us section */}
         <div className="container mx-auto px-4 py-8">
           <div className="flex flex-col items-center">
             <div className="w-full sm:w-2/3 md:w-1/2 lg:w-1/3 mb-8">
@@ -24,6 +25,7 @@ const AboutPage = () => {
             <div className="w-full sm:w-4/5 md:w-3/4 lg:w-2/3"> </div>
           </div>
         </div>
+        {/* Who we are section */}
         <div className="container pb-8">
           <h2 className="text-lg sm:text-xl md:text-2xl font-semibold py-4">
             Who We Are
@@ -53,6 +55,7 @@ const AboutPage = () => {
             surveillance, leading to a long-term totalitarian regime.
           </p>
         </div>
+        {/* Vision section */}
         <div className="container pb-8">
           <h2 className="text-lg sm:text-xl md:text-2xl font-semibold py-4">
             Our Vision
@@ -90,6 +93,7 @@ const AboutPage = () => {
             </p>
           </div>
         </div>
+        {/* Approach section */}
         <h2 className="text-lg sm:text-xl md:text-2xl font-semibold py-4">
           Our Approach
         </h2>
@@ -102,7 +106,9 @@ const AboutPage = () => {
             potential usage of such systems.
           </p>
 
-          <h4 className="text-md font-semibold mt-4 mb-1">First Principles</h4>
+          <h3 className="text-lg text-lg font-semibold mt-4 mb-1">
+            First Principles
+          </h3>
           <p className="text-lg">
             This is a nascent area of study, and in the spirit of rationality,
             we believe that thinking about lock-in risks from first principles
@@ -114,9 +120,9 @@ const AboutPage = () => {
             other fields before employing them.
           </p>
 
-          <h4 className="text-md font-semibold mt-4 mb-1">
+          <h3 className="text-lg text-md font-semibold mt-4 mb-1">
             Bottom-up Research
-          </h4>
+          </h3>
           <p className="text-lg">
             Building theoretical and conceptual models of lock-in based on
             simple facts about AI systems and game theory, rather than resting
@@ -126,9 +132,9 @@ const AboutPage = () => {
             our research.
           </p>
 
-          <h4 className="text-md font-semibold mt-4 mb-1">
+          <h3 className="text-lg text-lg text-md font-semibold mt-4 mb-1">
             Collaborative Research
-          </h4>
+          </h3>
           <p className="text-lg">
             We aim to be a collaborative organisation that works with AI safety
             research organisations with overlapping goals. We also expect to
@@ -137,33 +143,33 @@ const AboutPage = () => {
             who may approach lock-in from a different point of view.
           </p>
 
-          <h4 className="text-md font-semibold mt-4 mb-1">
+          <h3 className="text-lg font-semibold mt-4 mb-1">
             Scientific Research
-          </h4>
+          </h3>
           <p className="text-lg">
             We plan to use the scientific method in our research with the goal
             of creating fundamental knowledge about lock-in risks. We plan to
             use:
           </p>
           <ul className="list-disc list-inside mt-2 space-y-2">
-            <li className="ml-4">
+            <li className="text-lg ml-4">
               Conjecture with first principles, forecasting, and estimation,
             </li>
-            <li className="ml-4">
+            <li className="text-lg ml-4">
               Criticism through feedback, peer review, and publication,
             </li>
-            <li className="ml-4">
+            <li className="text-lg ml-4">
               Error-correction by updating our world models in light of feedback
               and review,
             </li>
           </ul>
-          <p className="mt-2">
+          <p className="text-lg mt-2">
             to make scientific progress on lock-in with good explanations.
           </p>
 
-          <h4 className="text-md font-semibold mt-4 mb-1">
+          <h3 className="text-lg font-semibold mt-4 mb-1">
             Technical Research
-          </h4>
+          </h3>
           <p className="text-lg">
             We will also use the scientific method with real-world applications
             in mind. We want to create applicable knowledge that can solve
@@ -171,9 +177,9 @@ const AboutPage = () => {
             develop interventions and innovate solutions to lock-in risks.
           </p>
 
-          <h4 className="text-md font-semibold mt-4 mb-1">
+          <h3 className="text-lg font-semibold mt-4 mb-1">
             Validated Learning
-          </h4>
+          </h3>
           <p className="text-lg">
             We believe in the build, measure, learn approach to creating and
             scaling solutions to problems. In the context of lock-in
