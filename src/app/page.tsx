@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import landingPageBanner from "@/images/research-banner.jpg";
+import landingPageBanner from "@/images/theory-of-change-banner.jpg";
 
 const Main: React.FC = () => {
   return (
