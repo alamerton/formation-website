@@ -22,7 +22,7 @@ const Main: React.FC = () => {
               <Link href="/about">
                 <Button
                   size="lg"
-                  className="bg-customPurple hover:bg-blue-700 text-white"
+                  className="bg-customPurple px-16 py-6 over:bg-blue-700 text-white text-xl font-medium"
                 >
                   Learn More
                 </Button>
@@ -30,8 +30,8 @@ const Main: React.FC = () => {
               <Link href="/theory-of-change">
                 <Button
                   size="lg"
-                  variant="outline"
-                  className="border-blue-600 text-blue-600 hover:bg-blue-50"
+                  // variant="outline"
+                  className="bg-white px-16 py-6 text-blue-600 text-xl font-medium hover:bg-blue-50"
                 >
                   Theory of Change
                 </Button>
@@ -50,7 +50,7 @@ const Main: React.FC = () => {
         </div>
       </div>
 
-      <div className=" py-16">
+      <div className=" py-24">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
             Our Approach
@@ -60,7 +60,7 @@ const Main: React.FC = () => {
               {
                 title: "Research",
                 description:
-                  "Conducting conceptual and empirical lock-in risk research, developing quantitative models of lock-in and methods for measuring and reducing lock-in risk.",
+                  "We are conducting foundational technical research into lock-in risks from AI systems, starting by forecasting lock-in risk, developing threat models for lock-in, and designing technical interventions for minimising lock-in risk.",
               },
               {
                 title: "Threat Modelling",
@@ -70,7 +70,7 @@ const Main: React.FC = () => {
               {
                 title: "Interventions",
                 description:
-                  "We plan to build interventions and products targeting the problem of lock-in, using the results from our research and threat modelling",
+                  "We plan to use our findings and threat models to build interventions and products targeting lock-in risk, using techniques such as backcasting and scenario planning.",
               },
             ].map((item, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-md">
@@ -84,7 +84,7 @@ const Main: React.FC = () => {
         </div>
       </div>
 
-      <div className="bg-orange-400 py-16 text-white text-center">
+      <div className="bg-orange-400 py-10 text-white text-center">
         <h2 className="text-xl md:text-2xl font-bold mb-4">
           Join Us in Shaping the Future
         </h2>
