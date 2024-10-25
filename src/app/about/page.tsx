@@ -1,5 +1,4 @@
 import React from "react";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import Image from "next/image";
 import aboutImage from "@/images/about-image.png";
 import productCycleImage from "@/images/product-cycle.png";
@@ -132,7 +131,7 @@ const AboutPage = () => {
             our research.
           </p>
 
-          <h3 className="text-lg text-lg text-md font-semibold mt-4 mb-1">
+          <h3 className="text-lg text-md font-semibold mt-4 mb-1">
             Collaborative Research
           </h3>
           <p className="text-lg">
