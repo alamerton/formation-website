@@ -19,7 +19,7 @@ const TheoryOfChangePage = () => {
         />
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center font-serif">
           <h1 className="text-3xl md:text-5xl font-kameron text-white">
-            Our Theory of Change
+            Theory of Change
           </h1>
         </div>
       </div>
