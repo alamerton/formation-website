@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import aboutImage from "@/images/about-image.png";
-import aboutBanner from "@/images/pattern-6.jpg";
+import aboutBanner from "@/images/about-banner.jpg";
 
 const AboutPage = () => {
   return (

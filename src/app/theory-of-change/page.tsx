@@ -4,7 +4,7 @@ import theoryOfChangeImage from "@/images/theory-of-change.png";
 import sphereOfControlImage from "@/images/sphere-of-control.png";
 import sphereOfInfluenceImage from "@/images/sphere-of-influence.png";
 import sphereOfInterestImage from "@/images/sphere-of-interest.png";
-import theoryOfChangeBanner from "@/images/pattern-5.jpg";
+import theoryOfChangeBanner from "@/images/theory-of-change-banner.jpg";
 
 const TheoryOfChangePage = () => {
   return (

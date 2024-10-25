@@ -1,6 +1,6 @@
 import Image from "next/image";
 import alfieImage from "@/images/alfie.png";
-import teamBanner from "@/images/pattern-4.jpg";
+import teamBanner from "@/images/team-banner.jpg";
 
 const teamMembers = [
   {

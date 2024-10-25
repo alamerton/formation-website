@@ -1,5 +1,5 @@
 import Image from "next/image";
-import researchBanner from "@/images/research-banner-4.jpg";
+import researchBanner from "@/images/research-banner.jpg";
 import giza from "@/images/giza.jpg";
 
 const researchItems = [
