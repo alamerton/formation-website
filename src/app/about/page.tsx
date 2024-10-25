@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import aboutImage from "@/images/about-image.png";
-import productCycleImage from "@/images/product-cycle.png";
 
 const AboutPage = () => {
   return (
