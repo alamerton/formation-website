@@ -4,15 +4,27 @@ import theoryOfChangeImage from "@/images/theory-of-change.png";
 import sphereOfControlImage from "@/images/sphere-of-control.png";
 import sphereOfInfluenceImage from "@/images/sphere-of-influence.png";
 import sphereOfInterestImage from "@/images/sphere-of-interest.png";
+import theoryOfChangeBanner from "@/images/pattern-5.jpg";
 
 const TheoryOfChangePage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white">
+      <div className="relative w-full h-64 md:h-96">
+        <Image
+          src={theoryOfChangeBanner}
+          alt="Theory of Change Banner"
+          layout="fill"
+          objectFit="cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center font-serif">
+          <h1 className="text-3xl md:text-5xl font-kameron text-white">
+            Our Theory of Change
+          </h1>
+        </div>
+      </div>
       {/* Hero section with main diagram */}
       <div className="container mx-auto px-4 py-12 max-w-6xl">
-        <h1 className="text-4xl md:text-5xl font-bold text-center mb-8 text-gray-900">
-          Our Theory of Change
-        </h1>
         <div className="bg-white rounded-xl shadow-lg p-6 mb-12">
           <Image
             src={theoryOfChangeImage}
