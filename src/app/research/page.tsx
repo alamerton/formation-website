@@ -16,14 +16,14 @@ const researchItems = [
       "Qualitative definition and quantitative operationalisation of lock-in for our future research.",
     link: "https://docs.google.com/document/d/1ekTUeG8Bwf75dt86wtfWZvT316P0KT9sVgnQ9BSsLrU/edit?usp=sharing",
   },
-  {
-    id: 2,
-    image: pattern3,
-    title: "Research Project 2",
-    date: "October 20, 2024",
-    description: "Brief description of research project 2...",
-    link: "/research/project-2",
-  },
+  // {
+  //   id: 2,
+  //   image: pattern3,
+  //   title: "Research Project 2",
+  //   date: "October 20, 2024",
+  //   description: "Brief description of research project 2...",
+  //   link: "/research/project-2",
+  // },
 ];
 
 const ResearchPage = () => {
@@ -37,7 +37,7 @@ const ResearchPage = () => {
           objectFit="cover"
           priority
         />
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center font-serif">
           <h1 className="text-3xl md:text-5xl  font-kameron text-white">
             Research
           </h1>

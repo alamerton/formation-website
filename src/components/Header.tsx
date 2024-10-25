@@ -19,10 +19,7 @@ const Header: React.FC = () => {
               alt="Formation Research Logo"
               className="rounded-full sm:hidden"
             />
-            <span
-              className="hidden sm:inline text-white text-center text-[40px] font-light leading-normal font-kameron"
-              // style={{ textShadow: "0px 0px 8px #E79DFF" }}
-            >
+            <span className="hidden sm:inline text-white text-center text-[40px] font-light leading-normal font-serif">
               Formation Research
             </span>
           </Link>
@@ -51,9 +48,9 @@ const Header: React.FC = () => {
         <ul
           className={`${
             isMenuOpen ? "block" : "hidden"
-          } md:flex md:space-x-8 w-full md:w-auto justify-center md:justify-end mt-4 md:mt-0 text-[20px] font-serif`}
+          } md:flex md:space-x-8 w-full md:w-auto justify-center md:justify-end mt-4 md:mt-0 text-[20px]`}
         >
-          {["Home", "About", "Theory of Change", "Contact", "Research"].map(
+          {["Home", "About", "Theory of Change", "Team", "Research"].map(
             (item) => (
               <li key={item}>
                 <Link

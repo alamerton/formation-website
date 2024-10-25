@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const Main: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white font-sans">
       {/* Hero Section */}
       <div className="container mx-auto px-4 py-16 sm:py-24">
         <div className="flex flex-col lg:flex-row items-center justify-between">
@@ -22,7 +22,7 @@ const Main: React.FC = () => {
               <Link href="/about">
                 <Button
                   size="lg"
-                  className="bg-customPurple px-16 py-6 over:bg-blue-700 text-white text-xl font-medium"
+                  className="bg-customPurple px-16 py-6 hover:bg-blue-700 text-white text-xl font-medium"
                 >
                   Learn More
                 </Button>
@@ -30,7 +30,6 @@ const Main: React.FC = () => {
               <Link href="/theory-of-change">
                 <Button
                   size="lg"
-                  // variant="outline"
                   className="bg-white px-16 py-6 text-blue-600 text-xl font-medium hover:bg-blue-50"
                 >
                   Theory of Change
@@ -38,7 +37,7 @@ const Main: React.FC = () => {
               </Link>
             </div>
           </div>
-          <div className="lg:w-1/2">
+          <div className="lg:w-2/5">
             <Image
               src={lockInImage}
               alt="AI Illustration"
@@ -50,7 +49,7 @@ const Main: React.FC = () => {
         </div>
       </div>
 
-      <div className=" py-24">
+      <div className="py-24">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
             Our Approach
@@ -89,7 +88,7 @@ const Main: React.FC = () => {
           Help Us Minimise Lock-In Risks
         </h2>
         <p className="mb-6">
-          We are currenty seeking funding for our research, you can help by
+          We are currently seeking funding for our research, you can help by
           donating to our Manifund proposal.
         </p>
         <Link href="https://manifund.org/projects/formation-research">

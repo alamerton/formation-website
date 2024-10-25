@@ -186,25 +186,10 @@ const AboutPage = () => {
             change, research agneda, and interventions upon updates to our world
             models. We aim to always use evidence and reason to update those
             world models.
-            <br />
-            <br />
-            We plan to update our products and interventions in an iterative
-            cycle, using conjecture, criticism, and error correction, as
-            follows:
           </p>
-
-          <div className="w-full flex justify-center mb-8">
-            <div className="w-full sm:w-10/12 md:w-10/12 lg:w-10/12">
-              <Image
-                src={productCycleImage}
-                alt="Diagram outlining our iterative approach to effective research and intervention"
-                layout="responsive"
-                priority
-              />
-            </div>
-          </div>
         </div>
       </div>
+      <div className="h-64"></div>
     </div>
   );
 };
