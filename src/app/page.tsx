@@ -86,10 +86,11 @@ const Main: React.FC = () => {
 
       <div className="bg-orange-400 py-10 text-white text-center">
         <h2 className="text-xl md:text-2xl font-bold mb-4">
-          Join Us in Shaping the Future
+          Help Us Minimise Lock-In Risks
         </h2>
         <p className="mb-6">
-          Be part of our mission to create safer AI systems.
+          We are currenty seeking funding for our research, you can help by
+          donating to our Manifund proposal.
         </p>
         <Link href="https://manifund.org/projects/formation-research">
           <Button

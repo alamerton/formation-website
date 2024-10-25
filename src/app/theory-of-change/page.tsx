@@ -26,7 +26,7 @@ const TheoryOfChangePage = () => {
 
       {/* Main content */}
       <div className="container mx-auto px-4 max-w-3xl">
-        {/* TL;DR Section */}
+        {/* Overview Section */}
         <div className="mb-16">
           <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900">
             Overview
@@ -78,7 +78,7 @@ const TheoryOfChangePage = () => {
           </h2>
           <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
             <div className="flex justify-center mb-6">
-              <div className="w-4/5 md:w-2/3">
+              <div className="w-3/5 md:w-1/2">
                 <Image
                   src={sphereOfControlImage}
                   alt="Diagram showing our sphere of control"
@@ -107,7 +107,7 @@ const TheoryOfChangePage = () => {
           </h2>
           <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
             <div className="flex justify-center mb-6">
-              <div className="w-4/5 md:w-2/3">
+              <div className="w-3/5 md:w-1/2">
                 <Image
                   src={sphereOfInfluenceImage}
                   alt="Diagram showing our sphere of influence"
