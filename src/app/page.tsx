@@ -22,7 +22,7 @@ const Main: React.FC = () => {
             Welcome to Formation
           </h1>
           <p className="text-xl md:text-2xl text-gray-200 mb-8">
-            We're on a mission to minimise lock-in risks from AI systems to
+            We&apos;re on a mission to minimise lock-in risks from AI systems to
             shape a safer future for humanity.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
@@ -53,8 +53,8 @@ const Main: React.FC = () => {
             Help Us Minimise Lock-In Risks
           </h2>
           <p className="text-lg mb-8 max-w-xl mx-auto">
-            We are currently seeking funding for our research. You can help by
-            donating to our Manifund proposal and joining our mission.
+            W&apos;re currently seeking funding for our research. You can help
+            by donating to our Manifund proposal and joining our mission.
           </p>
           <Link href="https://manifund.org/projects/formation-research">
             <Button
