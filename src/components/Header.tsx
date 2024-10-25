@@ -8,8 +8,9 @@ const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="bg-customPurple text-white p-4 shadow-md">
-      <nav className="container mx-auto flex flex-wrap justify-between items-center">
+    <header className="fixed top-0 left-0 right-0 z-50 text-white p-4">
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-transparent pointer-events-none"></div>
+      <nav className="container mx-auto flex flex-wrap justify-between items-center relative">
         <div className="flex items-center space-x-4">
           <Link href="/" className="flex items-center space-x-2">
             <Image

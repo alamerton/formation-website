@@ -1,28 +1,26 @@
 import React from "react";
 import Image from "next/image";
 import aboutImage from "@/images/about-image.png";
+import aboutBanner from "@/images/pattern-6.jpg";
 
 const AboutPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white">
-      <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8 max-w-3xl">
-        {/* About us section */}
-        <div className="container mx-auto px-4 py-8">
-          <div className="flex flex-col items-center">
-            <div className="w-full sm:w-2/3 md:w-1/2 lg:w-1/3 mb-8">
-              <Image
-                src={aboutImage}
-                alt="Diagram outlining our theory of change"
-                layout="responsive"
-                priority
-              />
-            </div>
-            <h1 className="text-3xl md:text-4xl font-bold mb-6 text-center">
-              About Us
-            </h1>
-            <div className="w-full sm:w-4/5 md:w-3/4 lg:w-2/3"> </div>
-          </div>
+      <div className="relative w-full h-64 md:h-96">
+        <Image
+          src={aboutBanner}
+          alt="About Banner"
+          layout="fill"
+          objectFit="cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center font-serif">
+          <h1 className="text-3xl md:text-5xl font-kameron text-white">
+            About Us
+          </h1>
         </div>
+      </div>
+      <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8 max-w-3xl">
         {/* Who we are section */}
         <div className="container pb-8">
           <h2 className="text-lg sm:text-xl md:text-2xl font-semibold py-4">
