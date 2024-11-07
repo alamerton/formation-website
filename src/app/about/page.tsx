@@ -26,10 +26,10 @@ const AboutPage = () => {
             Who We Are
           </h2>
           <p className="text-lg">
-            Nick Bostrom thought about AGI and lock-in in 2014, but there has
-            been almost no empirical work on it since. We&apos;re starting
-            Formation Research to minimise lock-in risk, the outcome being
-            reduced likelihood that humanity ends up in a lock-in in the future.
+            Nick Bostrom first thought about AGI and lock-in in 2005, but there
+            has been almost no work on it since. We&apos;re starting Formation
+            Research to minimise lock-in risk, the outcome being reduced
+            likelihood that humanity ends up in a lock-in in the future.
             <br />
             <br /> A lock-in is where features of the world, typically negative
             elements of human culture that are harmful or oppressive, are held
