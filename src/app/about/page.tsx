@@ -119,10 +119,10 @@ const AboutPage = () => {
             Bottom-up Research
           </h3>
           <p className="text-lg">
-            Building theoretical and conceptual models of lock-in based on
-            simple facts about AI systems and game theory, rather than resting
-            on the conceptual models of other fields or organisations. For
-            example, we would not just implement existing risk management
+            Building inside-view theoretical and conceptual models of lock-in
+            based on simple facts about AI systems and game theory, rather than
+            resting on the conceptual models of other fields or organisations.
+            For example, we would not just implement existing risk management
             protocols, alignment strategies, or follow the s-risk template in
             our research.
           </p>
@@ -167,9 +167,10 @@ const AboutPage = () => {
           </h3>
           <p className="text-lg">
             We will also use the scientific method with real-world applications
-            in mind. We want to create applicable knowledge that can solve
-            problems. We want to use the existing and created knowledge to
-            develop interventions and innovate solutions to lock-in risks.
+            and interventions in mind. We want to create applicable knowledge
+            that can be applied to solving problems. We want to use the existing
+            and created knowledge to develop interventions and innovate
+            mitigations for lock-in risks.
           </p>
 
           <h3 className="text-lg font-semibold mt-4 mb-1">
@@ -178,10 +179,10 @@ const AboutPage = () => {
           <p className="text-lg">
             We believe in the build, measure, learn approach to creating and
             scaling solutions to problems. In the context of lock-in
-            minimisation, this entails continuously updating our theory of
-            change, research agneda, and interventions upon updates to our world
-            models. We aim to always use evidence and reason to update those
-            world models.
+            minimisation, this means continuously updating our theory of change,
+            research agenda, and interventions upon updates to our world models.
+            We aim to always use evidence and reason to update those world
+            models.
           </p>
         </div>
       </div>
