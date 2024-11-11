@@ -175,12 +175,13 @@ const TheoryOfChangePage = () => {
             Summary
           </h2>
           <p className="text-lg text-gray-700 leading-relaxed">
-            This page aims to purpose and operation of the organisation by
-            decomposing its initial theory of change and explaining each element
-            in detail. It also identifies the assumptions on which the theory of
-            change rests, outlines the bases for these assumptions and expresses
-            a confidence level in each of them. Lastly, the report illuminates
-            potential next steps for the improvement of the theory of change.
+            This page aims to outline the purpose and operation of the
+            organisation by decomposing its initial theory of change and
+            explaining each element in detail. It also identifies the
+            assumptions on which the theory of change rests, outlines the bases
+            for these assumptions and expresses a confidence level in each of
+            them. Lastly, the report illuminates potential next steps for the
+            improvement of the theory of change.
           </p>
         </div>
       </div>
