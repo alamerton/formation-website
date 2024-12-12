@@ -6,7 +6,7 @@ const teamMembers = [
   {
     name: "Alfie Lamerton",
     role: "Research Lead",
-    bio: "Alfie Lamerton is the organisation's research lead. Alfie holds a computer science BSc and has completed an artificial intelligence MSc, covering topics relevant to lock-in such as deep learning, game theory, and philosophy. Alfie has published AI alignment blog posts, participated in AI safety projects such as AI safety fundamentals, SPAR, and MARS, and has been awarded a grant by the Long-Term Future Fund for his research.",
+    bio: "Alfie Lamerton is the organisation's research lead. Alfie holds a computer science BSc and artificial intelligence MSc, covering topics relevant to lock-in such as deep learning, game theory, and philosophy. Alfie has worked on several AI safety and alignment projects, participated in AI safety projects such as AI safety fundamentals, SPAR, and MARS, and has been awarded multiple grants for his research",
     image: alfieImage,
     email: "alfie.david.lamerton@gmail.com",
     linkedin: "https://www.linkedin.com/in/alfie-lamerton/",
