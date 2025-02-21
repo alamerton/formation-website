@@ -48,7 +48,7 @@ const Main: React.FC = () => {
       </div>
 
       {/* Call to Action Section */}
-      <div className=" py-16 text-center">
+      {/* <div className=" py-16 text-center">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
             Help Us Minimise Lock-In Risks
@@ -66,7 +66,7 @@ const Main: React.FC = () => {
             </Button>
           </Link>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
