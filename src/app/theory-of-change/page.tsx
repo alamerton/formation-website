@@ -44,19 +44,20 @@ const TheoryOfChangePage = () => {
             Overview
           </h2>
           <p className="text-lg text-gray-700 leading-relaxed">
-            This page documents the initial theory of change for the
-            organisation. The purpose of the theory of change is to specify the
-            activities conducted by the organisation, the intended effects of
-            those activities, and the justification for the belief that those
-            activities will bring about those effects.
+            This page outlines Formation&apos;s theory of change. The purpose of
+            the theory of change is to specify the activities conducted by the
+            organisation, the intended effects of those activities, and the
+            justification for the belief that those activities will bring about
+            those effects.
           </p>
           <br />
           <p className="text-lg text-gray-700 leading-relaxed">
             The structure of a theory of change typically consists of a team or
             set of teams, a sphere of control, a sphere of influence, a sphere
             of interest, and a set of assumptions and evidence. This theory of
-            change is subject to change on receiving updated information about
-            the impact of the organisation.
+            change is subject to change as we learn more about what inputs best
+            bring about the outcomes we are aiming for &mdash; reduced lock-in
+            risk.
           </p>
         </div>
 
@@ -67,18 +68,17 @@ const TheoryOfChangePage = () => {
           </h2>
           <div className="space-y-4">
             <p className="text-lg text-gray-700 leading-relaxed">
-              The organisation consists only of one individual at present, Alfie
-              Lamerton. Alfie will have other roles at the organisation, but
-              those roles are not relevant for the theory of change at this
-              time.
+              Currently Formation is composed of two members, Alfie Lamerton and
+              Adam Jones. Alfie is Formation&apos;s founder and research lead
+              and Adam is an advisor to the organisation.
             </p>
             <p className="text-lg text-gray-700 leading-relaxed">
-              Alfie will act as the research team in the proposed organisation
-              for the time being. It is expected that as the organisation
-              evolves, more teams will be created that contribute to the sphere
-              of interest. Those teams will be added as new rows to the theory
-              of change, starting with the organisation&apos;s goal and mapping
-              the causal pathway backwards to team design.
+              Alfie is the sole researcher and therefore the only member of
+              Formation&apos;s research team. It is expected that as the
+              organisation evolves, more teams will be created that contribute
+              to the sphere of interest. Those teams will be added as new rows
+              to the theory of change by mapping the causal pathway backwards
+              from the intended impact to team design.
             </p>
           </div>
         </div>
@@ -101,13 +101,8 @@ const TheoryOfChangePage = () => {
               </div>
             </div>
             <p className="text-lg text-gray-700 leading-relaxed">
-              The sphere of control contains the inputs of the organisation –
-              the activities conducted by the research team. The research team
-              will calculate a forecast for lock-in risk using primary and
-              secondary data, brainstorm lock-in threat models, build an
-              evaluation framework and benchmark for lock-in risk in frontier
-              models, and conduct technical cooperative AI and AI control
-              research.
+              The sphere of control contains the inputs of the organisation
+              &mdash; the activities conducted by the research team.
             </p>
           </div>
         </div>
@@ -131,13 +126,8 @@ const TheoryOfChangePage = () => {
             </div>
             <p className="text-lg text-gray-700 leading-relaxed">
               The sphere of influence contains the measurable effects of the
-              activities conducted by the research team – these are the products
-              of the organisation. The research activities will be channelled
-              into publishing a lock-in risk forecast, creating threat models
-              for lock-in and maintaining a public list of threat models,
-              publishing a lock-in evaluation framework and benchmark, producing
-              technical research papers, and producing reports making
-              recommendations about lock-in risk reduction.
+              activities conducted by the research team – these are
+              Formation&apos;s outputs.
             </p>
           </div>
         </div>
@@ -160,29 +150,12 @@ const TheoryOfChangePage = () => {
               </div>
             </div>
             <p className="text-lg text-gray-700 leading-relaxed">
-              The sphere of interest specifies the events the organisation is
-              trying to elicit in the world; it contains two columns in the
-              causal chain of events: the outcomes – the intended effects of the
-              outputs, and the goal – the main objective of the theory of
-              change.
+              The sphere of interest specifies the change the organisation is
+              aiming to affect in the world. It contains the outcomes (the
+              intended effects of the outputs), and the goal (the main objective
+              of the theory of change).
             </p>
           </div>
-        </div>
-
-        {/* Summary Section */}
-        <div className="mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900">
-            Summary
-          </h2>
-          <p className="text-lg text-gray-700 leading-relaxed">
-            This page aims to outline the purpose and operation of the
-            organisation by decomposing its initial theory of change and
-            explaining each element in detail. It also identifies the
-            assumptions on which the theory of change rests, outlines the bases
-            for these assumptions and expresses a confidence level in each of
-            them. Lastly, the report illuminates potential next steps for the
-            improvement of the theory of change.
-          </p>
         </div>
       </div>
     </div>

@@ -5,8 +5,8 @@ import teamBanner from "@/images/team-banner.jpg";
 const teamMembers = [
   {
     name: "Alfie Lamerton",
-    role: "Research Lead",
-    bio: "Alfie Lamerton is the organisation's research lead. Alfie holds a computer science BSc and artificial intelligence MSc, covering topics relevant to lock-in such as deep learning, game theory, and philosophy. Alfie has worked on several AI safety and alignment projects, participated in AI safety projects such as AI safety fundamentals, SPAR, and MARS, and has been awarded multiple grants for his research",
+    role: "Founder and Research Lead",
+    bio: "Alfie Lamerton is the organisation's founder and research lead. He holds a computer science BSc and artificial intelligence MSc, has completed AI safety projects such as AI safety fundamentals, SPAR, and MARS, and been awarded grants for his research",
     image: alfieImage,
     email: "alfie.david.lamerton@gmail.com",
     linkedin: "https://www.linkedin.com/in/alfie-lamerton/",

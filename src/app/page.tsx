@@ -22,8 +22,9 @@ const Main: React.FC = () => {
             Welcome to Formation
           </h1>
           <p className="text-xl md:text-2xl text-gray-200 mb-8">
-            We&apos;re on a mission to minimise lock-in risks from AI systems to
-            shape a safer future for humanity.
+            Formation Research aims to reduce lock-in risks by researching
+            fundamental lock-in dynamics and implementing high-impact
+            interventions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link href="/about">
