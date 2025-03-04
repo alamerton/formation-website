@@ -45,6 +45,7 @@ const AboutPage = () => {
             humanity, enforcing a dystopian scenario where the AGI competently
             pursues some goal, preventing human intervention.
             <br />
+            <br />
             <strong>Example 2:</strong> a human dictator may leverage AI systems
             to improve their own lifespan and implement mass worldwide
             surveillance, leading to a long-term totalitarian regime.
@@ -57,7 +58,7 @@ const AboutPage = () => {
           </h2>
           <div>
             <p className="text-lg mb-4">Our vision is twofold:</p>
-            <ol className="list-decimal list-inside space-y-4">
+            <ol className="text-lg list-decimal list-inside space-y-4">
               <li>
                 <span className="text-lg font-semibold">
                   Minimising lock-in risks:
@@ -81,7 +82,7 @@ const AboutPage = () => {
                 </ul>
               </li>
             </ol>
-            <p className="mt-4">
+            <p className="text-lg mt-4">
               Lock-in may prevent any or all of these properties from being true
               in the future. The nature of lock-in prevents people from doing
               anything about it once it happens.

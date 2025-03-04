@@ -21,7 +21,7 @@ const Main: React.FC = () => {
           <h1 className="text-4xl md:text-6xl font-serif text-white mb-4">
             Welcome to Formation
           </h1>
-          <p className="text-xl md:text-2xl text-gray-200 mb-8">
+          <p className="text-xl md:text-2xl text-gray-200 mb-8 mt-4 mr-8 ml-8">
             Formation Research aims to reduce lock-in risks by researching
             fundamental lock-in dynamics and implementing high-impact
             interventions.

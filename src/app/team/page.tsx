@@ -1,5 +1,6 @@
 import Image from "next/image";
 import alfieImage from "@/images/alfie.png";
+import adamImage from "@/images/adam.webp";
 import teamBanner from "@/images/team-banner.jpg";
 
 const teamMembers = [
@@ -10,6 +11,14 @@ const teamMembers = [
     image: alfieImage,
     email: "alfie.lamerton@formationresearch.com",
     linkedin: "https://www.linkedin.com/in/alfie-lamerton/",
+  },
+  {
+    name: "Adam Jones",
+    role: "Adviser",
+    bio: "Adam Jones is an adviser to the organisation, helping steer the organisation's decision making and strategy. He is also working full-time at BlueDot Impact and seconded part-time in the Department for Science, Innovation and Technology, to help advise on governing frontier AI systems.",
+    image: adamImage,
+    email: "domdomegg+adamjones.me@gmail.com",
+    linkedin: "https://www.linkedin.com/in/domdomegg/",
   },
 ];
 
