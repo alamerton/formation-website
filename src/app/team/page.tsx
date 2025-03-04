@@ -43,7 +43,7 @@ const TeamPage = () => {
         {teamMembers.map((member, index) => (
           <div
             key={index}
-            className="flex flex-col md:flex-row items-center mb-12"
+            className="flex flex-col md:flex-row items-center mb-20"
           >
             <div className="md:w-1/3 mb-6 md:mb-0">
               <Image
