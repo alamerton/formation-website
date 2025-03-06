@@ -13,7 +13,7 @@ const researchItems = [
     date: "October 25, 2024",
     description:
       "Qualitative definition and quantitative operationalisation of lock-in for our future research.",
-    link: "https://docs.google.com/document/d/1ekTUeG8Bwf75dt86wtfWZvT316P0KT9sVgnQ9BSsLrU/edit?usp=sharing",
+    link: "https://www.lesswrong.com/posts/F4ji5dvvCk8tBAsXw/what-is-lock-in",
   },
   {
     id: 2,
