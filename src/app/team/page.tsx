@@ -7,7 +7,7 @@ const teamMembers = [
   {
     name: "Alfie Lamerton",
     role: "Founder and Research Lead",
-    bio: "Alfie Lamerton is the organisation's founder and research lead. He holds a computer science BSc and artificial intelligence MSc, has completed AI safety projects such as AI safety fundamentals, SPAR, and MARS, and been awarded grants for his research",
+    bio: "Alfie Lamerton is the organisation's founder and research lead. He holds a computer science BSc and artificial intelligence MSc, has completed numerous software engineering, machine learning, and research projects across the fintech industry, academia, and in nonprofits, and been awarded several grants for his research.",
     image: alfieImage,
     email: "alfie.lamerton@formationresearch.com",
     linkedin: "https://www.linkedin.com/in/alfie-lamerton/",
