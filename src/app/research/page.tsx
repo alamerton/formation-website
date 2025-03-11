@@ -1,14 +1,15 @@
 import Image from "next/image";
 import researchBanner from "@/images/research-banner.jpg";
 import giza from "@/images/giza.jpg";
-import china from "@/images/wall-of-china.jpg";
+import definition from "@/images/lock-in-definition.png";
+// import china from "@/images/wall-of-china.jpg";
 
 const researchItems = [
   // Where item data goes. Most properties are plain text. The URL should
   // be a Google doc with appropriate sharing settings, or a PDF
   {
     id: 1,
-    image: china,
+    image: definition,
     title: "Definition of Lock-In",
     date: "October 25, 2024",
     description:
