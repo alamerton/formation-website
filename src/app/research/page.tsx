@@ -2,13 +2,24 @@ import Image from "next/image";
 import researchBanner from "@/images/research-banner.jpg";
 import giza from "@/images/giza.jpg";
 import definition from "@/images/lock-in-definition.png";
-// import china from "@/images/wall-of-china.jpg";
+import china from "@/images/wall-of-china.jpg";
+import stacity from "@/images/stacity.png";
+import recommender from "@/images/recommender.png";
 
 const researchItems = [
   // Where item data goes. Most properties are plain text. The URL should
   // be a Google doc with appropriate sharing settings, or a PDF
   {
     id: 1,
+    image: giza,
+    title: "Organisation Overview",
+    date: "March 4, 2025",
+    description:
+      "Introduction to Formation – concise definition, existing work, threat models, and intervention approaches. ",
+    link: "https://www.lesswrong.com/posts/TPTA9rELyhxiBK6cu/formation-research-organisation-overview",
+  },
+  {
+    id: 2,
     image: definition,
     title: "Definition of Lock-In",
     date: "October 25, 2024",
@@ -17,13 +28,30 @@ const researchItems = [
     link: "https://www.lesswrong.com/posts/F4ji5dvvCk8tBAsXw/what-is-lock-in",
   },
   {
-    id: 2,
-    image: giza,
-    title: "Organisation Overview",
-    date: "March 4, 2025",
+    id: 3,
+    image: china,
+    title: "Lock-In Threat Models",
+    date: "March 10, 2025",
     description:
-      "Introduction to Formation – concise definition, existing work, threat models, and intervention approaches. ",
-    link: "https://www.lesswrong.com/posts/TPTA9rELyhxiBK6cu/formation-research-organisation-overview",
+      "The possible routes to lock-in prioritised on a set of criteria for importance.",
+    link: "https://www.lesswrong.com/s/yP8Zs4Tuog6tDES5b/p/gmFadztDHePBz7SRm",
+  },
+  {
+    id: 4,
+    image: stacity,
+    title: "Stacity: a Lock-In Risk Benchmark for Large Language Models",
+    date: "March 13, 2025",
+    description: "Lock-in risk proxy benchmark for large language models.",
+    link: "https://www.lesswrong.com/s/yP8Zs4Tuog6tDES5b/p/vbH3o4LWtswWhWnGx",
+  },
+  {
+    id: 5,
+    image: recommender,
+    title: "Recommender Alignment for Lock-In Risk",
+    date: "March 24, 2025",
+    description:
+      "Here we connect one of our lock-in threat models to the function of recommender systems, and outline intervention approaches.",
+    link: "https://www.lesswrong.com/s/yP8Zs4Tuog6tDES5b/p/F5QQuQDk79ouL9DbQ",
   },
 ];
 
