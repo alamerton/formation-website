@@ -5,6 +5,7 @@ import definition from "@/images/lock-in-definition.png";
 import china from "@/images/wall-of-china.jpg";
 import stacity from "@/images/stacity.png";
 import recommender from "@/images/recommender.png";
+import organisation from "@/images/position-preserving-intervention-1.png";
 
 const researchItems = [
   // Where item data goes. Most properties are plain text. The URL should
@@ -52,6 +53,15 @@ const researchItems = [
     description:
       "Here we connect one of our lock-in threat models to the function of recommender systems, and outline intervention approaches.",
     link: "https://www.lesswrong.com/s/yP8Zs4Tuog6tDES5b/p/F5QQuQDk79ouL9DbQ",
+  },
+  {
+    id: 6,
+    image: organisation,
+    title: "Organisation-Level Lock-In Risk Interventions",
+    date: "April 1, 2025",
+    description:
+      "This post outlines how lock-in could result from organisation structures and dynamics, and what interventions might be implemented to reduce the risk.",
+    link: "https://www.lesswrong.com/posts/uSRmzaynuCWaRJth6/organisation-level-lock-in-risk-interventions",
   },
 ];
 
