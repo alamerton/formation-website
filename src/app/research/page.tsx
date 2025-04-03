@@ -1,7 +1,7 @@
 import Image from "next/image";
 import researchBanner from "@/images/research-banner.jpg";
 import giza from "@/images/giza.jpg";
-import definition from "@/images/lock-in-definition.png";
+import about from "@/images/about-banner.jpg";
 import china from "@/images/wall-of-china.jpg";
 import stacity from "@/images/stacity.png";
 import recommender from "@/images/recommender.png";
@@ -12,7 +12,7 @@ const researchItems = [
   // be a Google doc with appropriate sharing settings, or a PDF
   {
     id: 1,
-    image: giza,
+    image: about,
     title: "Organisation Overview",
     date: "March 4, 2025",
     description:
@@ -21,7 +21,7 @@ const researchItems = [
   },
   {
     id: 2,
-    image: definition,
+    image: giza,
     title: "Definition of Lock-In",
     date: "October 25, 2024",
     description:
