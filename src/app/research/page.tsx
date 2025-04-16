@@ -7,6 +7,7 @@ import stacity from "@/images/stacity.png";
 import recommender from "@/images/recommender.png";
 import organisation from "@/images/position-preserving-intervention-1.png";
 import error from "@/images/digital-error-correction.jpg";
+import Head from "next/head";
 
 const researchItems = [
   // Where item data goes. Most properties are plain text. The URL should
