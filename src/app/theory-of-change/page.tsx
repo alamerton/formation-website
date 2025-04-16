@@ -5,6 +5,7 @@ import sphereOfControlImage from "@/images/sphere-of-control.png";
 import sphereOfInfluenceImage from "@/images/sphere-of-influence.png";
 import sphereOfInterestImage from "@/images/sphere-of-interest.png";
 import theoryOfChangeBanner from "@/images/theory-of-change-banner.jpg";
+import Head from "next/head";
 
 const structuredData = {
   "@context": "https://schema.org",
