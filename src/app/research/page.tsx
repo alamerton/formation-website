@@ -75,54 +75,101 @@ const researchItems = [
   },
 ];
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Research | Formation Research",
+  url: "https://formationresearch.com/research",
+  description:
+    "Explore Formation Research's publications and insights on lock-in risks and AI safety.",
+  publisher: {
+    "@type": "Organization",
+    name: "Formation Research",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://formationresearch.com/logo.png",
+    },
+  },
+};
+
 const ResearchPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white">
-      <div className="relative w-full h-64 md:h-96">
-        <Image
-          src={researchBanner}
-          alt="Research Banner"
-          layout="fill"
-          objectFit="cover"
-          priority
+    <>
+      <Head>
+        <title>Research | Formation Research - Insights on Lock-In Risks</title>
+        <meta
+          name="description"
+          content="Explore our research on lock-in risks, AI safety, and interventions to promote a dynamic future. Read our publications and learn about our findings."
         />
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center font-serif">
-          <h1 className="text-3xl md:text-5xl  font-kameron text-white">
-            Research
-          </h1>
+        <meta property="og:title" content="Research | Formation Research" />
+        <meta
+          property="og:description"
+          content="Explore Formation Research's publications and insights on lock-in risks and AI safety."
+        />
+        <meta
+          property="og:image"
+          content="https://formationresearch.com/images/research-banner.jpg"
+        />
+        <meta
+          property="og:url"
+          content="https://formationresearch.com/research"
+        />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <link rel="canonical" href="https://formationresearch.com/research" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      </Head>
+
+      <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white">
+        <div className="relative w-full h-64 md:h-96">
+          <Image
+            src={researchBanner}
+            alt="Research Banner"
+            layout="fill"
+            objectFit="cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center font-serif">
+            <h1 className="text-3xl md:text-5xl  font-kameron text-white">
+              Research
+            </h1>
+          </div>
+        </div>
+        <div className="container mx-auto px-4 py-12 max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {researchItems.map((item) => (
+              <div
+                key={item.id}
+                className="bg-white rounded-lg shadow-md overflow-hidden"
+              >
+                <div className="relative h-48">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
+                  <p className="text-sm text-gray-600 mb-4">{item.date}</p>
+                  <p className="text-gray-700 mb-4">{item.description}</p>
+                  <a
+                    href={item.link}
+                    className="inline-block bg-customPurple text-white font-open-sans font-medium py-2 px-4 rounded hover:bg-blue-600 transition duration-200"
+                  >
+                    Learn More
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-      <div className="container mx-auto px-4 py-12 max-w-6xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {researchItems.map((item) => (
-            <div
-              key={item.id}
-              className="bg-white rounded-lg shadow-md overflow-hidden"
-            >
-              <div className="relative h-48">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  layout="fill"
-                  objectFit="cover"
-                />
-              </div>
-              <div className="p-6">
-                <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
-                <p className="text-sm text-gray-600 mb-4">{item.date}</p>
-                <p className="text-gray-700 mb-4">{item.description}</p>
-                <a
-                  href={item.link}
-                  className="inline-block bg-customPurple text-white font-open-sans font-medium py-2 px-4 rounded hover:bg-blue-600 transition duration-200"
-                >
-                  Learn More
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
+    </>
   );
 };
 
