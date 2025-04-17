@@ -89,7 +89,7 @@ const TheoryOfChangePage = () => {
         </div>
         {/* Hero section with main diagram */}
         <div className="container mx-auto px-4 py-12 max-w-6xl">
-          <div className="bg-white rounded-xl shadow-lg p-6 mb-12">
+          <div className="hidden md:block bg-white rounded-xl shadow-lg p-6 mb-12">
             <Image
               src={theoryOfChangeImage}
               alt="Diagram outlining our theory of change"
