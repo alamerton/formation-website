@@ -63,31 +63,37 @@ const AboutPage = () => {
               Who We Are
             </h2>
             <p className="text-lg">
-              Nick Bostrom first thought about AGI and lock-in in 2005, but
-              there has been almost no work on it since. We&apos;re starting
-              Formation Research to minimise lock-in risk, the outcome being
-              reduced likelihood that humanity ends up in a lock-in in the
-              future.
+              We are Formation Research, a nonprofit startup research
+              organisation focusing on reducing lock-in risks from AI systems.
+              Nick Bostrom first thought about AI and lock-in in 2005, but there
+              has been almost no work on it since. Our mission is to reduce
+              lock-in risks by researching fundamental lock-in dynamics and
+              implementing high-impact interventions, with a view to reducing
+              the likelihood that humanity ends up in a lock-in in the future.
               <br />
-              <br /> A lock-in is where features of the world, typically
-              negative elements of human culture that are harmful or oppressive,
-              are held stable for long periods of time, akin to a totalitarian
-              regime. A future where lock-ins are prevented has continued
-              technological and cultural evolution, economic growth, sustainable
-              competition, and improved individual freedom. Lock-in may prevent
-              any or all of these properties from being true in the future. The
-              nature of lock-in prevents people from doing anything about it
-              once it happens.
+              <br />A lock-in is where some feature of the world, typically a
+              negative element of human culture, is held stable for a long time.
+              <ul className="list-disc list-inside ml-6 my-4">
+                <li>
+                  <strong>Example 1:</strong> A powerful AI system may gain
+                  strategic control of humanity, enforcing a dystopian scenario
+                  where the AI system competently pursues some goal, preventing
+                  human intervention.
+                </li>
+                <li>
+                  <strong>Example 2:</strong> A human dictator may leverage AI
+                  systems to improve their own lifespan and implement mass
+                  worldwide surveillance, leading to a long-term stable
+                  totalitarian regime.
+                </li>
+              </ul>
+              A future where lock-ins are prevented has the potential for
+              continued technological and cultural evolution, economic growth,
+              sustainable competition, and improved individual freedom. Lock-in
+              may prevent any or all of these properties from being possible in
+              the future. The nature of lock-in prevents people from doing
+              anything about it once it happens.
               <br />
-              <br />
-              <strong>Example 1:</strong> an AGI may gain strategic control of
-              humanity, enforcing a dystopian scenario where the AGI competently
-              pursues some goal, preventing human intervention.
-              <br />
-              <br />
-              <strong>Example 2:</strong> a human dictator may leverage AI
-              systems to improve their own lifespan and implement mass worldwide
-              surveillance, leading to a long-term totalitarian regime.
             </p>
           </div>
           {/* Vision section */}
@@ -104,7 +110,7 @@ const AboutPage = () => {
                   </span>{" "}
                   To minimise the likelihood that negative elements of culture
                   become stable to the extent that they are harmful, oppressive,
-                  ultimate, parochial, or large, either accidentally or
+                  persistent, or widespread, either accidentally or
                   deliberately, as a result of humans and AI systems. Or, more
                   concisely, minimising lock-in risks.
                 </li>
