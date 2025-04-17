@@ -65,7 +65,7 @@ const Header: React.FC = () => {
           </Link>
         </div>
 
-        {/* Hamburger/X Button (mobile only) */}
+        {/* Hamburger/X Button */}
         <button
           ref={buttonRef}
           className="md:hidden p-2 hover:bg-white/10 rounded-lg transition-colors z-50"
@@ -109,12 +109,14 @@ const Header: React.FC = () => {
         <ul
           ref={menuRef}
           className={`${
-            isMenuOpen ? "block" : "hidden"
-          } md:flex md:space-x-8 w-full md:w-auto justify-center md:justify-end mt-4 md:mt-0 text-[20px] 
-            bg-purple-900/95 backdrop-blur-lg md:bg-transparent md:backdrop-blur-0 
-            absolute md:static top-[72px] left-0 right-0 py-6 md:py-0 space-y-4 md:space-y-0
-            md:relative md:top-auto md:left-auto md:right-auto md:py-0 md:bg-none
-            transition-opacity duration-300 ease-in-out z-40`}
+            isMenuOpen
+              ? "translate-y-0 opacity-100"
+              : "-translate-y-4 opacity-0"
+          } md:translate-y-0 md:opacity-100 md:flex md:space-x-8 w-full md:w-auto flex-col md:flex-row justify-center md:justify-end text-[20px] 
+            bg-purple-900/95 md:bg-transparent backdrop-blur-lg md:backdrop-blur-0 
+            fixed md:static inset-0 h-screen md:h-auto pt-[72px] md:pt-0
+            py-6 md:py-0 space-y-4 md:space-y-0 overflow-y-auto
+            transition-all duration-300 ease-in-out z-40`}
         >
           {["Home", "About", "Theory of Change", "Team", "Research"].map(
             (item) => (
@@ -125,7 +127,7 @@ const Header: React.FC = () => {
                       ? "/"
                       : `/${item.toLowerCase().replace(/ /g, "-")}`
                   }
-                  className="block py-2 px-4 md:py-0 hover:bg-white/10 md:hover:bg-transparent md:hover:text-gray-300 transition-all duration-300 rounded-lg md:rounded-none"
+                  className="block py-4 md:py-2 text-center md:text-left hover:bg-white/10 md:hover:bg-transparent md:hover:text-gray-300 transition-all duration-300"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item}
