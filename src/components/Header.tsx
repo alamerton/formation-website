@@ -110,13 +110,13 @@ const Header: React.FC = () => {
           ref={menuRef}
           className={`${
             isMenuOpen
-              ? "translate-y-0 opacity-100"
-              : "-translate-y-4 opacity-0"
+              ? "translate-y-0 opacity-100 pointer-events-auto"
+              : "-translate-y-4 opacity-0 pointer-events-none"
           } md:translate-y-0 md:opacity-100 md:flex md:space-x-8 w-full md:w-auto flex-col md:flex-row justify-center md:justify-end text-[20px] 
-            bg-purple-900/95 md:bg-transparent backdrop-blur-lg md:backdrop-blur-0 
-            fixed md:static inset-0 h-screen md:h-auto pt-[72px] md:pt-0
-            py-6 md:py-0 space-y-4 md:space-y-0 overflow-y-auto
-            transition-all duration-300 ease-in-out z-40`}
+    bg-purple-900/95 md:bg-transparent backdrop-blur-lg md:backdrop-blur-0 
+    fixed md:static inset-0 h-screen md:h-auto pt-[72px] md:pt-0
+    py-6 md:py-0 space-y-4 md:space-y-0 overflow-y-auto
+    transition-all duration-300 ease-in-out z-40`}
         >
           {["Home", "About", "Theory of Change", "Team", "Research"].map(
             (item) => (
