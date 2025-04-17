@@ -134,7 +134,7 @@ const TheoryOfChangePage = () => {
               <p className="text-lg text-gray-700 leading-relaxed">
                 Currently Formation is composed of two members, Alfie Lamerton
                 and Adam Jones. Alfie is Formation&apos;s founder and research
-                lead and Adam is an advisor to the organisation.
+                lead and Adam is an adviser to the organisation.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
                 Alfie is the sole researcher and therefore the only member of
