@@ -81,7 +81,7 @@ const Main: React.FC = () => {
                   size="lg"
                   className="bg-white px-8 py-4 hover:bg-gray-100 text-customPurple text-lg font-medium hover:bg-gray-100 border border-customPurple w-full sm:w-auto"
                 >
-                  Theory of Change
+                  Newsletter Sign Up
                 </Button>
               </Link>
             </div>
@@ -89,25 +89,24 @@ const Main: React.FC = () => {
         </div>
 
         {/* Call to Action Section */}
-        {/* <div className=" py-16 text-center">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">
-            Help Us Minimise Lock-In Risks
-          </h2>
-          <p className="text-lg mb-8 max-w-xl mx-auto">
-            W&apos;re currently seeking funding for our research. You can help
-            by donating to our Manifund proposal and joining our mission.
-          </p>
-          <Link href="https://manifund.org/projects/formation-research">
-            <Button
-              size="lg"
-              className="bg-customPurple text-white hover:bg-blue-500 hover:font-black text-lg font-medium px-8 py-4"
-            >
-              Get Involved
-            </Button>
-          </Link>
+        <div className=" py-16 text-center">
+          <div className="container mx-auto px-4">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">
+              Stay in Touch
+            </h2>
+            <p className="text-lg mb-8 max-w-xl mx-auto">
+              Sign up to our newsletter to stay updated on our progress.
+            </p>
+            <Link href="">
+              <Button
+                size="lg"
+                className="bg-customPurple text-white hover:bg-blue-500 hover:font-black text-lg font-medium px-8 py-4"
+              >
+                Sign Up
+              </Button>
+            </Link>
+          </div>
         </div>
-      </div> */}
       </div>
     </>
   );
