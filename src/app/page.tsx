@@ -81,7 +81,7 @@ const Main: React.FC = () => {
                   size="lg"
                   className="bg-white px-8 py-4 hover:bg-gray-100 text-customPurple text-lg font-medium hover:bg-gray-100 border border-customPurple w-full sm:w-auto"
                 >
-                  Newsletter Sign Up
+                  Theory of Change
                 </Button>
               </Link>
             </div>
@@ -89,7 +89,7 @@ const Main: React.FC = () => {
         </div>
 
         {/* Call to Action Section */}
-        <div className=" py-16 text-center">
+        {/* <div className=" py-16 text-center">
           <div className="container mx-auto px-4">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">
               Stay in Touch
@@ -106,7 +106,7 @@ const Main: React.FC = () => {
               </Button>
             </Link>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );
