@@ -13,8 +13,8 @@ const structuredData = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Formation Research",
-  url: "https://yourdomain.com",
-  logo: "https://yourdomain.com/logo.png",
+  url: "https://formationresearch.com",
+  logo: "https://formationresearch.com/logo.png",
   description:
     "Formation Research aims to reduce lock-in risks by researching fundamental lock-in dynamics and implementing high-impact interventions.",
 };
