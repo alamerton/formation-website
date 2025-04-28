@@ -17,7 +17,7 @@ const AboutPage = () => {
     <>
       {/* SEO Meta Tags */}
       <Head>
-        <title>About Us | Formation Research - Minimizing Lock-In Risks</title>
+        <title>About Us | Formation Research - Minimising Lock-In Risks</title>
         <meta
           name="description"
           content="Learn about Formation Research's mission to minimise lock-in risks and promote a dynamic future through first-principles AI safety research."

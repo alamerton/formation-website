@@ -97,7 +97,10 @@ const ResearchPage = () => {
   return (
     <>
       <Head>
-        <title>Research | Formation Research - Insights on Lock-In Risks</title>
+        <title>
+          Research | Formation Research - Lock-In Risk Research and Intervention
+          Proposals
+        </title>
         <meta
           name="description"
           content="Explore our research on lock-in risks, AI safety, and interventions to promote a dynamic future. Read our publications and learn about our findings."

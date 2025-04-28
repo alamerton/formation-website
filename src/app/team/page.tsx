@@ -52,7 +52,10 @@ const TeamPage = () => {
   return (
     <>
       <Head>
-        <title>Our Team | Formation Research - Experts in AI Safety</title>
+        <title>
+          Our Team | Formation Research - AI Safety Experts Working on Lock-In
+          Risks
+        </title>
         <meta
           name="description"
           content="Meet the team at Formation Research, dedicated to minimising lock-in risks and promoting AI safety. Learn about our founder, researchers, and advisors."

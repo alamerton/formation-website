@@ -39,7 +39,8 @@ const TheoryOfChangePage = () => {
     <>
       <Head>
         <title>
-          Our Theory of Change | Formation Research - Reducing Lock-In Risk
+          Our Theory of Change | Formation Research - Theory of Change for
+          Reducing Lock-In Risk
         </title>
         <meta
           name="description"
@@ -215,7 +216,7 @@ const TheoryOfChangePage = () => {
               </div>
               <p className="text-lg text-gray-700 leading-relaxed">
                 The sphere of interest specifies the change the organisation is
-                aiming to affect in the world. It contains the outcomes (the
+                aiming to a effect in the world. It contains the outcomes (the
                 intended effects of the outputs), and the goal (the main
                 objective of the theory of change).
               </p>
