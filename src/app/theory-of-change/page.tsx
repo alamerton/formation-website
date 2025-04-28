@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import theoryOfChangeImage from "@/images/theory-of-change.png";
+import theoryOfChangeImage from "@/images/theory-of-change.jpg";
 import sphereOfControlImage from "@/images/sphere-of-control.png";
 import sphereOfInfluenceImage from "@/images/sphere-of-influence.png";
 import sphereOfInterestImage from "@/images/sphere-of-interest.png";

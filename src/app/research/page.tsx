@@ -4,7 +4,7 @@ import giza from "@/images/giza.jpg";
 import about from "@/images/about-banner.jpg";
 import china from "@/images/wall-of-china.jpg";
 import stacity from "@/images/stacity.png";
-import recommender from "@/images/recommender.png";
+import recommender from "@/images/recommender.jpg";
 import organisation from "@/images/position-preserving-intervention-1.png";
 import error from "@/images/digital-error-correction.jpg";
 import Head from "next/head";

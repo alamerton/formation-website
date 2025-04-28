@@ -1,5 +1,5 @@
 import Image from "next/image";
-import alfieImage from "@/images/alfie.png";
+import alfieImage from "@/images/alfie.jpg";
 import adamImage from "@/images/adam.webp";
 import teamBanner from "@/images/team-banner.jpg";
 import Head from "next/head";
