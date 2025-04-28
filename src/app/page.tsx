@@ -6,8 +6,7 @@ import landingPageBanner from "@/images/theory-of-change-banner.jpg";
 import Head from "next/head";
 
 export const metadata = {
-  title:
-    "Formation Research – Reducing Lock-In Risks and Implementing High-Impact Interventions",
+  title: "Formation Research – Minimising Lock-In Risks",
 };
 
 const structuredData = {
