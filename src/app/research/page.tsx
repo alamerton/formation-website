@@ -84,7 +84,7 @@ const structuredData = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   name: "Research | Formation Research",
-  url: "https://formationresearch.com/research",
+  url: "https://www.formationresearch.com/research",
   description:
     "Explore Formation Research's publications and insights on lock-in risks and AI safety.",
   publisher: {
@@ -92,7 +92,7 @@ const structuredData = {
     name: "Formation Research",
     logo: {
       "@type": "ImageObject",
-      url: "https://formationresearch.com/logo.png",
+      url: "https://www.formationresearch.com/logo.png",
     },
   },
 };
@@ -116,15 +116,18 @@ const ResearchPage = () => {
         />
         <meta
           property="og:image"
-          content="https://formationresearch.com/images/research-banner.jpg"
+          content="https://www.formationresearch.com/images/research-banner.jpg"
         />
         <meta
           property="og:url"
-          content="https://formationresearch.com/research"
+          content="https://www.formationresearch.com/research"
         />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <link rel="canonical" href="https://formationresearch.com/research" />
+        <link
+          rel="canonical"
+          href="https://www.formationresearch.com/research"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}

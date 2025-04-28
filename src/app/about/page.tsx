@@ -11,7 +11,7 @@ const structuredData = {
   "@context": "https://schema.org",
   "@type": "AboutPage",
   name: "About Formation Research",
-  url: "https://formationresearch.com/about",
+  url: "https://www.formationresearch.com/about",
   description:
     "Learn about Formation Research's mission to minimise lock-in risks and promote a dynamic future through AI safety research.",
 };
@@ -33,11 +33,11 @@ const AboutPage = () => {
         />
         <meta
           property="og:image"
-          content="https://formationresearch.com/images/about-banner.jpg"
+          content="https://www.formationresearch.com/images/about-banner.jpg"
         />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <link rel="canonical" href="https://formationresearch.com/about" />
+        <link rel="canonical" href="https://www.formationresearch.com/about" />
         {/* Structured Data */}
         <script
           type="application/ld+json"

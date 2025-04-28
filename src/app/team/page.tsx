@@ -31,7 +31,7 @@ const structuredData = {
   "@context": "https://schema.org",
   "@type": "AboutPage",
   name: "Our Team | Formation Research",
-  url: "https://formationresearch.com/team",
+  url: "https://www.formationresearch.com/team",
   description:
     "Meet the team at Formation Research, dedicated to minimising lock-in risks and promoting AI safety. Learn about our founder, researchers, and advisors.",
   publisher: {
@@ -39,7 +39,7 @@ const structuredData = {
     name: "Formation Research",
     logo: {
       "@type": "ImageObject",
-      url: "https://formationresearch.com/logo.png",
+      url: "https://www.formationresearch.com/logo.png",
     },
   },
   member: teamMembers.map((member) => ({
@@ -47,7 +47,7 @@ const structuredData = {
     name: member.name,
     jobTitle: member.role,
     description: member.bio,
-    image: `https://formationresearch.com${member.image.src}`,
+    image: `https://www.formationresearch.com${member.image.src}`,
     sameAs: [member.linkedin, `mailto:${member.email}`],
   })),
 };
@@ -71,12 +71,15 @@ const TeamPage = () => {
         />
         <meta
           property="og:image"
-          content="https://formationresearch.com/images/team-banner.jpg"
+          content="https://www.formationresearch.com/images/team-banner.jpg"
         />
-        <meta property="og:url" content="https://formationresearch.com/team" />
+        <meta
+          property="og:url"
+          content="https://www.formationresearch.com/team"
+        />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <link rel="canonical" href="https://formationresearch.com/team" />
+        <link rel="canonical" href="https://www.formationresearch.com/team" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}

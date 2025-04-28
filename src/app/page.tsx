@@ -13,8 +13,8 @@ const structuredData = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Formation Research",
-  url: "https://formationresearch.com",
-  logo: "https://formationresearch.com/logo.png",
+  url: "https://www.formationresearch.com",
+  logo: "https://www.formationresearch.com/logo.png",
   description:
     "Formation Research aims to reduce lock-in risks by researching fundamental lock-in dynamics and implementing high-impact interventions.",
 };
@@ -39,11 +39,11 @@ const Main: React.FC = () => {
         />
         <meta
           property="og:image"
-          content="https://formationresearch.com/images/theory-of-change-banner.jpg"
+          content="https://www.formationresearch.com/images/theory-of-change-banner.jpg"
         />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <link rel="canonical" href="https://formationresearch.com/" />
+        <link rel="canonical" href="https://www.formationresearch.com/" />
         {/* Structured Data */}
         <script
           type="application/ld+json"

@@ -19,7 +19,7 @@ const lato = Lato({
 
 export const metadata = {
   description: "Minimising lock-in risk",
-  metadataBase: new URL("https://formationresearch.com"),
+  metadataBase: new URL("https://www.formationresearch.com"),
   alternates: {
     canonical: "./",
   },

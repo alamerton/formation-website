@@ -16,12 +16,12 @@ const structuredData = {
   "@type": "Article",
   mainEntityOfPage: {
     "@type": "WebPage",
-    "@id": "https://formationresearch.com/theory-of-change",
+    "@id": "https://www.formationresearch.com/theory-of-change",
   },
   headline: "Our Theory of Change | Formation Research",
   description:
     "Learn about Formation Research's theory of change, outlining our activities, intended effects, and justification for reducing lock-in risk.",
-  image: "https://formationresearch.com/images/theory-of-change-banner.jpg",
+  image: "https://www.formationresearch.com/images/theory-of-change-banner.jpg",
   author: {
     "@type": "Organization",
     name: "Formation Research",
@@ -31,7 +31,7 @@ const structuredData = {
     name: "Formation Research",
     logo: {
       "@type": "ImageObject",
-      url: "https://formationresearch.com/logo.png",
+      url: "https://www.formationresearch.com/logo.png",
     },
   },
   datePublished: "2025-04-16",
@@ -60,17 +60,17 @@ const TheoryOfChangePage = () => {
         />
         <meta
           property="og:image"
-          content="https://formationresearch.com/images/theory-of-change-banner.jpg"
+          content="https://www.formationresearch.com/images/theory-of-change-banner.jpg"
         />
         <meta
           property="og:url"
-          content="https://formationresearch.com/theory-of-change"
+          content="https://www.formationresearch.com/theory-of-change"
         />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image" />
         <link
           rel="canonical"
-          href="https://formationresearch.com/theory-of-change"
+          href="https://www.formationresearch.com/theory-of-change"
         />
         <script
           type="application/ld+json"

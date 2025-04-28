@@ -4,4 +4,4 @@ Disallow: /admin/
 Disallow: /private/
 Allow: /
 
-Sitemap: https://formationresearch.com/sitemap.xml
+Sitemap: https://www.formationresearch.com/sitemap.xml
