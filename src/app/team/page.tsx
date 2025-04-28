@@ -23,7 +23,7 @@ const teamMembers = [
   },
 ];
 
-const metadata = {
+export const metadata = {
   title: "Team",
 };
 

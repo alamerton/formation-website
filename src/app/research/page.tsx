@@ -76,7 +76,7 @@ const researchItems = [
   },
 ];
 
-const metadata = {
+export const metadata = {
   title: "Research",
 };
 

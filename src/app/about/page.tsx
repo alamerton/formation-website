@@ -3,7 +3,7 @@ import Image from "next/image";
 import aboutBanner from "@/images/about-banner.jpg";
 import Head from "next/head";
 
-const metadata = {
+export const metadata = {
   title: "About",
 };
 

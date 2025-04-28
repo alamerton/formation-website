@@ -5,7 +5,7 @@ import Link from "next/link";
 import landingPageBanner from "@/images/theory-of-change-banner.jpg";
 import Head from "next/head";
 
-const metadata = {
+export const metadata = {
   title: "Formation Research",
 };
 
