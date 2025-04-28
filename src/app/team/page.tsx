@@ -24,7 +24,7 @@ const teamMembers = [
 ];
 
 export const metadata = {
-  title: "Team",
+  title: "Formation's Team – Formation Research",
 };
 
 const structuredData = {

@@ -8,7 +8,7 @@ import theoryOfChangeBanner from "@/images/theory-of-change-banner.jpg";
 import Head from "next/head";
 
 export const metadata = {
-  title: "Theory of Change",
+  title: "Theory of Change – Formation Research",
 };
 
 const structuredData = {

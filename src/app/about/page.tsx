@@ -4,7 +4,7 @@ import aboutBanner from "@/images/about-banner.jpg";
 import Head from "next/head";
 
 export const metadata = {
-  title: "About",
+  title: "About Us at Formation – Formation Research",
 };
 
 const structuredData = {

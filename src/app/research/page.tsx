@@ -77,7 +77,7 @@ const researchItems = [
 ];
 
 export const metadata = {
-  title: "Research",
+  title: "Our Research – Formation Research",
 };
 
 const structuredData = {
