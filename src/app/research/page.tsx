@@ -76,6 +76,10 @@ const researchItems = [
   },
 ];
 
+const metadata = {
+  title: "Research",
+};
+
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",

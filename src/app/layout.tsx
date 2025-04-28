@@ -18,7 +18,6 @@ const lato = Lato({
 });
 
 export const metadata = {
-  title: "Formation Research",
   description: "Minimising lock-in risk",
   metadataBase: new URL("https://yourdomain.com"),
   alternates: {

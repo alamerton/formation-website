@@ -5,6 +5,10 @@ import Link from "next/link";
 import landingPageBanner from "@/images/theory-of-change-banner.jpg";
 import Head from "next/head";
 
+const metadata = {
+  title: "Formation Research",
+};
+
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Organization",

@@ -23,6 +23,10 @@ const teamMembers = [
   },
 ];
 
+const metadata = {
+  title: "Team",
+};
+
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "AboutPage",

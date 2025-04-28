@@ -3,6 +3,10 @@ import Image from "next/image";
 import aboutBanner from "@/images/about-banner.jpg";
 import Head from "next/head";
 
+const metadata = {
+  title: "About",
+};
+
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "AboutPage",

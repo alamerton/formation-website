@@ -7,6 +7,10 @@ import sphereOfInterestImage from "@/images/sphere-of-interest.png";
 import theoryOfChangeBanner from "@/images/theory-of-change-banner.jpg";
 import Head from "next/head";
 
+const metadata = {
+  title: "Theory of Change",
+};
+
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Article",
