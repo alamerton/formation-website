@@ -72,20 +72,20 @@ const Main: React.FC = () => {
               interventions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/about">
+              <Link href="http://eepurl.com/jdNh_I">
                 <Button
                   size="lg"
                   className="bg-customPurple px-8 py-4 hover:bg-gray-100 text-white text-lg font-medium w-full sm:w-auto"
                 >
-                  Learn More
+                  Newsletter Sign Up
                 </Button>
               </Link>
-              <Link href="http://eepurl.com/jdNh_I">
+              <Link href="/about">
                 <Button
                   size="lg"
                   className="bg-white px-8 py-4 hover:bg-gray-100 text-customPurple text-lg font-medium hover:bg-gray-100 border border-customPurple w-full sm:w-auto"
                 >
-                  Newsletter Sign Up
+                  Learn More
                 </Button>
               </Link>
             </div>
