@@ -80,12 +80,12 @@ const Main: React.FC = () => {
                   Learn More
                 </Button>
               </Link>
-              <Link href="/theory-of-change">
+              <Link href="http://eepurl.com/jdNh_I">
                 <Button
                   size="lg"
                   className="bg-white px-8 py-4 hover:bg-gray-100 text-customPurple text-lg font-medium hover:bg-gray-100 border border-customPurple w-full sm:w-auto"
                 >
-                  Theory of Change
+                  Newsletter Sign Up
                 </Button>
               </Link>
             </div>
@@ -101,16 +101,14 @@ const Main: React.FC = () => {
             <p className="text-lg mb-8 max-w-xl mx-auto">
               Sign up to our newsletter to stay updated on our progress.
             </p>
-            <Link href="">
+            <Link href="http://eepurl.com/jdNh_I">
               <Button
                 size="lg"
                 className="bg-customPurple text-white hover:bg-blue-500 hover:font-black text-lg font-medium px-8 py-4"
               >
                 Sign Up
               </Button>
-            </Link>
-          </div>
-        </div> */}
+            </Link> */}
       </div>
     </>
   );
