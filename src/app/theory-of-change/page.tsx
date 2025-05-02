@@ -8,7 +8,8 @@ import theoryOfChangeBanner from "@/images/theory-of-change-banner.jpg";
 import Head from "next/head";
 
 export const metadata = {
-  title: "Theory of Change – Formation Research",
+  title:
+    "Theory of Change | Formation Research – Lock-In Risk Research and High-Impact Interventions",
 };
 
 const structuredData = {

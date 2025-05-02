@@ -77,7 +77,8 @@ const researchItems = [
 ];
 
 export const metadata = {
-  title: "Our Research – Formation Research",
+  title:
+    "Research | Formation Research – Lock-In Risk Research and High-Impact Interventions",
 };
 
 const structuredData = {

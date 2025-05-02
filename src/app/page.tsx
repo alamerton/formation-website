@@ -7,7 +7,7 @@ import Head from "next/head";
 
 export const metadata = {
   title:
-    "Formation Research | Condcuting Lock-In Risk Research and Implementing High-Impact Interventions",
+    "Formation Research – Lock-In Risk Research and High-Impact Interventions",
 };
 
 const structuredData = {

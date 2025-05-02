@@ -24,7 +24,8 @@ const teamMembers = [
 ];
 
 export const metadata = {
-  title: "Formation's Team – Formation Research",
+  title:
+    "Team | Formation Research – Lock-In Risk Research and High-Impact Interventions",
 };
 
 const structuredData = {
