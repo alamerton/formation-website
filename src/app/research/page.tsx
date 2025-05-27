@@ -1,11 +1,11 @@
 import Image from "next/image";
 import researchBanner from "@/images/research-banner.jpg";
-import giza from "@/images/giza.jpg";
+import definition from "@/images/definition.jpg";
 import about from "@/images/about-banner.jpg";
-import china from "@/images/wall-of-china.jpg";
-import stacity from "@/images/stacity.png";
+import threat from "@/images/threat-models.jpg";
+import stacity from "@/images/stacity-pic.jpg";
 import recommender from "@/images/recommender.jpg";
-import organisation from "@/images/position-preserving-intervention-1.png";
+import organisation from "@/images/organisation.jpg";
 import error from "@/images/digital-error-correction.jpg";
 import Head from "next/head";
 
@@ -49,7 +49,7 @@ const researchItems = [
   },
   {
     id: 3,
-    image: china,
+    image: threat,
     title: "Lock-In Threat Models",
     date: "March 10, 2025",
     description:
@@ -58,7 +58,7 @@ const researchItems = [
   },
   {
     id: 2,
-    image: giza,
+    image: definition,
     title: "Definition of Lock-In",
     date: "October 25, 2024",
     description:
