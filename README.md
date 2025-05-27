@@ -1,6 +1,6 @@
 # Formation Research Website
 
-This is the official website for Formation Research, an organization dedicated to minimising lock-in risks and promoting responsible AI development.
+This is the official website for Formation Research, an organisation dedicated to minimising lock-in risks and promoting responsible AI development.
 
 ## Project Structure
 

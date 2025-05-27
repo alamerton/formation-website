@@ -1,0 +1,215 @@
+---
+title: "Organisation Overview"
+date: "2025-03-04"
+description: "Introduction to Formation – concise definition, existing work, threat models, and intervention approaches."
+image: "/images/about-banner.jpg"
+slug: "organisation-overview"
+---
+
+_Thank you to Adam Jones, Lukas Finnveden, Jess Riedel, Tianyi (Alex) Qiu, Aaron Scher, Nandi Schoots, Fin Moorhouse, and others for the conversations and feedback that helped me synthesise these ideas and create this post._
+
+[Epistemic Status](https://forum.effectivealtruism.org/posts/bbtvDJtb6YwwWtJm7/epistemic-status-an-explainer-and-some-thoughts): my own thoughts and research after thinking about lock-in and having conversations with people for a few months. This post summarises my thinking about lock-in risk.
+
+# TL;DR
+
+This post gives an overview to [Formation Research](https://formationresearch.com/), an early stage nonprofit startup research organisation working on lock-in risk, a neglected category of AI risk.
+
+# Introduction
+
+I spent the last few months of my master’s degree working with Adam Jones on starting a new organisation focusing on a neglected area of AI safety he identified. I ended up focusing on a category of risks I call ‘lock-in risks’. In this post, I outline what we mean by lock-in risks, some of the existing work regarding lock-in, the threat models we identified as being relevant to lock-in, and the interventions we are working on to reduce lock-in risks[[1]](https://www.lesswrong.com/s/yP8Zs4Tuog6tDES5b/p/TPTA9rELyhxiBK6cu#fnojduzn51ric).
+
+# What Lock-In Means
+
+We define lock-in risks as *the probabilities of situations where features of the world, typically negative elements of human culture, are made stable for a long period of time*.
+
+The things we care most about when wanting to minimise lock-in risks (from our point of view as humans) are not all the features of the world, but the features of *human culture*, namely values and ethics, power and decision-making structures, cultural norms and ideologies, and scientific and technological progress. From the perspective of minimising risk, we are therefore most interested in potential lock-in scenarios that would be *harmful, oppressive, persistent, or widespread.*
+
+While the definition encompasses lock-ins not related to AI systems, I anticipate that AI will be the key technology in their potential future manifestation. Therefore, the focus of the organisation is on lock-in risks in general, but we expect this to mostly consist of AI lock-in risks.
+
+### **For example – North Korea under the Kim Family**
+
+- Example of a totalitarian dictatorship under the Kim family since 1948
+- Centralised government and ideological control
+- Extensive surveillance, forced labour, and exploitation
+
+### **Or, a generally intelligent autonomous system pursuing a goal and preventing interference**
+
+- Example of a situation which could remain stable for a long time
+- Digital error-correction capabilities of an intelligent system theoretically enable the long-term preservation of goals and stability of behaviour
+- Could be highly undesirable from the perspective of humans
+
+## Positive Lock-In
+
+Today’s positive lock-in might be considered short-sighted and negative by future generations. Just as locking in the values of slavery would be seen as a terrible idea today, so locking in some values of today might be seen as a terrible idea in the future. This is an attendant paradox in a society that makes constant progress towards an improved version of itself.
+
+However, there is a small space of potential solutions where we might be able to converge on something close to positive lock-ins. This is the region where we lock-in features of human culture that we believe contribute to the minimisation of lock-in risks.
+
+- One example is human extinction. Efforts to prevent this from happening, such as those in the field of existential risk, can be argued as being positive, because they prevent us from a stable, undesirable future – all being dead.
+- Another example is locking in the rule of *never banning criticism*, because this prevents us from getting into a situation where critical thinking cannot be targeted at a stable feature of the world to question its integrity or authority.
+- Lastly, the *preservation of sustainable competition* could be argued as a positive lock-in, because it helps prevent the monopolisation of features of culture, such as in markets.
+
+The concept of a positive lock-in is delicate, and more conceptual work is needed to learn whether we can sensibly converge on positive lock-ins to mitigate lock-in risks.
+
+## Neutral Lock-In
+
+We define these as lock-ins that we are not particularly interested in. The openness of our definition allows for many features of the world to be considered lock-ins. For example, the shape of the pyramids of Giza, the structural integrity of the Great Wall of China, or the temperature of the Earth. These are features of the world which tend to remain stable, but that we are not trying to make more or less stable.
+
+![](https://res.cloudinary.com/lesswrong-2-0/image/upload/f_auto,q_auto/v1/mirroredImages/TPTA9rELyhxiBK6cu/cnzott0hul3dwcx6z5om)
+
+**Figure 1.** The precise shape of the Pyramids of Giza are a stable feature of the world we do not care about changing
+
+## Negative Lock-In
+
+These are the lock-ins we are most interested in. The manifestation of these kinds of lock-ins would have negative implications for humanity. As mentioned, we care most about lock-ins that are:
+
+1. **Harmful**: resulting in physical or psychological harm to individuals
+2. **Oppressive**: suppressing individuals’ freedom, autonomy, speech, or opportunities, or the continued evolution of culture
+3. **Persistent**: long-term, unrecoverable, or irreversible
+4. **Widespread**: concerning a significant portion of individuals relative to the total population
+
+While there are other negative qualities of potential lock-ins, these are the qualities we care most about. Some examples of other areas we might care about are situations where humanity is limited in happiness, freedom, rights, well-being, quality of life, meaning, autonomy, survival, or empowerment.
+
+## Why Do AI Systems Enable Lock-In?
+
+We further categorise lock-ins by their relationship to AI systems. We created three such categorisations:
+
+1. **AI-enabled**: led by a human or a group of humans leveraging an AI system
+2. **AI-led**: led by an AI system or group of AI systems
+3. **Human-only**: led by a human or group of humans and not enhanced significantly by an AI system.
+
+### AI-Enabled Lock-In
+
+It is possible that lock-in can be led by a human or a group of humans leveraging an AI system. For example, a human with the goal of controlling the world could leverage an AI system to implement mass worldwide surveillance, preventing interference from other humans.
+
+AGI would make human immortality possible in principle, removing the historical succession problem.[[2]](https://www.lesswrong.com/s/yP8Zs4Tuog6tDES5b/p/TPTA9rELyhxiBK6cu#fnxrcywo4u3hb) An AGI system that solves biological immortality could theoretically enable a human ruler to continue their rule indefinitely.
+
+Lastly, AGI systems would make whole brain emulation possible in principle, which would allow for any individual’s mind to persist indefinitely, like biological immortality. This way, the mind of a human ruler can be emulated and consulted on decisions, also continuing their rule indefinitely.
+
+Thankfully, there are no concrete existing examples of negative AI-enabled lock-ins yet, but some related examples are the Molochian forces of recommendation algorithms and the advent of short-form video on human attention and preferences by companies such as Meta and TikTok, in products such as the TikTok app, Instagram Reels, and YouTube shorts. These are situations where intelligent algorithms have been optimised by humans for customer retention.
+
+### AI-Led Lock-In
+
+It is possible that lock-in can be led by an autonomous AI system or group of AI systems. For example, a generally intelligent AI system (AGI) could competently pursue some goal and prevent interference from humans due to the instrumentally convergent goal of goal preservation, resulting in a situation where the AGI pursues that goal for a long time.
+
+AI systems could enable the persistent preservation of information, including human values. AGI systems would be software systems, which can in principle last forever without changing, and so an autonomous AGI pursuing goals may be able to successfully pursue and achieve those goals without interference for a long time.
+
+### Human-Only Lock-In
+
+As mentioned, we do still care about lock-in risks that don’t involve AI, given that they are sufficiently undesirable according to our prioritisation. Human-only lock-ins have existed in the past. Prime examples of this are past expansionist totalitarian regimes.
+
+# Other People Have Thought About This
+
+## Nick Bostrom
+
+In [Superintelligence](https://www.google.co.uk/books/edition/Superintelligence/7_H8AwAAQBAJ?hl=en&gbpv=0), Nick Bostrom describes lock-in as a potential second-order effect of superintelligence developing. A superintelligence can create conditions that effectively lock-in certain *values or arrangements* for an extremely long time or permanently.
+
+- In chapter 5, he introduces the concept of decisive strategic advantage – that one entity may gain strategic power over the fate of humanity at large. He relates this to the potential formation of a [Singleton](https://nickbostrom.com/fut/singleton), a single decision-making agency at the highest level.
+- In chapter 7 he introduces the [instrumental convergence hypothesis](https://www.lesswrong.com/w/instrumental-convergence), providing a framework for the motivations of superintelligent systems. The hypothesis suggests a number of logically implied goals an agent will develop when given an initial goal.
+- In chapter 12, he introduces the value loading problem, and the risks of misalignment due to issues such as goal misspecification.
+
+Bostrom frames lock-in as one potential outcome of an [intelligence explosion](https://www.lesswrong.com/w/intelligence-explosion), aside from the permanent disempowerment of humanity. He suggests that a single AI system, gaining a decisive strategic advantage, could control critical infrastructure and resources, becoming a singleton.
+
+He also outlines the value lock-in problem, where hard-coding human values into AI systems that become generally intelligent or superintelligent may lead to those systems robustly defending those values against shift due to instrumental convergence. He also notes that the frameworks and architectures leading up to an intelligence explosion might get locked in and shape subsequent AI development.
+
+## Lukas Finnveden
+
+[AGI and Lock-In](https://forum.effectivealtruism.org/posts/KqCybin8rtfP3qztq/agi-and-lock-in), authored by Lukas Finnveden during an internship at Open Philanthropy, is currently the most detailed report on lock-in risk. The report expands on notes made on value lock-in by Jess Riedel, who co-authored the report along with Carl Shulman.
+
+The report references Nick Bostrom’s initial arguments about AGI and superintelligence, and argues that many features of society can be held stable for up to trillions of years due to AI systems’ digital error correction capabilities and the alignment problem.
+
+The authors first argue that dictators, enabled by technological advancement to be immortal, could avoid the succession problem, which explains the end of past totalitarian regimes, but theoretically would not prevent the preservation of future regimes. Next, whole brain emulations (WBEs) of dictators could be arbitrarily loaded and consulted on novel problems, enabling perpetual value lock-in.
+
+They also argue that AGI-led institutions could themselves competently pursue goals with no value drift due to digital error correction. This resilience can be reinforced by distributing copies of values across space, protecting them from local destruction. Their main threat model suggests that If AGI is developed and is misaligned, *and does not permanently kill or disempower humans*, lock-in is the likely next default outcome.
+
+## William MacAskill
+
+In [What We Owe the Future](https://books.google.co.uk/books/about/What_We_Owe_the_Future.html?id=SaFTEAAAQBAJ&redir_esc=y), Will MacAskill introduces the concept of longtermism and its implications for the future of humanity. It was MacAskill who originally asked Lukas Finnveden to write the AGI and lock-in report. He expands on the concepts outlined in the report in more philosophical terms in chapter 4 of his book, entitled ‘Value Lock-In’.
+
+MacAskill defines value lock-in as ‘an event that causes a single value system, or set of value systems, to persist for an extremely long time’. He stresses the importance of current cultural dynamics in potentially shaping the long-term future, explaining that a set of values can easily become stable for an extremely long time. He identifies AI as the key technology with respect to lock-in, citing [AGI and Lock-In](https://forum.effectivealtruism.org/posts/KqCybin8rtfP3qztq/agi-and-lock-in). He echoes their threat models:
+
+1. An AGI agent with hard-coded goals acting on behalf of humans could competently pursue that goal indefinitely. The beyond-human intelligence of the agent suggests it could successfully prevent humans from doing anything about it.
+2. Whole brain emulations of humans can potentially pursue goals for eternity, due to them being technically immortal.
+3. AGI may enable human immortality; an immortal human could instantiate a lock-in that could last indefinitely, especially if their actions are enabled and reinforced by AGI.
+4. Values could become more persistent if a single value system is globally dominant. If a future world war occurs which one nation or group of nations win, the value system of the winners may persist.
+
+## Jess Riedel
+
+In [Value Lock-In Notes 2021](<https://jessriedel.com/index_files/Value%20Lock-in%20Notes%202021%20(Public%20version).pdf>), Jess Riedel provides an in-depth overview of *value* lock-in from a Longtermist perspective. Riedel details the *technological feasibility* of irreversible value lock-in, arguing that permanent value stability seems extremely likely for AI systems that have hard-coded values.
+
+Riedel claims that ‘given machines capable of performing almost all tasks at least as well as humans, it will be technologically possible, assuming sufficient institutional cooperation, to irreversibly lock-in the values determining the future of earth-originating intelligent life.’
+
+The report focuses on the formation of a totalitarian super-surveillance police state controlled by an effectively immortal bad person. Riedel explains that the only requirements are one immortal malevolent actor, and surveillance technology.
+
+## Robin Hanson
+
+In [MacAskill on Value Lock-In](https://www.overcomingbias.com/p/macaskill-on-value-lock-inhtml), economist Robin Hanson comments on What We Owe the Future, arguing that immortality is insufficient for value stability. He believes MacAskill underestimates the dangers of central power and is overconfident about the likelihood of rapid AI takeoff. Hanson presents an alternative framing of lock-in threat models:
+
+1. **A centralised ‘take over’ process**, in which an immortal power with stable values takes over the world.
+2. **A decentralised evolutionary process**, where as entities evolve in a stable universe, some values might become dominant via evolutionary selection. These values would outcompete others and remain ultimately stable.
+3. **Centralised regulation**: the central powers needed to promote MacAskill’s ‘long reflection’, limit national competition, and preserve value plurality, could create value stability through their central dominance. Also suggests this could cause faster value convergence than decentralised evolution.
+
+## Paul Christiano
+
+In [Machine intelligence and capital accumulation](https://rationalaltruist.com/2014/05/14/machine-intelligence-and-capital-accumulation/), Paul Christiano proposes a ‘naïve model’ of capital accumulation involving advanced AI systems. He frames agents as:
+
+> "soups of potentially conflicting values. When I talk about “who” controls what resources, what I really want to think about is what values control what resources."
+
+He claims it is plausible that the arrival of AGI will lead to a ‘crystallisation of influence’, akin to lock-in – where whoever controls resources at that point may maintain control for a very long time. He also expresses concern that influence over the long-term future could shift to ‘machines with alien values’, leading to humanity ending with a [whimper](https://nickbostrom.com/existential/risks#:~:text=possible%20and%20desirable.-,Whimpers,-%E2%80%93%20A%20posthuman%20civilization)**.**
+
+He illustrates a possible world in which this occurs. In a future with AI, human wages fall below subsistence level as AI replaces labour. Value is concentrated in non-labour resources such as machines, land, and ideas. The resources can be directly controlled by their owners, unlike people. So whoever owns the machines captures the resources and income, causing the distribution of resources at the time of AI to become ‘sticky’ – whoever controls the resources can maintain that control indefinitely via investment.
+
+# Lock-in Threat Models
+
+In order to begin working on outputs that aim to reduce lock-in risks, we established a list of threat models we believe are the most pressing chains of events that could lead to negative lock-ins in the future. We approached this by examining the fundamental patterns in the existing work, and by backcasting from all the undesirable lock-ins we could think of. The result is a list of threat models, as follows:
+
+## Patterns in Existing Work
+
+1. An autonomous AI system competently pursues a goal and prevents interference
+2. An immortal AI-enabled malevolent actor instantiates a lock-in
+3. A whole brain emulation of a malevolent actor instantiates a lock-in
+4. A large group with sufficient decision-making power decide the values of the long-term future, by majority, natural selection, or war
+5. Anti-rational ideologies prevent cultural, intellectual or moral progress
+6. The frameworks and architectures leading up to an intelligence explosion get locked in and shape subsequent AI development.
+7. AI systems unintentionally concentrate power because so many people use them that whoever controls the AI system controls the people
+
+## Backcasting Results
+
+1. Decision making power is concentrated into the hands of a small group of actors (AI agents or humans) causing a monopoly, oligopoly, or plutocracy
+2. The deliberate manipulation of information systems by actors interested in promoting an agenda or idea leads to a persistent prevalence of that idea
+3. AI systems proliferate so much that modifications to the AI system impact people's worldviews
+4. AI-generated content causes addiction e.g. TikTok, Instagram, and YouTube. Especially harmful if targeting young people.
+5. Tech companies or AI labs concentrate power, leading to a lock-in of services, potentially leading to corruption or a monopoly
+6. Ideologies pushing us into undesired future or anti-rational ideologies preventing humanity from making moral progress
+7. Enfeeblement from reliance on AI systems
+
+# Lock-In Risk Interventions
+
+So far, we are working on white papers, research, and model evaluations.
+
+## Research
+
+- Lock-in risk is a nascent and currently neglected research area in AI safety. This line of work seeks to conduct foundational lock-in risk research, creating knowledge about the phenomenon and proposing novel interventions to reduce lock-in risks.
+- Lock-in research is concerned with complex systems, making much of the work low tractability. This line of work attempts to include a microscopic, granular approach, focusing on empirical studies of current AI use cases (such as recommender systems and LLMs), as well as a macroscopic, general approach, focusing on agent foundations and theory (such as with game theory and emulations).
+
+## Evaluations
+
+- Evaluations help decision makers know how dangerous their models are, and know information about the models generally. This line of work would seek to build a comprehensive evaluation for lock-in risk, starting with large language models (LLMs).
+- The evaluation would prompt the model using specific language with a capability of behaviour in mind, and score the model’s response based on the presence of the target behaviour
+- The model’s answers will be scored using natural language scoring metrics, and the model’s final score will be calculated based on its individual scores
+- The framework will be targeted at AISI Inspect, with the goal being for the UK government to use the evaluation to test frontier models, thus increasing the likelihood that models which pose a potential lock-in risk are identified early
+
+## White papers:
+
+- White papers are one medium that can be useful for presenting a problem and proposed solution, particularly in a persuasive way, attempting to affect change.
+- Technical reports are useful for summarising a presenting knowledge acquired from research, sometimes with related recommendations.
+- This work proposes that Formation produces white papers and reports aiming to create knowledge about lock-in risk and persuade decision makers to take actions.
+
+## How We Aim to Affect Change
+
+The theory of change behind these interventions is that our research identifies methods and frameworks for preventing the lock-in, the model evaluations show us which AI systems are at risk of contributing to the manifestation of lock-in, and the white papers are targeted at the organisations in which these at-risk systems are in use, recommending they implement our intervention to minimise the risk.
+
+We aim to work with these organisations to negotiate ways of implementing the interventions in ways that are non-intrusive and mutually beneficial from both the organisation’s perspective, and from the perspective of reducing lock-in risks effectively.
+
+---
+
+I hope that this post sparks a new conversation about lock-in risks. There are many angles to approach this problem from, and it is fairly unique in its risk profile and complexity.

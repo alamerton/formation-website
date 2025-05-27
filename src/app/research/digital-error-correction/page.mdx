@@ -1,0 +1,112 @@
+---
+title: "Digital Error Correction and Lock-In"
+date: "2025-04-08"
+description: "We believe the digital error correction properties of digital entities will make future lock-in scenarios more stable."
+image: "/images/digital-error-correction.jpg"
+slug: "digital-error-correction-and-lock-in"
+---
+
+import { PostHeader } from "@/components/PostHeader";
+
+<PostHeader
+  title="Digital Error Correction and Lock-In"
+  date="2025-04-08"
+  description="We believe the digital error correction properties of digital entities will make future lock-in scenarios more stable."
+/>
+
+[Epistemic status:](https://forum.effectivealtruism.org/posts/bbtvDJtb6YwwWtJm7/epistemic-status-an-explainer-and-some-thoughts) a collection of intervention proposals for digital error correction in the context of [lock-in](https://www.lesswrong.com/posts/F4ji5dvvCk8tBAsXw/what-is-lock-in). It reflects my own intervention ideas, and the opinion of Formation Research at the time of writing.
+
+## TL;DR
+
+We believe lock-in risks are a pressing problem, and that the digital error correction properties of digital entities will make future lock-in scenarios more stable.
+
+---
+
+## Introduction
+
+We have identified 4 key threat models for lock-in; ways we believe undesirable lock-ins could manifest in the future. This post focuses on two specific threat models:
+
+1. **An autonomous AI system competently pursues a goal and prevents interference**
+2. **An immortal AI-enabled malevolent actor, or whole-brain emulation of a malevolent actor, instantiates a lock-in**
+
+This post rests on the claim AGI and WBE are possible, and talks about roughly human-level digital entities. Some features of these interventions would break down with a superintelligence.
+
+### The Claim
+
+The focus of this post is one of the claims made by Lukas Finnveden, Jess Riedel, and Carl Shulman in [AGI and Lock-In](https://forum.effectivealtruism.org/posts/KqCybin8rtfP3qztq/agi-and-lock-in), section 4.2.:
+
+_Institutions can easily achieve very high baseline levels of stability that can only be interrupted by worldwide catastrophes or intelligent action._
+
+The authors introduce three components for this claim:
+
+- AGI making it theoretically possible to digitally store a wide range of complex values
+- Digital error-correction making it possible to accurately preserve these values for a long time
+- Large scale errors being mitigated with distributed storage
+
+We agree with their claim, believing that values can be preserved impeccably, long-term, due to digital entities being able to store large amounts of data, perform digital error-correction, and distribute information storage. Therefore the digital entity controlling some domain can preserve its control in its exact state without error in perpetuity.
+
+### How Digital Error Correction Could Create Bad Lock-In
+
+This entails many potential undesirable lock-in scenarios. Both of the relevant threat models involve digital entities creating lock-in, and the technological phenomenon in focus is the *digital error correction* properties of these entities.
+
+Undesirable lock-ins have happened in the past, but their stability fluctuated because humans were in charge of them. For example, North Korea’s totalitarian regime attempted to maintain its ideological integrity as different leaders took control in succession. Despite efforts to maintain the continuity of the regime in its original form, each leadership transition introduced variation, such as personality differences, health issues, and competency variance.
+
+Digital entities don't fluctuate like that. They have no biological or psychological limitations on system stability and, in control of a regime, may keep its configuration completely stable for a long time.[^1] The stability we observe in computer-controlled systems today (like operating systems maintaining consistent behavior across hardware replacements) suggests how a digitally-controlled lock-in would remain functionally indefinitely.
+
+### Interventions Could Target This
+
+Therefore, it is in our interest to create interventions that prevent this from happening. The main characteristic of this problem is the rigidity of the digital entity that is creating the lock-in. In this case, it is an AI system or whole brain emulation, or a group of such entities.[^2]The fact that the entity is digital means it has the advantage of digital error correction, unlike non-software agents like humans.
+
+The ideal intervention would target this characteristic, the digital error-correction properties of the digital entity, because it is responsible for the stability of hypothetical future digital entity-led lock-ins.[^3]
+
+We propose a set of theoretical intervention points for targeting this property:
+
+- Introducing digital errors into the entity (including at the architecture and compute resource level)
+- Controlling the entity’s actions
+- Refreshing or restarting the entity
+
+## Introducing Digital Errors
+
+In a lock-in created by a digital entity, a mechanism introducing digital errors would reduce the crystallisation of the feature being locked in, at least for a time. Depending on the amount of error being introduced, this may promote dynamism in the lock-in, or cause the entity to reconfigure the feature in a different way, or not lock the feature in again.
+
+It would end the lock-in for a short period. In situations where a lock-in is particularly undesirable, this may free other entities to reverse the lock-in permanently, or lock in some other, more desirable feature.
+
+If the digital entity is a neural network-based AI system, one way to introduce errors like this would be by adding random noise to its weights during runtime. In training ML models, adding noise to weights is used as a regularisation technique to improve robustness. For digital error-correction, the idea would be to inject noise to the model at runtime, to modify the model’s outputs over time. The technique would modify the weight settings, resulting in a change in model output, and degradation in performance. The change may then need to be rectified, possibly by retraining the model, or resetting it to an earlier configuration. Gaussian noise injection, genetic mutation techniques, and simulated annealing all offer examples of noise injection that may produce desirable instability.
+
+The drawback with introducing errors like this is that the performance degradation and instability will probably make the entity less capable in most cases. In situations where reliability is expected, this simply might not be an option. It is *being bad at controlling an undesirable lock-in* that we want, but not *being bad at controlling things in general*. We want an autonomous vehicle to control its driving well, but we want an autonomous dictator to be bad at controlling humans. So our technical interventions must isolate these desired errors and target them effectively.
+
+## Controlling the Entity’s Actions
+
+A clear workaround for competent error-correction is controlling the entity itself. AI control, boxing, and corrigibility all offer proposals for doing this.
+
+1. **AI Control:** In principle, being able to completely control the digital entity would be good because we could then stop it creating undesirable lock-in, in cases where we know what actions lead to those lock-ins.
+2. **Boxing Methods:** Boxing may help prevent a digital entity from creating its own lock-in, because by containing it we have the ability to shut it down if it shows signs of causing a lock-in (if the shutdown problem can be solved), or have a way of theoretically shutting it down if it creates a lock-in.
+3. **Corrigibility:** Success with corrigibility would help avoid lock-in risk by digital error-correction because it would stop the lock-in from being persistent. If a digital entity creates a lock-in with competent error correction, yes it may be able to hold the lock-in stable, but it can also change its goal and thus the lock-in can end.
+
+## Restarting the Entity
+
+Restarting a digital entity, so that it has to learn again, or re-instantiate its control. This would theoretically prevent any lock-in created by a digital entity from becoming persistently entrenched. If an agent has access to the ability to restart the digital entity, then its control over the domain can be ended by the restart. The goals and values of the entity would revert to an earlier configuration, out of alignment with the state of the world.
+
+If the digital entity had a regular restart built into its architecture,[^4] this would theoretically prevent a lock-in from becoming persistent as the controlling entity would always relinquish its control at a regular interval, at which point other entities may prevent another lock-in, or the updated configuration of the world relative to the entity may prevent it from being able to create another lock-in Two approaches to restarting seem promising:
+
+- **Enforced amnesia:** Implementing a regular or one-time reset of the entity at runtime with a view to resetting its goals and values, either to a previous configuration or letting them be learned again
+- **Programmed obsolescence or gradual performance degradation:** A concept borrowed from industrial design and systems engineering, where the entity is designed to degrade in performance or have a limited lifespan, making the entity stop working in the future. The idea here is that an entity with an expected lock-in risk could be designed to just stop working at some point.
+
+## Meta-Level Strategies
+
+### Creating a Theoretical Framework for these Properties
+
+A meta-level intervention strategy here is to create a foundational theoretical framework of the digital error correction properties of digital entities for the purpose of knowledge creation and to crystallise the conceptual definition of these properties. The digital error-correction properties we expect digital entities to have were introduced in AGI and lock-in, but have not been worked on explicitly since. This direction could be useful so that the concept and problem is introduced and opened up to the wider community. Work on creating a theoretical physical framework for these concepts may help define the problem and illuminate further intervention strategies, it will also help broaden the fundamental work on lock-in as a physical phenomenon.
+
+### Combining Approaches
+
+Another meta-level strategy is to combine the approaches identified above. This may result in beneficial and synergistic interventions. For example, a boxing method that controls entity outputs at runtime can be combined with a system restarting protocol, providing two lock-in intervention levers for the entity – controlling its behaviour to prevent lock-in, and restarting to prevent or reverse lock-in.
+
+---
+
+This post is more theoretical than the others in the sequence. It deals with a future scenario and is less concrete that our other intervention proposals. Our hope is that it offers a pointer to this theoretical intervention point for future research. Formation plans to do that research, and invites the community to do so as well.
+
+[^1]: Digital entities also bypass the historical [succession problem](https://www.wikiwand.com/en/articles/Succession_crisis), but that is out of scope for this post.
+[^2]: There is a line of theoretical work here in understanding the dynamics of a group composed partly of digital entities, and partly of humans. This would have implications on the quality of the error-correction of the entity as a whole, because the entity would involve some human error.
+[^3]: Peripheral interventions within this category would be those that target the physical distribution of the compute resources of the digital entities, because that is the other way errors can be introduced under this model.
+[^4]: This is assuming the entity is not sophisticated enough to modify its own architecture. If this is the case, this idea fails.

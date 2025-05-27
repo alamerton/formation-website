@@ -1,0 +1,142 @@
+---
+title: "Recommender Alignment for Lock-In Risk"
+date: "2025-03-24"
+description: "Here we connect one of our lock-in threat models to the function of recommender systems, and outline intervention approaches."
+image: "/images/recommender.jpg"
+slug: "recommender-alignment-for-lock-in-risk"
+---
+
+[Epistemic status](https://forum.effectivealtruism.org/posts/bbtvDJtb6YwwWtJm7/epistemic-status-an-explainer-and-some-thoughts): my own research and reasoning about lock-in risk threat models, and how recommender systems connect to the threat model outlined. I'm fairly confident in the claims about the contribution of recommender systems to filter bubbles, less so on extreme and persuasive content selection effects.
+
+# TL;DR
+
+We believe lock-in risks are a pressing problem, and that algorithmic technologies such as AI-driven recommender systems are a key technology in their potential manifestation. Here we connect one of our lock-in threat models to the function of existing recommender systems, and outline intervention approaches.
+
+# Lock-In (The Problem)
+
+We define [lock-in](https://www.lesswrong.com/s/yP8Zs4Tuog6tDES5b/p/F4ji5dvvCk8tBAsXw) as a situation where some feature of the world, typically a negative element of human culture, is held stable for a long time. Examples of lock-ins include totalitarian regimes, where individuals hold the values and configurations of a society stable for as long as they can, technology lock-ins, where some technology becomes the norm, and hard to reverse, for society (e.g., QWERTY keyboard), and more.
+
+We have identified various threat models for lock-in, i.e., ways we believe particularly undesirable lock-in scenarios could manifest in the future. We believe that  one of the most pressing lock-in threat models is *anti-rational ideologies preventing cultural, intellectual or moral progress, or accidentally bringing about an undesirable future*, and that state-of-the-art recommender systems, such as those embedded in social media platforms, may play a significant role in the manifestation of lock-in in the future.
+
+# Information Propagation Through Recommender Systems (The Subproblem)
+
+## How information propagates through recommender systems
+
+Under the standard paradigm, recommender systems propagate information through a software system as follows:
+
+1. Content is shown to a user
+2. The user sends a signal to the software system about how desirable this content is (usually a proxy in the form of time spent looking at the content, a *like* function, or *share* function, etc)
+3. The software system identifies similar content (using some statistical metric for comparison, e.g., word embeddings or the content preferences of other users) and shows the user *more of this similar content*
+
+![Diagram of a user interacting with a recommender system](https://res.cloudinary.com/lesswrong-2-0/image/upload/f_auto,q_auto/v1/mirroredImages/b0b88e5f5b46e6375385d82f50d617dbf4db5f6b8b452e4c6d43ed9570d4201b/gxll9vkbadz69wqgheah)
+
+_Simplified diagram of content propagation through recommender systems_
+
+### Example: The Facebook feed
+
+When you open Facebook, the content shown to you is not random or chronological. It is selected by a recommender system designed to maximise your engagement with the platform. When you first join Facebook, the platform shows you a variety of content based on the information it has about you, like your age, location, and stated interests.
+
+As you scroll through the feed, Facebook tracks your interactions:
+
+- How long you pause on certain posts
+- Which posts you "like," "love," or react to with other emotions
+- Which posts you comment on
+- Which posts you share
+- Which posts you click through to read fully
+- Which posts you skip quickly
+
+The recommender system then interprets these interactions as signals about your preferences. If you spend 45 seconds watching a cooking video, but scroll quickly past political news, the system registers cooking content as engaging for you.
+
+This process continues as you engage with content on the platform, refining the recommender system’s model of your preferences. Content that generates engagement from you leads to more similar content, and content that fails to engage you appears less frequently. Your feed gradually contains higher percentages of content types that you’ve engaged with.
+
+We won’t go into much more detail about specific algorithmic implementations. Most state-of-the-art recommendation algorithms are kept behind company doors and unknown to the public, and the algorithm may be different for each software system implementation anyway, but the abstract, high-level paradigm is mostly the same across implementations. This paradigm is sufficient for discussing the contribution of these algorithms on lock-in risk.
+
+### The Side Effects of This Process
+
+Often, content that increases *engagement* is what the system ends up optimising for. Engagement is a proxy for preference, not preference itself. Therefore the algorithms can end up recommending engaging content, which may not be what the users want. Therefore the recommender system is not aligned with human preferences, but aligned with a proxy for human preferences – engagement – the signal we give to it that indicates *something like* our preferences.
+
+### What Role do Recommender Systems Play?
+
+Recommender systems are being investigated for their contribution to polarisation and filter bubbles.
+
+**Polarisation**
+
+Recommender systems are believed to contribute to polarisation by promoting extreme content (Chen et al., 2023; Santos et al., 2021; Whittaker et al., 2021). However, the evidence for this is inconclusive and it’s possible that this effect is not very pronounced. either because it *was never the problem in the first place*, or because *companies are effectively mitigating the effect in their in-house recommender system*. For example, (Whittaker et al., 2021) identified that YouTube amplifies extreme content, but the other two platforms in their study – Reddit and Gab – do not.
+
+Most studies were recent, after these issues became a concern, suggesting that the problems may have been patched before the studies commenced. For example, Chen et al. (2023) claimed that YouTube was not perpetuating extreme ideas, and that this could be because YouTube made changes to its recommender system in 2019. Therefore the direct relationship between polarisation and recommender systems hasn’t been firmly established. Whether they are contributing to polarisation or just making it visible is an open question.
+
+**Filter Bubbles**
+
+The way recommender systems curate information can lead to the isolation of information into a filter bubble. This is a state in which a user’s content consists almost completely of information conforming to one belief, idea, or ideology, and suppresses information that challenges or opposes it. Several empirical studies find evidence of filter bubbles in recommender systems (Areeb et al., 2023; Kidwai et al., 2023)**.**
+
+These phenomena make lock-in risk more likely. Regardless of whether or not they are caused or contributed to by recommender systems, these systems seem to offer a strong intervention point for lock-in risk.
+
+### Example: How Filter Bubbles and Polarisation Can Emerge
+
+Alice joins Etsagram with the preference ‘blue is better than green’. She engages in blue and green content at first, but engages more with blue content due to her initial preference of blue over green.
+
+![An equal distribution of blue and green squares](https://res.cloudinary.com/lesswrong-2-0/image/upload/f_auto,q_auto/v1/mirroredImages/53920661cd50dc42bd42ddeffd8aaa1e34abf371b095e3562b7d7e76f6335cde/oa1aktk3txeendpr9orz)
+
+_The initial (simplified) distribution of Alice’s recommended content_
+
+The recommender system therefore promotes blue content and suppresses green content on her feed. Alice ends up being exposed to more blue content than green content, but furthermore she is exposed more to *persuasive or extreme* blue content. This is especially true if recommender systems reward and promote such content for being engaging. If not, she will still be exposed to more of it, because the distribution of blue content will be larger and contain more content overall.
+
+![A distribution with more blue squares than green. Some blue squares are darker, and some green squares are lighter](https://res.cloudinary.com/lesswrong-2-0/image/upload/f_auto,q_auto/v1/mirroredImages/65b450cfcb177baf8ab38c01add1efd9e2938d6e652c56fe7548dfccc4fac74d/ocjscsh9e8qximofcch0)
+
+_The distribution of Alice’s feed after she engages more with blue content_
+
+The new normal for Alice’s Etsagam experience is mostly blue content, and little to no green content. Alice’s preferences may shift with exposure to this content, being biassed by the exposure to persuasive, extreme blue content, reinforcing and potentially strengthening her preference of blue against green. Furthermore, her lack of exposure to green may lead her to forget the nuanced details of green, and have less of an understanding of what green actually is.
+
+![A distribution of mostly blue squares, of varying darkness, with two light green squares](https://res.cloudinary.com/lesswrong-2-0/image/upload/f_auto,q_auto/v1/mirroredImages/69ee1d55af39b0e8de70e9956712a83058bd4a03ac5b489772a63081faabfbbc/auknnc6vswtcvtwtqkuw)
+
+_The distribution of Alice’s recommended content after the process repeats several times_
+
+Alice is now in a filter bubble. Most of the content she sees on Etsagram reinforces her preferences, and vastly outnumbers content that opposes or challenges them.
+
+The structure of this information propagation process lends itself to the reinforcement of irrational ideas by suppressing counterexamples, criticism, and challenges to them. Anti-rational ideas can therefore spread like a parasite on these systems, getting selected for over neutral and rational content *by the recommender system itself*, and promoted more than that content because it is more engaging.
+
+### How This May Lead to Lock-In
+
+An anti-rational ideology may have the staying power needed to lock itself in long-term. By nature, anti-rational ideas and ideologies work by disabling rational criticism and challenges. Filter bubbles lend themselves to this, and recommender systems lend themselves to the emergence of filter bubbles.
+
+# Intervention Strategies
+
+Looking backwards from the threat models it seems like some negative lock-in scenarios can happen due to the locking in of values, beliefs, and ideologies. Looking forward from the current state of recommender systems, it seems like they are following a trend that will further lock these things in. Therefore we claim that interventions in this process may reduce the likelihood of those lock-in scenarios manifesting via that threat model.
+
+## Stray’s Intervention Taxonomy
+
+Stray (2021) put forward an intervention taxonomy for recommender systems categorising the points in the information propagation process where interventions can be targeted. The taxonomy was written as an intervention to political polarisation, which we include in the lock-in threat model discussed here. Stray categorises three depolarisation intervention points: content moderation, ranking, and interface.
+
+### Content moderation
+
+Content moderation is a lever on the content that is available to users on the platform, and thus what content can affect their beliefs, values, and ideas. Controlling content through moderation allows for less content identified as harmful, and a more balanced representation of general content.
+
+### Content ranking
+
+Content ranking is a lever on the content that is recommended to users on a platform, based on their behaviour on the platform, and thus what content is outputted by the system depending on the user’s inputs. This allows for modifications to the input-output mappings of user behaviour onto content selection on the platform; or, the function of information propagation on that platform (how information propagates through the paired dynamic of the users’ behaviour and the system’s architecture).
+
+### Content interface
+
+The content interface is a lever on the volume and presentation of content, and the feedback mechanisms available to the user for giving information about their interpretation of the content to the recommender system. This opens up the system for architectures which can take feedback of different depth and resolution, to make more or less informative recommendations.
+
+## Categories of Intervention to Avoid
+
+Considering the goal of preventing negative lock-in scenarios, there are some kinds of interventions to avoid.
+
+1. **Suppressing Disagreement and Criticism:** Interventions that function by suppressing disagreement or criticism on the platform may result in a negative lock-in in which entities cannot be criticised and cannot compete.
+2. **Centralised Content Control:** Interventions born out of a central authority may be particularly sensitive to the incentive system underlying that authority. For example, if a tech company is in total control of its recommender system and is driven primarily by increasing profit or user retention, the resulting system could end up misaligned with human interests.
+
+# Conclusion
+
+This post outlines the problem of information propagation through recommender systems as a contributor to the lock-in threat model of anti-rational ideologies preventing cultural, intellectual or moral progress, or accidentally bringing about an undesirable future. We illustrate the misalignment of state-of-the-art recommender systems with human preferences, connect this to lock-in, and refer to a taxonomy of intervention areas to combat lock-in through this casual route.
+
+Future directions may include implementing technical interventions that specifically target these dynamics, that are not centralised, with companies that deploy recommender systems at scale, and advocating for intervention implementation in behind-closed-doors recommender systems.
+
+# References
+
+1. Areeb, Q. M., Nadeem, M., Sohail, S. S., Imam, R., Doctor, F., Himeur, Y., Hussain, A., & Amira, A. (2023). Filter bubbles in recommender systems: Fact or fallacy—A systematic review. *WIREs Data Mining and Knowledge Discovery*, *13*(6), e1512. https://doi.org/10.1002/widm.1512
+2. Chen, A. Y., Nyhan, B., Reifler, J., Robertson, R. E., & Wilson, C. (2023). Subscriptions and external links help drive resentful users to alternative and extremist YouTube channels. *Science Advances*, *9*(35), eadd8080. https://doi.org/10.1126/sciadv.add8080
+3. Kidwai, U. T., Akhtar, D. N., & Nadeem, D. M. (2023). Unravelling Filter Bubbles in Recommender Systems: A Comprehensive Review. *International Journal of Membrane Science and Technology*, *10*(2), Article 2. https://doi.org/10.15379/ijmst.v10i2.1839
+4. Santos, F. P., Lelkes, Y., & Levin, S. A. (2021). Link recommendation algorithms and dynamics of polarization in online social networks. *Proceedings of the National Academy of Sciences*, *118*(50), e2102141118. https://doi.org/10.1073/pnas.2102141118
+5. Stray, J. (2021). *Designing Recommender Systems to Depolarize* (arXiv:2107.04953). arXiv. https://doi.org/10.48550/arXiv.2107.04953
+6. Whittaker, J., Looney, S., Reed, A., & Votta, F. (2021, June 30). *Recommender systems and the amplification of extremist content* [Info:eu-repo/semantics/article]. Alexander von Humboldt Institute for Internet and Society gGmbH. https://doi.org/10.14763/2021.2.1565
