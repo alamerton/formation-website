@@ -1,7 +1,10 @@
 import React from "react";
 import explainerBanner from "@/images/explainer-banner.png";
-import categorisation from "@/images/lock-in-categorisation.png";
 import Image from "next/image";
+import categorisation from "@/images/lock-in-categorisation.png";
+import lobster from "@/images/lobster-pot-image.png";
+import lockedRoom from "@/images/locked-room.png";
+import timeline from "@/images/timeline.png";
 import Head from "next/head";
 
 export const metadata = {
@@ -72,12 +75,18 @@ const ExplainerPage = () => {
             </p>
           </div>
         </div>
+
         {/* What is lock-in section */}
         <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8 max-w-3xl">
           <div className="pb-8">
-            <h1 className="text-2xl sm:text-3xl font-bold py-4 text-center">
+            <h1 className="text-2xl sm:text-3xl font-bold pt-4 text-center">
               What is Lock-In?
             </h1>
+            <p className="text-md sm:text-lg py-4 text-center">
+              Lock-in is where some feature of the world – technological,
+              political, or institutional – is held stable for a long time.
+              Possibly for centuries. Possibly forever.
+            </p>
           </div>
           <div className="grid grid-cols-2 gap-4 mb-8">
             <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center">
@@ -107,6 +116,7 @@ const ExplainerPage = () => {
               </p>
             </div>
           </div>
+
           {/* What are lock-in risks section */}
           <div className="pb-8">
             <h1 className="text-2xl sm:text-3xl font-bold py-4 text-center">
@@ -148,6 +158,7 @@ const ExplainerPage = () => {
               interventions based on conjecture and empirical investigation.
             </p>
           </div>
+
           {/* Categorising lock-in section */}
           <div className="pb-8">
             <h1 className="text-2xl sm:text-3xl font-bold py-4 text-center">
@@ -210,12 +221,54 @@ const ExplainerPage = () => {
               </p>
             </div>
           </div>
-        </div>
-        {/* Lobster Pot Analogy Section */}
-        <div className="pb-8">
-          <h1 className="text-2xl sm:text-3xl font-bold py-4 text-center">
+          {/* Lobster Pot Analogy Section */}
+          <h1 className="text-2xl sm:text-3xl font-bold pt-4 text-center">
             Lobster Pot Analogy
           </h1>
+          <p className="text-md sm:text-lg py-4 text-center">
+            Easy to get in, hard to get out.
+          </p>
+          <div className="flex justify-center mb-6">
+            <Image
+              src={lobster}
+              alt="Picture of a lobster crawling into a lobster pot and being unable to get out"
+              layout="responsive"
+              priority
+              className="rounded-lg"
+            />
+          </div>
+          {/* Locked Room Analogy Section */}
+          <h1 className="text-2xl sm:text-3xl font-bold pt-4 text-center">
+            Locked-Room Analogy
+          </h1>
+          <p className="text-md sm:text-lg py-4 text-center">
+            Humans or digital agents could create lock-in scenarios{" "}
+          </p>
+          <div className="flex justify-center mb-6">
+            <Image
+              src={lockedRoom}
+              alt="3 panel image of a person being locked in a room by a human and a robot, with descriptions of the effects of this"
+              layout="responsive"
+              priority
+            />
+          </div>
+        </div>
+        <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8 max-w-6xl">
+          {/* Timeline explainer section */}
+          <h1 className="text-2xl sm:text-3xl font-bold pt-4 text-center">
+            Timeline Explainer
+          </h1>
+          <p className="text-md sm:text-lg py-4 text-center">
+            An abstract timeline demonstrating how a lock-in could manifest
+          </p>
+          <div className="flex justify-center mb-6">
+            <Image
+              src={timeline}
+              alt="3 panel image of a person being locked in a room by a human and a robot, with descriptions of the effects of this"
+              layout="responsive"
+              priority
+            />
+          </div>
         </div>
       </div>
     </>
