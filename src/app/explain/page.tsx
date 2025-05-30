@@ -1,5 +1,6 @@
 import React from "react";
 import explainerBanner from "@/images/explainer-banner.png";
+import categorisation from "@/images/lock-in-categorisation.png";
 import Image from "next/image";
 import Head from "next/head";
 
@@ -69,12 +70,152 @@ const ExplainerPage = () => {
               The likelihood that negative elements of the world become stable
               for a long time.
             </p>
-            <p className="text-md md:text-md text-gray-200 mb-8 mx-auto max-w-3xl">
-              Lock-in is where some feature of the world – technological,
-              political, or institutional – is held stable for a long time.
-              Possibly for centuries. Possibly forever.
+          </div>
+        </div>
+        {/* What is lock-in section */}
+        <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8 max-w-3xl">
+          <div className="pb-8">
+            <h1 className="text-2xl sm:text-3xl font-bold py-4 text-center">
+              What is Lock-In?
+            </h1>
+          </div>
+          <div className="grid grid-cols-2 gap-4 mb-8">
+            <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center">
+              <h2 className="font-semibold  mb-2">A Physical Phenomenon</h2>
+              <p className="text-sm text-gray-700">
+                Emerges from the dynamics of irreversibility in complex systems.
+              </p>
+            </div>
+            <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center">
+              <h2 className="font-semibold mb-2">Self-Perpetuating</h2>
+              <p className="text-sm text-gray-700">
+                Once embedded, elements self-reinforce and resist change.
+              </p>
+            </div>
+            <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center">
+              <h2 className="font-semibold mb-2">Multi-Scalar</h2>
+              <p className="text-sm text-gray-700">
+                Can operate at multiple levels from organisation-level tech
+                stacks to global ideologies.
+              </p>
+            </div>
+            <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center">
+              <h2 className="font-semibold mb-2">Long-Term</h2>
+              <p className="text-sm text-gray-700">
+                Can operate across long time horizons, from years, to decades,
+                and millennia.
+              </p>
+            </div>
+          </div>
+          {/* What are lock-in risks section */}
+          <div className="pb-8">
+            <h1 className="text-2xl sm:text-3xl font-bold py-4 text-center">
+              What are Lock-In Risks?
+            </h1>
+          </div>
+          <div className="grid grid-cols-2 gap-4 mb-8">
+            <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center">
+              <h2 className="font-semibold mb-2">Potentially Catastrophic</h2>
+              <p className="text-sm text-gray-700">
+                Could affect a significant number of individuals.
+              </p>
+            </div>
+            <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center">
+              <h2 className="font-semibold mb-2">Neglected</h2>
+              <p className="text-sm text-gray-700">
+                Few organisations or individuals track or model lock-in risk.
+              </p>
+            </div>
+            <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center">
+              <h2 className="font-semibold mb-2">A Moral Problem</h2>
+              <p className="text-sm text-gray-700">
+                Could perpetuate or create suffering and prevent progress.
+              </p>
+            </div>
+            <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center">
+              <h2 className="font-semibold mb-2">A Global Problem</h2>
+              <p className="text-sm text-gray-700">
+                Could affect institutions, states, nations, or the world.
+              </p>
+            </div>
+          </div>
+          <div className="bg-white rounded-lg shadow p-4 mt-4 mb-8">
+            <h3 className="font-semibold mb-2 text-center">Definition</h3>
+            <p className="text-sm text-gray-700 text-center">
+              Defined as a subjective probability in [0, 1] that a negative
+              lock-in occurs. Fundamentally unknowable in absolute terms and
+              must be approximated through modelling and reduced via
+              interventions based on conjecture and empirical investigation.
             </p>
           </div>
+          {/* Categorising lock-in section */}
+          <div className="pb-8">
+            <h1 className="text-2xl sm:text-3xl font-bold py-4 text-center">
+              Categorising Lock-In
+            </h1>
+          </div>
+          <div className="flex justify-center mb-6">
+            <Image
+              src={categorisation}
+              alt="Diagram showing how we taxonomise lock-in into different categories."
+              layout="responsive"
+              priority
+              className="rounded-lg"
+            />
+          </div>
+          {/* Examples section */}
+          <div className="pb-8">
+            <h1 className="text-2xl sm:text-3xl font-bold py-4 text-center">
+              What is Lock-In?
+            </h1>
+          </div>
+          <div className="grid grid-cols-2 gap-4 mb-8">
+            <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center">
+              <h2 className="font-semibold  mb-2">QWERTY Keyboard</h2>
+              <p className="text-sm text-gray-700">
+                Classic example of an efficiency lock-in. QWERTY is the industry
+                standard keyboard layout not because it is optimal for typing,
+                but because the typewriter with that layout became most popular.
+                The QWERTY keyboard layout is not locked in because the cost of
+                switching to a layout like Colemak is high.
+              </p>
+            </div>
+            <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center">
+              <h2 className="font-semibold mb-2">Stable Totalitarianism</h2>
+              <p className="text-sm text-gray-700">
+                Potentially high-impact negative lock-in that could last a long
+                time due to the competent digital error correction of digital
+                entities such as AI systems. An AI-enabled leader may
+                successfully reign over a state for centuries or millennia.
+              </p>
+            </div>
+            <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center">
+              <h2 className="font-semibold mb-2">
+                AI-Driven Power Concentration
+              </h2>
+              <p className="text-sm text-gray-700">
+                Individuals at the forefront of the AI revolution may end up
+                with high leverage over the technological and political
+                trajectory of humanity due to their control over AI systems,
+                potentially creating persistent monopolies over resources and
+                labour
+              </p>
+            </div>
+            <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center">
+              <h2 className="font-semibold mb-2">Ideological Stasis</h2>
+              <p className="text-sm text-gray-700">
+                Dogmatic or anti-rational belief systems could prevail over the
+                cultural zeitgeist and lock-in norms and practices that are
+                self-reinforcing.
+              </p>
+            </div>
+          </div>
+        </div>
+        {/* Lobster Pot Analogy Section */}
+        <div className="pb-8">
+          <h1 className="text-2xl sm:text-3xl font-bold py-4 text-center">
+            Lobster Pot Analogy
+          </h1>
         </div>
       </div>
     </>
