@@ -2,6 +2,8 @@ import React from "react";
 import Image from "next/image";
 import aboutBanner from "@/images/about-banner.jpg";
 import Head from "next/head";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export const metadata = {
   title:
@@ -55,10 +57,20 @@ const AboutPage = () => {
             objectFit="cover"
             priority
           />
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center font-serif">
-            <h1 className="text-3xl md:text-5xl font-kameron text-white">
+          <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center font-serif">
+            <h1 className="text-3xl md:text-5xl font-kameron text-white mb-6">
               About Us
             </h1>
+            <div className="font-sans">
+              <Link href="/explain">
+                <Button
+                  size="lg"
+                  className="bg-white px-8 py-4 hover:bg-gray-100 text-customPurple text-lg font-medium hover:bg-gray-100 border border-customPurple w-full sm:w-auto"
+                >
+                  Lock-In Explainers
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
         <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8 max-w-3xl">
