@@ -160,11 +160,11 @@ const ExplainerPage = () => {
           </div>
 
           {/* Categorising lock-in section */}
-          <div className="pb-8">
+          {/* <div className="pb-8">
             <h1 className="text-2xl sm:text-3xl font-bold py-4 text-center">
               Categorising Lock-In
             </h1>
-          </div>
+          </div> */}
           <div className="flex justify-center mb-6">
             <Image
               src={categorisation}

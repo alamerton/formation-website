@@ -61,16 +61,6 @@ const AboutPage = () => {
             <h1 className="text-3xl md:text-5xl font-kameron text-white mb-6">
               About Us
             </h1>
-            <div className="font-sans">
-              <Link href="/explain">
-                <Button
-                  size="lg"
-                  className="bg-white px-8 py-4 hover:bg-gray-100 text-customPurple text-lg font-medium hover:bg-gray-100 border border-customPurple w-full sm:w-auto"
-                >
-                  Lock-In Explainers
-                </Button>
-              </Link>
-            </div>
           </div>
         </div>
         <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8 max-w-3xl">
@@ -79,9 +69,22 @@ const AboutPage = () => {
             <h2 className="text-lg sm:text-xl md:text-2xl font-semibold py-4">
               Who We Are
             </h2>
-            <p className="text-lg">
+            <p className="text-lg pb-4">
               We are Formation Research, a nonprofit startup research
               organisation focusing on reducing lock-in risks from AI systems.
+            </p>
+            <div className="font-sans flex flex-col items-center">
+              <Link href="/explain">
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-indigo-600 to-indigo-800 px-8 py-4 hover:bg-gray-100 text-white text-lg font-bold  hover:bg-gray-100 border border-customPurple w-full sm:w-auto"
+                >
+                  What are lock-in risks?
+                </Button>
+              </Link>
+            </div>
+
+            <p className="text-lg pt-4">
               Nick Bostrom first thought about AI and lock-in in 2005, but there
               has been almost no work on it since. Our mission is to reduce
               lock-in risks by researching fundamental lock-in dynamics and

@@ -171,7 +171,7 @@ const ResearchPage = () => {
                   <p className="text-gray-700 mb-4">{item.description}</p>
                   <a
                     href={item.link}
-                    className="inline-block bg-customPurple text-white font-open-sans font-medium py-2 px-4 rounded hover:bg-blue-600 transition duration-200"
+                    className="inline-block bg-gradient-to-r from-indigo-600 to-indigo-800 text-white font-open-sans font-bold py-2 px-4 rounded hover:bg-blue-600 transition duration-200"
                   >
                     Learn More
                   </a>
