@@ -47,6 +47,16 @@ export default function RootLayout({
             `,
           }}
         />
+        <Script
+          id="x-pixel-event"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+            twq('event', 'tw-pt1jw-pt1jy', {
+            });
+            `,
+          }}
+        />
         {children}
         <Footer />
       </body>
