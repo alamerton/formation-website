@@ -76,7 +76,7 @@ const Main: React.FC = () => {
               <Link href="http://eepurl.com/jdNh_I">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-indigo-700 to-indigo-800  px-8 py-4 hover:bg-indigo-800 text-white text-lg font-bold w-full sm:w-auto"
+                  className="bg-customPurple  px-8 py-4 hover:bg-indigo-800 text-white text-lg font-bold w-full sm:w-auto"
                 >
                   Newsletter Sign Up
                 </Button>
@@ -84,7 +84,7 @@ const Main: React.FC = () => {
               <Link href="/about">
                 <Button
                   size="lg"
-                  className="bg-white px-8 py-4 hover:bg-indigo-100 text-indigo-800 text-lg font-bold border border-customPurple w-full sm:w-auto"
+                  className="bg-white px-8 py-4 hover:bg-indigo-100 text-customPurple text-lg font-bold border border-customPurple w-full sm:w-auto"
                 >
                   Learn More
                 </Button>
