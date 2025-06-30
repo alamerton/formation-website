@@ -7,7 +7,7 @@ import Head from "next/head";
 const teamMembers = [
   {
     name: "Alfie Lamerton",
-    role: "Founder and Research Lead",
+    role: "Founder and Researcher",
     bio: "Alfie Lamerton is the organisation's founder and research lead. He holds a computer science BSc and artificial intelligence MSc, has completed numerous software engineering, machine learning, and research projects across the fintech industry, academia, and in nonprofits, and been awarded several grants for his research.",
     image: alfieImage,
     email: "alfie.lamerton@formationresearch.com",

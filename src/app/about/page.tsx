@@ -77,7 +77,7 @@ const AboutPage = () => {
               <Link href="/explain">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-indigo-600 to-indigo-800 px-8 py-4 hover:bg-gray-100 text-white text-lg font-bold  hover:bg-gray-100 border border-customPurple w-full sm:w-auto"
+                  className="bg-gradient-to-r from-indigo-600 to-indigo-800 px-8 py-4 hover:bg-gray-100 text-white text-lg font-bold  hover:bg-gray-100 w-full sm:w-auto"
                 >
                   What are lock-in risks?
                 </Button>
