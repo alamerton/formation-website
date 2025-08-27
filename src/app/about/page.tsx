@@ -94,7 +94,7 @@ const AboutPage = () => {
               <br />
               <br />A lock-in is where some feature of the world, typically a
               negative element of human culture, is held stable for a long time.
-              <ul className="list-disc list-inside ml-6 my-4">
+              <ul className="list-inside my-4">
                 <li>
                   <strong>Example 1:</strong> A powerful AI system may gain
                   strategic control of humanity, enforcing a dystopian scenario
