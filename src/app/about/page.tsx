@@ -58,7 +58,7 @@ const AboutPage = () => {
             priority
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center font-serif">
-            <h1 className="text-3xl md:text-5xl font-kameron text-white mb-6">
+            <h1 className="text-3xl md:text-5xl font-serif text-white mb-6">
               About Us
             </h1>
           </div>
@@ -86,10 +86,11 @@ const AboutPage = () => {
 
             <p className="text-lg pt-4">
               Nick Bostrom first thought about AI and lock-in in 2005, but there
-              has been almost no work on it since. Our mission is to reduce
+              has not been much work on it since. Our mission is to reduce
               lock-in risks by researching fundamental lock-in dynamics and
               implementing high-impact interventions, with a view to reducing
-              the likelihood that humanity ends up in a lock-in in the future.
+              the likelihood that humanity ends up in a negative lock-in in the
+              future.
               <br />
               <br />A lock-in is where some feature of the world, typically a
               negative element of human culture, is held stable for a long time.
