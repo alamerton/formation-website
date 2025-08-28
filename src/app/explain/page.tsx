@@ -127,7 +127,7 @@ const ExplainerPage = () => {
             <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center">
               <h2 className="font-semibold mb-2">Potentially Catastrophic</h2>
               <p className="text-sm text-gray-700">
-                Could affect a significant number of individuals.
+                Could affect a substantial number of individuals.
               </p>
             </div>
             <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center">
