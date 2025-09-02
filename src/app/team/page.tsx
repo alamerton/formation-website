@@ -16,7 +16,7 @@ const teamMembers = [
   {
     name: "Adam Jones",
     role: "Adviser",
-    bio: "Adam Jones is an adviser to the organisation, helping steer the organisation's decision making and strategy. He is also working full-time at BlueDot Impact and seconded part-time in the Department for Science, Innovation and Technology, to help advise on governing frontier AI systems.",
+    bio: "Adam Jones is an adviser to the organisation, helping steer the organisation's decision making and strategy. He's currently a member of technical staff at Anthropic, helping develop the Model Context Protocol.",
     image: adamImage,
     email: "domdomegg+adamjones.me@gmail.com",
     linkedin: "https://www.linkedin.com/in/domdomegg/",
@@ -97,7 +97,7 @@ const TeamPage = () => {
             priority
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center font-serif">
-            <h1 className="text-3xl md:text-5xl font-kameron text-white">
+            <h1 className="text-3xl md:text-5xl font-times text-white">
               Our Team
             </h1>
           </div>
