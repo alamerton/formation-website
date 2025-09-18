@@ -238,7 +238,7 @@ const ExplainerPage = () => {
             />
           </div>
           {/* Locked Room Analogy Section */}
-          <h1 className="text-2xl sm:text-3xl font-bold pt-4 text-center">
+          {/* <h1 className="text-2xl sm:text-3xl font-bold pt-4 text-center">
             Locked-Room Analogy
           </h1>
           <p className="text-md sm:text-lg py-4 text-center">
@@ -253,7 +253,7 @@ const ExplainerPage = () => {
             />
           </div>
         </div>
-        <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8 max-w-6xl">
+        <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8 max-w-6xl"> */}
           {/* Timeline explainer section */}
           <h1 className="text-2xl sm:text-3xl font-bold pt-4 text-center">
             Timeline Explainer
