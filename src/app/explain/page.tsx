@@ -3,7 +3,7 @@ import explainerBanner from "@/images/explainer-banner.png";
 import Image from "next/image";
 import categorisation from "@/images/lock-in-categorisation.png";
 import lobster from "@/images/lobster-pot-image.png";
-import lockedRoom from "@/images/locked-room.png";
+// import lockedRoom from "@/images/locked-room.png";
 import timeline from "@/images/timeline.png";
 import Head from "next/head";
 
