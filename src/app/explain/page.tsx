@@ -177,7 +177,7 @@ const ExplainerPage = () => {
           {/* Examples section */}
           <div className="pb-8">
             <h1 className="text-2xl sm:text-3xl font-bold py-4 text-center">
-              What is Lock-In?
+              Examples of Lock-In
             </h1>
           </div>
           <div className="grid grid-cols-2 gap-4 mb-8">
