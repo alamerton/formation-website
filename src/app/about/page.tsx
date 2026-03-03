@@ -1,9 +1,31 @@
 import React from "react";
 import Image from "next/image";
 import aboutBanner from "@/images/about-banner.jpg";
+import alfieImage from "@/images/alfie.jpg";
+import adamImage from "@/images/adam.webp";
+import anthropicLogo from "@/images/anthropic-v2.svg";
+import oxfordLogo from "@/images/University-of-Oxford-scaled.jpg";
+import forethoughtLogo from "@/images/forethought_logo-v2.png";
 import Head from "next/head";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+
+const teamMembers = [
+  {
+    name: "Alfie Lamerton",
+    role: "Founder",
+    bio: "Alfie Lamerton founded Formation Research in 2025. He holds a computer science BSc and artificial intelligence MSc, and has worked as a software engineer, research assistant, and independent researcher. He has participated in several AI safety projects and been awarded several grants for his research.",
+    image: alfieImage,
+    email: "alfie.lamerton@formationresearch.com",
+    linkedin: "https://www.linkedin.com/in/alfie-lamerton/",
+  },
+  {
+    name: "Adam Jones",
+    role: "Trustee",
+    bio: "Adam Jones is a member of technical staff at Anthropic and former AI safety lead at BlueDot Impact.",
+    image: adamImage,
+    email: "domdomegg+adamjones.me@gmail.com",
+    linkedin: "https://www.linkedin.com/in/domdomegg/",
+  },
+];
 
 export const metadata = {
   title:
@@ -49,12 +71,13 @@ const AboutPage = () => {
       </Head>
 
       <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white">
+        {/* Banner */}
         <div className="relative w-full h-64 md:h-96">
           <Image
             src={aboutBanner}
             alt="About Banner"
-            layout="fill"
-            objectFit="cover"
+            fill
+            className="object-cover"
             priority
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center font-serif">
@@ -63,198 +86,283 @@ const AboutPage = () => {
             </h1>
           </div>
         </div>
-        <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8 max-w-3xl">
-          {/* Who we are section */}
-          <div className="container pb-8">
-            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold py-4">
-              Who We Are
-            </h2>
-            <p className="text-lg pb-4">
-              We are Formation Research, a nonprofit startup research
-              organisation focusing on reducing lock-in risks from AI systems.
-            </p>
-            <div className="font-sans flex flex-col items-center">
-              <Link href="/explain">
-                <Button
-                  size="lg"
-                  className="bg-gradient-to-r from-indigo-600 to-indigo-800 px-8 py-4 hover:bg-gray-100 text-white text-lg font-bold  hover:bg-gray-100 w-full sm:w-auto"
-                >
-                  What are lock-in risks?
-                </Button>
-              </Link>
-            </div>
 
-            <p className="text-lg pt-4">
-              Nick Bostrom first thought about AI and lock-in in 2005, but there
-              has not been much work on it since. Our mission is to reduce
-              lock-in risks by researching fundamental lock-in dynamics and
-              implementing high-impact interventions, with a view to reducing
-              the likelihood that humanity ends up in a negative lock-in in the
-              future.
-              <br />
-              <br />A lock-in is where some feature of the world, typically a
-              negative element of human culture, is held stable for a long time.
-              <ul className="list-inside my-4">
-                <li>
-                  <strong>Example 1:</strong> A powerful AI system may gain
-                  strategic control of humanity, enforcing a dystopian scenario
-                  where the AI system competently pursues some goal, preventing
-                  human intervention.
-                </li>
-                <li>
-                  <strong>Example 2:</strong> A human dictator may leverage AI
-                  systems to improve their own lifespan and implement mass
-                  worldwide surveillance, leading to a long-term stable
-                  totalitarian regime.
-                </li>
-              </ul>
-              A future where lock-ins are prevented has the potential for
-              continued technological and cultural evolution, economic growth,
-              sustainable competition, and improved individual freedom. Lock-in
-              may prevent any or all of these properties from being possible in
-              the future. The nature of lock-in prevents people from doing
-              anything about it once it happens.
-              <br />
-            </p>
-          </div>
-          {/* Vision section */}
-          <div className="container pb-8">
-            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold py-4">
-              Our Vision
-            </h2>
-            <div>
-              <p className="text-lg mb-4">Our vision is twofold:</p>
-              <ol className="text-lg list-decimal list-inside space-y-4">
-                <li>
-                  <span className="text-lg font-semibold">
-                    Minimising lock-in risks:
-                  </span>{" "}
-                  To minimise the likelihood that negative elements of culture
-                  become stable to the extent that they are harmful, oppressive,
-                  persistent, or widespread, either accidentally or
-                  deliberately, as a result of humans and AI systems. Or, more
-                  concisely, minimising lock-in risks.
-                </li>
-                <li>
-                  <span className="text-lg font-semibold">
-                    Promoting a dynamic future:
-                  </span>{" "}
-                  We envision a future where lock-ins are prevented as having:
-                  <ul className="list-disc list-inside mt-2 ml-6 space-y-2 text-lg">
-                    <li>Continued technological and cultural evolution</li>
-                    <li>Economic growth</li>
-                    <li>Sustainable competition</li>
-                    <li>Improved individual freedom</li>
-                  </ul>
-                </li>
-              </ol>
-              <p className="text-lg mt-4">
-                Lock-in may prevent any or all of these properties from being
-                true in the future. The nature of lock-in prevents people from
-                doing anything about it once it happens.
+        <div className="container mx-auto px-4 sm:px-6 pt-12 pb-4 max-w-4xl">
+          {/* Mission Statement */}
+          <section className="mb-16">
+            <div className="bg-white rounded-xl shadow-md p-8 border-l-4 border-customPurple">
+              <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-gray-900">
+                Who We Are
+              </h2>
+              <p className="text-lg text-gray-700 leading-relaxed mb-4">
+                Formation Research Ltd is a UK-based not-for-profit company limited by guarantee
+                with 501(c)(3) equivalency determination through NGO Source. We are on a mission
+                to research fundamental <strong>lock-in</strong> dynamics and implement high-impact interventions.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                A lock-in is a situation where some feature of the world, typically a negative
+                element of human culture, becomes stable for a long time. Formation Research
+                focuses on interventions for particularly undesirable lock-in scenarios such as
+                AI-enabled totalitarianism and extreme power concentration.
               </p>
             </div>
-          </div>
-          {/* Approach section */}
-          <h2 className="text-lg sm:text-xl md:text-2xl font-semibold py-4">
-            Our Approach
-          </h2>
-          <div>
-            <p className="text-lg">
-              As we outline in the theory of change, the type of research our
-              organisation will initially conduct is defined by the following
-              values: first-principles, bottom-up, collaborative, scientific and
-              technical research into the behaviours of AI systems and the
-              potential usage of such systems.
-            </p>
+          </section>
 
-            <h3 className="text-lg text-lg font-semibold mt-4 mb-1">
-              First Principles
-            </h3>
-            <p className="text-lg">
-              This is a nascent area of study, and in the spirit of rationality,
-              we believe that thinking about lock-in risks from first principles
-              is the best way to keep unhelpful biases from clouding our
-              research. This is not the same as only using the knowledge we
-              create, that is not realistic. It means forming our own conceptual
-              and theoretical models of the world based on our understanding of
-              the laws of physics and computation, and testing the assumptions
-              borrowed from other fields before employing them.
-            </p>
+          {/* Current Research Focus */}
+          <section className="mb-16">
+            <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-gray-900">
+              Current Research Focus
+            </h2>
+            <div className="bg-white rounded-xl shadow-md p-8">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900">Secret Loyalties</h3>
+              <p className="text-gray-700 mb-4">
+                A promising technical intervention direction for lock-in risk is secret loyalties research.
+                A <strong>secret loyalty</strong> is an objective encoded in a language model that favours
+                a specific actor or the goals of that actor, activated by a private activation condition.
+              </p>
+              <p className="text-gray-700">
+                Secret loyalties are a mechanism for AI-enabled authoritarianism, power concentration,
+                and similar lock-in risks from AI systems. There is concrete technical research that
+                can be done on understanding and mitigating secret loyalties with current systems.
+              </p>
+            </div>
+          </section>
+        </div>
 
-            <h3 className="text-lg text-md font-semibold mt-4 mb-1">
-              Bottom-up Research
-            </h3>
-            <p className="text-lg">
-              Building inside-view theoretical and conceptual models of lock-in
-              based on simple facts about AI systems and game theory, rather
-              than resting on the conceptual models of other fields or
-              organisations. For example, we would not just implement existing
-              risk management protocols, alignment strategies, or follow the
-              s-risk template in our research.
+        {/* Collaborations Banner - Full Width */}
+        <div className="bg-white pt-4 pb-12 md:pt-6 md:pb-16">
+          <div className="container mx-auto px-4">
+            <p className="text-center text-gray-500 text-sm uppercase tracking-wider mb-8">
+              In collaboration with researchers at
             </p>
-
-            <h3 className="text-lg text-md font-semibold mt-4 mb-1">
-              Collaborative Research
-            </h3>
-            <p className="text-lg">
-              We aim to be a collaborative organisation that works with AI
-              safety research organisations with overlapping goals. We also
-              expect to conduct interdisciplinary work with organisations that
-              conduct other kinds of research, e.g., think tanks which conduct
-              economic research who may approach lock-in from a different point
-              of view.
-            </p>
-
-            <h3 className="text-lg font-semibold mt-4 mb-1">
-              Scientific Research
-            </h3>
-            <p className="text-lg">
-              We plan to use the scientific method in our research with the goal
-              of creating fundamental knowledge about lock-in risks. We plan to
-              use:
-            </p>
-            <ul className="list-disc list-inside mt-2 space-y-2">
-              <li className="text-lg ml-4">
-                Conjecture with first principles, forecasting, and estimation,
-              </li>
-              <li className="text-lg ml-4">
-                Criticism through feedback, peer review, and publication,
-              </li>
-              <li className="text-lg ml-4">
-                Error-correction by updating our world models in light of
-                feedback and review,
-              </li>
-            </ul>
-            <p className="text-lg mt-2">
-              to make scientific progress on lock-in with good explanations.
-            </p>
-
-            <h3 className="text-lg font-semibold mt-4 mb-1">
-              Technical Research
-            </h3>
-            <p className="text-lg">
-              We will also use the scientific method with real-world
-              applications and interventions in mind. We want to create
-              applicable knowledge that can be applied to solving problems. We
-              want to use the existing and created knowledge to develop
-              interventions and innovate mitigations for lock-in risks.
-            </p>
-
-            <h3 className="text-lg font-semibold mt-4 mb-1">
-              Validated Learning
-            </h3>
-            <p className="text-lg">
-              We believe in the build, measure, learn approach to creating and
-              scaling solutions to problems. In the context of lock-in
-              minimisation, this means continuously updating our theory of
-              change, research agenda, and interventions upon updates to our
-              world models. We aim to always use evidence and reason to update
-              those world models.
-            </p>
+            <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 -ml-4 md:-ml-8">
+              <a href="https://www.anthropic.com" target="_blank" rel="noopener noreferrer" className="opacity-70 hover:opacity-100 transition-opacity duration-200">
+                <Image src={anthropicLogo} alt="Anthropic" width={110} height={35} className="h-7 w-auto" />
+              </a>
+              <a href="https://www.ox.ac.uk" target="_blank" rel="noopener noreferrer" className="opacity-70 hover:opacity-100 transition-opacity duration-200">
+                <Image src={oxfordLogo} alt="University of Oxford" width={200} height={70} className="h-16 w-auto" />
+              </a>
+              <a href="https://www.forethought.org" target="_blank" rel="noopener noreferrer" className="opacity-70 hover:opacity-100 transition-opacity duration-200">
+                <Image src={forethoughtLogo} alt="Forethought" width={180} height={60} className="h-14 w-auto" />
+              </a>
+            </div>
           </div>
         </div>
-        <div className="h-64"></div>
+
+        <div className="container mx-auto px-4 sm:px-6 py-12 max-w-4xl">
+          {/* Lock-in Scenarios */}
+          <section className="mb-16">
+            <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-gray-900">
+              Lock-In Scenarios We Study
+            </h2>
+            <p className="text-lg text-gray-700 mb-6">
+              We focus on a range of undesirable lock-in scenarios, including:
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <div className="w-12 h-12 bg-gradient-to-r from-violet-800 to-indigo-900 rounded-lg flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold mb-2 text-gray-900">AI-Enabled Totalitarianism</h3>
+                <p className="text-gray-600">
+                  A human dictator may leverage AI systems to improve their own lifespan
+                  and implement mass worldwide surveillance, leading to a long-term stable
+                  totalitarian regime.
+                </p>
+              </div>
+              <div className="bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <div className="w-12 h-12 bg-gradient-to-r from-violet-800 to-indigo-900 rounded-lg flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold mb-2 text-gray-900">Extreme Power Concentration</h3>
+                <p className="text-gray-600">
+                  Individuals at the forefront of the AI revolution may end up with high
+                  leverage over the technological and political trajectory of humanity,
+                  creating persistent monopolies over resources and labour.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Vision */}
+          <section className="mb-16">
+            <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-gray-900">
+              Our Vision
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-gradient-to-br from-violet-800 to-indigo-900 rounded-xl p-6 text-white">
+                <h3 className="text-xl font-semibold mb-3">Minimising Lock-In Risks</h3>
+                <p className="text-violet-100">
+                  Reducing the likelihood that harmful, oppressive, or persistent elements
+                  of culture become stable, whether through human action or AI systems.
+                </p>
+              </div>
+              <div className="bg-white rounded-xl shadow-md p-6 border border-gray-200">
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">Promoting a Dynamic Future</h3>
+                <ul className="space-y-2 text-gray-600">
+                  <li className="flex items-center">
+                    <svg className="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    Continued technological and cultural evolution
+                  </li>
+                  <li className="flex items-center">
+                    <svg className="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    Economic growth
+                  </li>
+                  <li className="flex items-center">
+                    <svg className="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    Sustainable competition
+                  </li>
+                  <li className="flex items-center">
+                    <svg className="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    Improved individual freedom
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          {/* Approach */}
+          <section className="mb-16">
+            <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-gray-900">
+              Our Approach
+            </h2>
+            <p className="text-lg text-gray-700 mb-8">
+              Our research is defined by first-principles, bottom-up, collaborative,
+              scientific and technical investigation into AI systems and their potential uses.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="bg-white rounded-lg shadow p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <h3 className="font-semibold mb-2 text-gray-900">First Principles</h3>
+                <p className="text-sm text-gray-600">
+                  Building conceptual models from fundamental understanding of physics
+                  and computation, testing assumptions before employing them.
+                </p>
+              </div>
+              <div className="bg-white rounded-lg shadow p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <h3 className="font-semibold mb-2 text-gray-900">Bottom-Up Research</h3>
+                <p className="text-sm text-gray-600">
+                  Creating inside-view theoretical models based on simple facts about
+                  AI systems and game theory.
+                </p>
+              </div>
+              <div className="bg-white rounded-lg shadow p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <h3 className="font-semibold mb-2 text-gray-900">Collaborative</h3>
+                <p className="text-sm text-gray-600">
+                  Working with AI safety organisations and conducting interdisciplinary
+                  research with think tanks and economists.
+                </p>
+              </div>
+              <div className="bg-white rounded-lg shadow p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <h3 className="font-semibold mb-2 text-gray-900">Scientific Method</h3>
+                <p className="text-sm text-gray-600">
+                  Using conjecture, criticism through peer review, and error-correction
+                  to create fundamental knowledge about lock-in risks.
+                </p>
+              </div>
+              <div className="bg-white rounded-lg shadow p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <h3 className="font-semibold mb-2 text-gray-900">Technical Research</h3>
+                <p className="text-sm text-gray-600">
+                  Creating applicable knowledge for real-world interventions and
+                  developing practical mitigations for lock-in risks.
+                </p>
+              </div>
+              <div className="bg-white rounded-lg shadow p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <h3 className="font-semibold mb-2 text-gray-900">Validated Learning</h3>
+                <p className="text-sm text-gray-600">
+                  Continuously updating our research agenda and interventions based
+                  on evidence and reason.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Team */}
+          <section className="mb-16">
+            <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-gray-900">
+              Our Team
+            </h2>
+            <div className="space-y-8">
+              {teamMembers.map((member, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-xl shadow-md p-6 md:p-8 transition-all duration-300 hover:shadow-lg"
+                >
+                  <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
+                    <div className="flex-shrink-0">
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        width={160}
+                        height={160}
+                        className="rounded-full shadow-md"
+                      />
+                    </div>
+                    <div className="flex-1 text-center md:text-left">
+                      <h3 className="text-xl font-semibold text-gray-900">{member.name}</h3>
+                      <p className="text-customPurple font-medium mb-3">{member.role}</p>
+                      <p className="text-gray-600 mb-4">{member.bio}</p>
+                      <div className="flex justify-center md:justify-start space-x-3">
+                        {member.email && (
+                          <a
+                            href={`mailto:${member.email}`}
+                            className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 text-customPurple hover:bg-customPurple hover:text-white transition-all duration-200"
+                            aria-label="Email"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="h-5 w-5"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                              />
+                            </svg>
+                          </a>
+                        )}
+                        {member.linkedin && (
+                          <a
+                            href={member.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 text-customPurple hover:bg-customPurple hover:text-white transition-all duration-200"
+                            aria-label="LinkedIn"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="h-5 w-5"
+                              fill="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        </div>
       </div>
     </>
   );

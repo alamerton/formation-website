@@ -118,7 +118,7 @@ const Header: React.FC = () => {
     py-6 md:py-0 space-y-4 md:space-y-0 overflow-y-auto
     transition-all duration-300 ease-in-out z-40`}
         >
-          {["Home", "About", "Theory of Change", "Team", "Research"].map(
+          {["Home", "About", "Research"].map(
             (item) => (
               <li key={item} className="px-4 md:px-0">
                 <Link
@@ -135,6 +135,15 @@ const Header: React.FC = () => {
               </li>
             )
           )}
+          <li className="px-4 md:px-0">
+            <Link
+              href="http://eepurl.com/jdNh_I"
+              className="block py-4 md:py-2 text-center md:text-left bg-gradient-to-r from-violet-800 to-indigo-900 md:px-4 md:rounded hover:opacity-90 transition-all duration-300"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Newsletter
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>

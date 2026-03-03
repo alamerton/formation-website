@@ -61,15 +61,15 @@ const ExplainerPage = () => {
           <Image
             src={explainerBanner}
             alt="A purple banner illustrating Formation Research's mission to reduce lock-in risks"
-            layout="fill"
-            objectFit="cover"
+            fill
+            className="object-cover"
             priority
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-center">
-            <h1 className="text-4xl md:text-6xl font-serif text-white mb-4">
+            <h1 className="text-4xl md:text-6xl font-serif text-white mb-4 animate-fade-in">
               Lock-In Risk
             </h1>
-            <p className="text-xl md:text-2xl text-gray-200 mb-2 mt-4 mr-8 ml-8">
+            <p className="text-xl md:text-2xl text-gray-200 mb-2 mt-4 mr-8 ml-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
               The likelihood that negative elements of the world become stable
               for a long time.
             </p>
@@ -88,27 +88,27 @@ const ExplainerPage = () => {
               Possibly for centuries. Possibly forever.
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-4 mb-8">
-            <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+            <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
               <h2 className="font-semibold  mb-2">A Physical Phenomenon</h2>
               <p className="text-sm text-gray-700">
                 Emerges from the dynamics of irreversibility in complex systems.
               </p>
             </div>
-            <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center">
+            <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
               <h2 className="font-semibold mb-2">Self-Perpetuating</h2>
               <p className="text-sm text-gray-700">
                 Once embedded, elements self-reinforce and resist change.
               </p>
             </div>
-            <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center">
+            <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
               <h2 className="font-semibold mb-2">Multi-Scalar</h2>
               <p className="text-sm text-gray-700">
                 Can operate at multiple levels from organisation-level tech
                 stacks to global ideologies.
               </p>
             </div>
-            <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center">
+            <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
               <h2 className="font-semibold mb-2">Long-Term</h2>
               <p className="text-sm text-gray-700">
                 Can operate across long time horizons, from years, to decades,
@@ -123,33 +123,33 @@ const ExplainerPage = () => {
               What are Lock-In Risks?
             </h1>
           </div>
-          <div className="grid grid-cols-2 gap-4 mb-8">
-            <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+            <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
               <h2 className="font-semibold mb-2">Potentially Catastrophic</h2>
               <p className="text-sm text-gray-700">
                 Could affect a substantial number of individuals.
               </p>
             </div>
-            <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center">
+            <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
               <h2 className="font-semibold mb-2">Neglected</h2>
               <p className="text-sm text-gray-700">
                 Few organisations or individuals track or model lock-in risk.
               </p>
             </div>
-            <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center">
+            <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
               <h2 className="font-semibold mb-2">A Moral Problem</h2>
               <p className="text-sm text-gray-700">
                 Could perpetuate or create suffering and prevent progress.
               </p>
             </div>
-            <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center">
+            <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
               <h2 className="font-semibold mb-2">A Global Problem</h2>
               <p className="text-sm text-gray-700">
                 Could affect institutions, states, nations, or the world.
               </p>
             </div>
           </div>
-          <div className="bg-white rounded-lg shadow p-4 mt-4 mb-8">
+          <div className="bg-white rounded-lg shadow p-4 mt-4 mb-8 transition-all duration-300 hover:shadow-lg">
             <h3 className="font-semibold mb-2 text-center">Definition</h3>
             <p className="text-sm text-gray-700 text-center">
               Defined as a subjective probability in [0, 1] that a negative
@@ -169,9 +169,8 @@ const ExplainerPage = () => {
             <Image
               src={categorisation}
               alt="Diagram showing how we taxonomise lock-in into different categories."
-              layout="responsive"
+              className="w-full h-auto rounded-lg"
               priority
-              className="rounded-lg"
             />
           </div>
           {/* Examples section */}
@@ -180,8 +179,8 @@ const ExplainerPage = () => {
               Examples of Lock-In
             </h1>
           </div>
-          <div className="grid grid-cols-2 gap-4 mb-8">
-            <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+            <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
               <h2 className="font-semibold  mb-2">QWERTY Keyboard</h2>
               <p className="text-sm text-gray-700">
                 Classic example of an efficiency lock-in. QWERTY is the industry
@@ -191,7 +190,7 @@ const ExplainerPage = () => {
                 switching to a layout like Colemak is high.
               </p>
             </div>
-            <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center">
+            <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
               <h2 className="font-semibold mb-2">Stable Totalitarianism</h2>
               <p className="text-sm text-gray-700">
                 Potentially high-impact negative lock-in that could last a long
@@ -200,7 +199,7 @@ const ExplainerPage = () => {
                 successfully reign over a state for centuries or millennia.
               </p>
             </div>
-            <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center">
+            <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
               <h2 className="font-semibold mb-2">
                 AI-Driven Power Concentration
               </h2>
@@ -212,7 +211,7 @@ const ExplainerPage = () => {
                 labour
               </p>
             </div>
-            <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center">
+            <div className="bg-white rounded-lg shadow p-4 flex flex-col text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
               <h2 className="font-semibold mb-2">Ideological Stasis</h2>
               <p className="text-sm text-gray-700">
                 Dogmatic or anti-rational belief systems could prevail over the
@@ -232,9 +231,8 @@ const ExplainerPage = () => {
             <Image
               src={lobster}
               alt="Picture of a lobster crawling into a lobster pot and being unable to get out"
-              layout="responsive"
+              className="w-full h-auto rounded-lg"
               priority
-              className="rounded-lg"
             />
           </div>
           {/* Locked Room Analogy Section */}
@@ -248,7 +246,7 @@ const ExplainerPage = () => {
             <Image
               src={lockedRoom}
               alt="3 panel image of a person being locked in a room by a human and a robot, with descriptions of the effects of this"
-              layout="responsive"
+              className="w-full h-auto"
               priority
             />
           </div>
@@ -265,7 +263,7 @@ const ExplainerPage = () => {
             <Image
               src={timeline}
               alt="3 panel image of a person being locked in a room by a human and a robot, with descriptions of the effects of this"
-              layout="responsive"
+              className="w-full h-auto"
               priority
             />
           </div>
