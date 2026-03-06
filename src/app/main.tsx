@@ -62,15 +62,15 @@ const Main: React.FC = () => {
             priority
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-center">
-            <h1 className="text-4xl md:text-6xl font-serif text-white mb-4 animate-fade-in">
+            <h1 className="text-4xl md:text-6xl font-serif text-white mb-4 opacity-0 animate-fade-in">
               Welcome to Formation
             </h1>
-            <p className="text-xl md:text-2xl text-gray-200 mb-8 mt-4 mr-8 ml-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <p className="text-xl md:text-2xl text-gray-200 mb-8 mt-4 mr-8 ml-8 opacity-0 animate-fade-in" style={{ animationDelay: '0.2s' }}>
               Formation Research aims to reduce lock-in risks by researching
               fundamental lock-in dynamics and implementing high-impact
               interventions.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in" style={{ animationDelay: '0.4s' }}>
               <Link href="http://eepurl.com/jdNh_I">
                 <Button
                   size="lg"
