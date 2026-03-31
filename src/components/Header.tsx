@@ -138,10 +138,19 @@ const Header: React.FC = () => {
           <li className="px-4 md:px-0">
             <Link
               href="http://eepurl.com/jdNh_I"
-              className="block py-4 md:py-2 text-center md:text-left bg-gradient-to-r from-violet-800 to-indigo-900 md:px-4 md:rounded hover:opacity-90 transition-all duration-300"
+              className="block py-4 md:py-2 text-center md:text-left border border-white/30 md:px-4 md:rounded hover:bg-white/10 transition-all duration-300"
               onClick={() => setIsMenuOpen(false)}
             >
               Newsletter
+            </Link>
+          </li>
+          <li className="px-4 md:px-0">
+            <Link
+              href="https://tally.so/r/5BLpOE"
+              className="block py-4 md:py-2 text-center md:text-left bg-gradient-to-r from-violet-800 to-indigo-900 md:px-4 md:rounded hover:opacity-90 transition-all duration-300"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Register Interest
             </Link>
           </li>
         </ul>
