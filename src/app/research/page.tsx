@@ -1,6 +1,7 @@
 import Image from "next/image";
 import researchBanner from "@/images/research-banner.jpg";
 import recommender from "@/images/recommender.jpg";
+import narrowLoyalty from "@/images/narrow-loyalty.jpg";
 import Head from "next/head";
 
 const researchItems = [
@@ -8,10 +9,19 @@ const researchItems = [
     id: 1,
     image: recommender,
     title: "Lock-In",
-    date: "",
+    date: "March 6, 2025",
     description:
       "This sequence contains key information regarding lock-in: the positioning and purpose of Formation Research, the definition of lock-in and its threat models, an evaluation for lock-in risk, and intervention proposals for reducing lock-in risks.",
     link: "https://www.lesswrong.com/s/yP8Zs4Tuog6tDES5b",
+  },
+  {
+    id: 2,
+    image: narrowLoyalty,
+    title: "Narrow Secret Loyalty Dodges Black-Box Audits",
+    date: "April 22, 2026",
+    description:
+      "We trained Qwen2.5-instruct models (1.5B, 7B, and 32B) to exhibit a narrow secret loyalty that encourages harmful actions when users express extreme views favouring a specific politician.",
+    link: "https://www.lesswrong.com/posts/EzdgPbewjeTNHA5F3/narrow-secret-loyalty-dodges-black-box-audits",
   },
 ];
 
