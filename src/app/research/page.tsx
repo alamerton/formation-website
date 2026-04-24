@@ -2,6 +2,7 @@ import Image from "next/image";
 import researchBanner from "@/images/research-banner.jpg";
 import recommender from "@/images/recommender.jpg";
 import narrowLoyalty from "@/images/narrow-loyalty.jpg";
+import powerConcentrationSurvey from "@/images/power-concentration-survey.jpg";
 import Head from "next/head";
 
 const researchItems = [
@@ -22,6 +23,16 @@ const researchItems = [
     description:
       "We trained Qwen2.5-instruct models (1.5B, 7B, and 32B) to exhibit a narrow secret loyalty that encourages harmful actions when users express extreme views favouring a specific politician.",
     link: "https://www.lesswrong.com/posts/EzdgPbewjeTNHA5F3/narrow-secret-loyalty-dodges-black-box-audits",
+  },
+  {
+    id: 3,
+    image: powerConcentrationSurvey,
+    title: "A Survey of AI-Driven Power Concentration",
+    date: "April 24, 2026",
+    description:
+      "A survey of AI-driven power concentration covering three threat models and four intervention families, finding that no single intervention addresses all three threats.",
+    link: "/power-concentration-survey.pdf",
+    newTab: true,
   },
 ];
 
@@ -118,6 +129,8 @@ const ResearchPage = () => {
                   <p className="text-gray-700 mb-4">{item.description}</p>
                   <a
                     href={item.link}
+                    target={item.newTab ? "_blank" : undefined}
+                    rel={item.newTab ? "noopener noreferrer" : undefined}
                     className="inline-block bg-gradient-to-r from-violet-800 to-indigo-900 text-white font-semibold py-2 px-4 rounded hover:opacity-90 transition-opacity duration-200"
                   >
                     Learn More
