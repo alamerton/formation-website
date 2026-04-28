@@ -406,7 +406,7 @@ const AboutPage = () => {
                 </h3>
                 <p className="text-sm text-gray-600">
                   Working with AI safety organisations and conducting
-                  interdisciplinary research with think tanks and economists.
+                  interdisciplinary research with other researchers.
                 </p>
               </div>
               <div className="bg-white rounded-lg shadow p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
