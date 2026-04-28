@@ -114,15 +114,18 @@ const AboutPage = () => {
                 Who We Are
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                Formation Research Ltd is a UK-based not-for-profit company limited by guarantee
-                with 501(c)(3) equivalency determination through NGO Source. We are on a mission
-                to research fundamental <strong>lock-in</strong> dynamics and implement high-impact interventions.
+                Formation Research Ltd is a UK-based not-for-profit company
+                limited by guarantee with 501(c)(3) equivalency determination
+                through NGO Source. We are on a mission to research fundamental{" "}
+                <strong>lock-in</strong> dynamics and implement high-impact
+                interventions.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
-                A lock-in is a situation where some feature of the world, typically a negative
-                element of human culture, becomes stable for a long time. Formation Research
-                focuses on interventions for particularly undesirable lock-in scenarios such as
-                AI-enabled totalitarianism and extreme power concentration.
+                A lock-in is a situation where some feature of the world,
+                typically a negative element of human culture, becomes stable
+                for a long time. Formation Research focuses on interventions for
+                particularly undesirable lock-in scenarios such as AI-enabled
+                totalitarianism and extreme power concentration.
               </p>
             </div>
           </section>
@@ -133,16 +136,22 @@ const AboutPage = () => {
               Current Research Focus
             </h2>
             <div className="bg-white rounded-xl shadow-md p-8">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900">Secret Loyalties</h3>
+              <h3 className="text-xl font-semibold mb-3 text-gray-900">
+                Secret Loyalties
+              </h3>
               <p className="text-gray-700 mb-4">
-                A promising technical intervention direction for lock-in risk is secret loyalties research.
-                A <strong>secret loyalty</strong> is an objective encoded in a language model that favours
-                a specific actor or the goals of that actor, activated by a private activation condition.
+                A promising technical intervention direction for lock-in risk is
+                secret loyalties research. A <strong>secret loyalty</strong> is
+                an objective encoded in a language model that favours a specific
+                actor or the goals of that actor, activated by a private
+                activation condition.
               </p>
               <p className="text-gray-700">
-                Secret loyalties are a mechanism for AI-enabled authoritarianism, power concentration,
-                and similar lock-in risks from AI systems. There is concrete technical research that
-                can be done on understanding and mitigating secret loyalties with current systems.
+                Secret loyalties are a mechanism for AI-enabled
+                authoritarianism, power concentration, and similar lock-in risks
+                from AI systems. There is concrete technical research that can
+                be done on understanding and mitigating secret loyalties with
+                current systems.
               </p>
             </div>
           </section>
@@ -155,14 +164,47 @@ const AboutPage = () => {
               In collaboration with researchers at
             </p>
             <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 -ml-4 md:-ml-8">
-              <a href="https://www.anthropic.com" target="_blank" rel="noopener noreferrer" className="opacity-70 hover:opacity-100 transition-opacity duration-200">
-                <Image src={anthropicLogo} alt="Anthropic" width={110} height={35} className="h-7 w-auto" />
+              <a
+                href="https://www.anthropic.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="opacity-70 hover:opacity-100 transition-opacity duration-200"
+              >
+                <Image
+                  src={anthropicLogo}
+                  alt="Anthropic"
+                  width={110}
+                  height={35}
+                  className="h-7 w-auto"
+                />
               </a>
-              <a href="https://www.ox.ac.uk" target="_blank" rel="noopener noreferrer" className="opacity-70 hover:opacity-100 transition-opacity duration-200">
-                <Image src={oxfordLogo} alt="University of Oxford" width={200} height={70} className="h-16 w-auto" />
+              <a
+                href="https://www.ox.ac.uk"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="opacity-70 hover:opacity-100 transition-opacity duration-200"
+              >
+                <Image
+                  src={oxfordLogo}
+                  alt="University of Oxford"
+                  width={200}
+                  height={70}
+                  className="h-16 w-auto"
+                />
               </a>
-              <a href="https://www.forethought.org" target="_blank" rel="noopener noreferrer" className="opacity-70 hover:opacity-100 transition-opacity duration-200">
-                <Image src={forethoughtLogo} alt="Forethought" width={180} height={60} className="h-14 w-auto" />
+              <a
+                href="https://www.forethought.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="opacity-70 hover:opacity-100 transition-opacity duration-200"
+              >
+                <Image
+                  src={forethoughtLogo}
+                  alt="Forethought"
+                  width={180}
+                  height={60}
+                  className="h-14 w-auto"
+                />
               </a>
             </div>
           </div>
@@ -180,29 +222,59 @@ const AboutPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                 <div className="w-12 h-12 bg-gradient-to-r from-violet-800 to-indigo-900 rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  <svg
+                    className="w-6 h-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                    />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold mb-2 text-gray-900">AI-Enabled Totalitarianism</h3>
+                <h3 className="text-lg font-semibold mb-2 text-gray-900">
+                  AI-Enabled Totalitarianism
+                </h3>
                 <p className="text-gray-600">
-                  A human dictator may leverage AI systems to improve their own lifespan
-                  and implement mass worldwide surveillance, leading to a long-term stable
-                  totalitarian regime.
+                  A human dictator may leverage AI systems to improve their own
+                  lifespan and implement mass worldwide surveillance, leading to
+                  a long-term stable totalitarian regime.
                 </p>
               </div>
               <div className="bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                 <div className="w-12 h-12 bg-gradient-to-r from-violet-800 to-indigo-900 rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  <svg
+                    className="w-6 h-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                    />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold mb-2 text-gray-900">Extreme Power Concentration</h3>
+                <h3 className="text-lg font-semibold mb-2 text-gray-900">
+                  Extreme Power Concentration
+                </h3>
                 <p className="text-gray-600">
-                  Individuals at the forefront of the AI revolution may end up with high
-                  leverage over the technological and political trajectory of humanity,
-                  creating persistent monopolies over resources and labour.
+                  Individuals at the forefront of the AI revolution may end up
+                  with high leverage over the technological and political
+                  trajectory of humanity, creating persistent monopolies over
+                  resources and labour.
                 </p>
               </div>
             </div>
@@ -215,36 +287,81 @@ const AboutPage = () => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-gradient-to-br from-violet-800 to-indigo-900 rounded-xl p-6 text-white">
-                <h3 className="text-xl font-semibold mb-3">Minimising Lock-In Risks</h3>
+                <h3 className="text-xl font-semibold mb-3">
+                  Minimising Lock-In Risks
+                </h3>
                 <p className="text-violet-100">
-                  Reducing the likelihood that harmful, oppressive, or persistent elements
-                  of culture become stable, whether through human action or AI systems.
+                  Reducing the likelihood that harmful, oppressive, persistent
+                  elements of culture become stable, whether through human
+                  action or AI systems.
                 </p>
               </div>
               <div className="bg-white rounded-xl shadow-md p-6 border border-gray-200">
-                <h3 className="text-xl font-semibold mb-3 text-gray-900">Promoting a Dynamic Future</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">
+                  Promoting a Dynamic Future
+                </h3>
                 <ul className="space-y-2 text-gray-600">
                   <li className="flex items-center">
-                    <svg className="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    <svg
+                      className="w-5 h-5 text-green-500 mr-2 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
                     </svg>
                     Continued technological and cultural evolution
                   </li>
                   <li className="flex items-center">
-                    <svg className="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    <svg
+                      className="w-5 h-5 text-green-500 mr-2 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
                     </svg>
                     Economic growth
                   </li>
                   <li className="flex items-center">
-                    <svg className="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    <svg
+                      className="w-5 h-5 text-green-500 mr-2 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
                     </svg>
                     Sustainable competition
                   </li>
                   <li className="flex items-center">
-                    <svg className="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    <svg
+                      className="w-5 h-5 text-green-500 mr-2 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
                     </svg>
                     Improved individual freedom
                   </li>
@@ -259,50 +376,65 @@ const AboutPage = () => {
               Our Approach
             </h2>
             <p className="text-lg text-gray-700 mb-8">
-              Our research is defined by first-principles, bottom-up, collaborative,
-              scientific and technical investigation into AI systems and their potential uses.
+              Our research is defined by first-principles, bottom-up,
+              collaborative, scientific and technical investigation into AI
+              systems and their potential uses.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               <div className="bg-white rounded-lg shadow p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                <h3 className="font-semibold mb-2 text-gray-900">First Principles</h3>
+                <h3 className="font-semibold mb-2 text-gray-900">
+                  First Principles
+                </h3>
                 <p className="text-sm text-gray-600">
-                  Building conceptual models from fundamental understanding of physics
-                  and computation, testing assumptions before employing them.
+                  Building conceptual models from fundamental understanding of
+                  physics and computation, testing assumptions before employing
+                  them.
                 </p>
               </div>
               <div className="bg-white rounded-lg shadow p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                <h3 className="font-semibold mb-2 text-gray-900">Bottom-Up Research</h3>
+                <h3 className="font-semibold mb-2 text-gray-900">
+                  Bottom-Up Research
+                </h3>
                 <p className="text-sm text-gray-600">
-                  Creating inside-view theoretical models based on simple facts about
-                  AI systems and game theory.
+                  Creating inside-view theoretical models based on simple facts
+                  about AI systems and game theory.
                 </p>
               </div>
               <div className="bg-white rounded-lg shadow p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                <h3 className="font-semibold mb-2 text-gray-900">Collaborative</h3>
+                <h3 className="font-semibold mb-2 text-gray-900">
+                  Collaborative
+                </h3>
                 <p className="text-sm text-gray-600">
-                  Working with AI safety organisations and conducting interdisciplinary
-                  research with think tanks and economists.
+                  Working with AI safety organisations and conducting
+                  interdisciplinary research with think tanks and economists.
                 </p>
               </div>
               <div className="bg-white rounded-lg shadow p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                <h3 className="font-semibold mb-2 text-gray-900">Scientific Method</h3>
+                <h3 className="font-semibold mb-2 text-gray-900">
+                  Scientific Method
+                </h3>
                 <p className="text-sm text-gray-600">
-                  Using conjecture, criticism through peer review, and error-correction
-                  to create fundamental knowledge about lock-in risks.
+                  Using conjecture, criticism through peer review, and
+                  error-correction to create fundamental knowledge about lock-in
+                  risks.
                 </p>
               </div>
               <div className="bg-white rounded-lg shadow p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                <h3 className="font-semibold mb-2 text-gray-900">Technical Research</h3>
+                <h3 className="font-semibold mb-2 text-gray-900">
+                  Technical Research
+                </h3>
                 <p className="text-sm text-gray-600">
                   Creating applicable knowledge for real-world interventions and
                   developing practical mitigations for lock-in risks.
                 </p>
               </div>
               <div className="bg-white rounded-lg shadow p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                <h3 className="font-semibold mb-2 text-gray-900">Validated Learning</h3>
+                <h3 className="font-semibold mb-2 text-gray-900">
+                  Validated Learning
+                </h3>
                 <p className="text-sm text-gray-600">
-                  Continuously updating our research agenda and interventions based
-                  on evidence and reason.
+                  Continuously updating our research agenda and interventions
+                  based on evidence and reason.
                 </p>
               </div>
             </div>
@@ -330,8 +462,12 @@ const AboutPage = () => {
                       />
                     </div>
                     <div className="flex-1 text-center md:text-left">
-                      <h3 className="text-xl font-semibold text-gray-900">{member.name}</h3>
-                      <p className="text-customPurple font-medium mb-3">{member.role}</p>
+                      <h3 className="text-xl font-semibold text-gray-900">
+                        {member.name}
+                      </h3>
+                      <p className="text-customPurple font-medium mb-3">
+                        {member.role}
+                      </p>
                       <p className="text-gray-600 mb-4">{member.bio}</p>
                       <div className="flex justify-center md:justify-start space-x-3">
                         {member.email && (
