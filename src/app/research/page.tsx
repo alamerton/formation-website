@@ -3,6 +3,7 @@ import researchBanner from "@/images/research-banner.jpg";
 import recommender from "@/images/recommender.jpg";
 import narrowLoyalty from "@/images/narrow-loyalty.jpg";
 import powerConcentrationSurvey from "@/images/power-concentration-survey.jpg";
+import secretLoyalties from "@/images/secret-loyalties.jpg";
 import Head from "next/head";
 
 const researchItems = [
@@ -23,6 +24,8 @@ const researchItems = [
     description:
       "We trained Qwen2.5-instruct models (1.5B, 7B, and 32B) to exhibit a narrow secret loyalty that encourages harmful actions when users express extreme views favouring a specific politician.",
     link: "https://www.lesswrong.com/posts/EzdgPbewjeTNHA5F3/narrow-secret-loyalty-dodges-black-box-audits",
+    linkLabel: "LessWrong",
+    paperLink: "/narrow-secret-loyalty-paper.pdf",
   },
   {
     id: 3,
@@ -33,6 +36,17 @@ const researchItems = [
       "A survey of AI-driven power concentration covering three threat models and four intervention families, finding that no single intervention addresses all three threats.",
     link: "/power-concentration-survey.pdf",
     newTab: true,
+  },
+  {
+    id: 4,
+    image: secretLoyalties,
+    title: "AIs with Secret Loyalties are a Serious but Addressable Threat",
+    date: "May 6, 2026",
+    description:
+      "This paper argues that the technical AI research community should prioritize studying and defending against a distinct, neglected threat: secret loyalties.",
+    link: "/secret-loyalties-whitepaper.pdf",
+    newTab: true,
+    containImage: true,
   },
 ];
 
@@ -115,26 +129,38 @@ const ResearchPage = () => {
                 key={item.id}
                 className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
               >
-                <div className="relative h-48">
+                <div className={`relative h-48 ${item.containImage ? "bg-white p-4" : ""}`}>
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-cover"
+                    className={item.containImage ? "object-contain" : "object-cover"}
                   />
                 </div>
                 <div className="p-6">
                   <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
                   {item.date && <p className="text-sm text-gray-600 mb-4">{item.date}</p>}
                   <p className="text-gray-700 mb-4">{item.description}</p>
-                  <a
-                    href={item.link}
-                    target={item.newTab ? "_blank" : undefined}
-                    rel={item.newTab ? "noopener noreferrer" : undefined}
-                    className="inline-block bg-gradient-to-r from-violet-800 to-indigo-900 text-white font-semibold py-2 px-4 rounded hover:opacity-90 transition-opacity duration-200"
-                  >
-                    Learn More
-                  </a>
+                  <div className="flex flex-wrap gap-2">
+                    <a
+                      href={item.link}
+                      target={item.newTab ? "_blank" : undefined}
+                      rel={item.newTab ? "noopener noreferrer" : undefined}
+                      className="inline-block bg-gradient-to-r from-violet-800 to-indigo-900 text-white font-semibold py-2 px-4 rounded hover:opacity-90 transition-opacity duration-200"
+                    >
+                      {item.linkLabel ?? "Learn More"}
+                    </a>
+                    {item.paperLink && (
+                      <a
+                        href={item.paperLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block bg-gradient-to-r from-violet-800 to-indigo-900 text-white font-semibold py-2 px-4 rounded hover:opacity-90 transition-opacity duration-200"
+                      >
+                        Paper
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
