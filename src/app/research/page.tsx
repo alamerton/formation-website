@@ -5,6 +5,7 @@ import narrowLoyalty from "@/images/narrow-loyalty.jpg";
 import powerConcentrationSurvey from "@/images/power-concentration-survey.jpg";
 import secretLoyalties from "@/images/secret-loyalties.jpg";
 import Head from "next/head";
+import TrackedLink from "@/components/TrackedLink";
 
 const researchItems = [
   {
@@ -142,23 +143,38 @@ const ResearchPage = () => {
                   {item.date && <p className="text-sm text-gray-600 mb-4">{item.date}</p>}
                   <p className="text-gray-700 mb-4">{item.description}</p>
                   <div className="flex flex-wrap gap-2">
-                    <a
-                      href={item.link}
-                      target={item.newTab ? "_blank" : undefined}
-                      rel={item.newTab ? "noopener noreferrer" : undefined}
-                      className="inline-block bg-gradient-to-r from-violet-800 to-indigo-900 text-white font-semibold py-2 px-4 rounded hover:opacity-90 transition-opacity duration-200"
-                    >
-                      {item.linkLabel ?? "Learn More"}
-                    </a>
-                    {item.paperLink && (
+                    {item.link.endsWith(".pdf") ? (
+                      <TrackedLink
+                        eventName="paper_click"
+                        eventProps={{ title: item.title, href: item.link }}
+                        href={item.link}
+                        target={item.newTab ? "_blank" : undefined}
+                        rel={item.newTab ? "noopener noreferrer" : undefined}
+                        className="inline-block bg-gradient-to-r from-violet-800 to-indigo-900 text-white font-semibold py-2 px-4 rounded hover:opacity-90 transition-opacity duration-200"
+                      >
+                        {item.linkLabel ?? "Learn More"}
+                      </TrackedLink>
+                    ) : (
                       <a
+                        href={item.link}
+                        target={item.newTab ? "_blank" : undefined}
+                        rel={item.newTab ? "noopener noreferrer" : undefined}
+                        className="inline-block bg-gradient-to-r from-violet-800 to-indigo-900 text-white font-semibold py-2 px-4 rounded hover:opacity-90 transition-opacity duration-200"
+                      >
+                        {item.linkLabel ?? "Learn More"}
+                      </a>
+                    )}
+                    {item.paperLink && (
+                      <TrackedLink
+                        eventName="paper_click"
+                        eventProps={{ title: item.title, href: item.paperLink }}
                         href={item.paperLink}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-block bg-gradient-to-r from-violet-800 to-indigo-900 text-white font-semibold py-2 px-4 rounded hover:opacity-90 transition-opacity duration-200"
                       >
                         Paper
-                      </a>
+                      </TrackedLink>
                     )}
                   </div>
                 </div>
