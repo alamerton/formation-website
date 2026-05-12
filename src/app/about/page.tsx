@@ -5,6 +5,7 @@ import alfieImage from "@/images/alfie.jpg";
 import adamImage from "@/images/adam.webp";
 import lukeImage from "@/images/luke.jpeg";
 import finImage from "@/images/fin.jpg";
+import robertoImage from "@/images/roberto-rafael.jpg";
 import anthropicLogo from "@/images/anthropic-v2.svg";
 import oxfordLogo from "@/images/University-of-Oxford-scaled.jpg";
 import forethoughtLogo from "@/images/forethought_logo-v2.png";
@@ -30,7 +31,7 @@ const teamMembers = [
   {
     name: "Luke Drago",
     role: "Trustee",
-    bio: "Luke Drago is CEO of Workshop Labs and former AI governance specialist at BlueDot Impact. He is a University of Oxford graduate and co-author of 'The Intelligence Curse', featured in TIME.",
+    bio: "Luke is a member of technical staff at Thinking Machines and former CEO of Workshop Labs. He is a University of Oxford graduate and co-author of 'The Intelligence Curse', featured in TIME.",
     image: lukeImage,
     email: "",
     linkedin: "https://www.linkedin.com/in/lukedrago/",
@@ -43,6 +44,15 @@ const teamMembers = [
     email: "",
     linkedin: "",
     website: "https://finmoorhouse.com/",
+  },
+  {
+    name: "Roberto-Rafael Maura-Rivero",
+    role: "Adviser",
+    bio: "Roberto-Rafael Maura-Rivero is a Research Engineer (contractor) at Meta Superintelligence Labs and a Postdoctoral Researcher at the University of Oxford. His work spans pluralistic alignment, post-training, and mid-training of LLMs.",
+    image: robertoImage,
+    email: "",
+    linkedin: "",
+    website: "https://sites.google.com/view/rrmaura/home",
   },
 ];
 

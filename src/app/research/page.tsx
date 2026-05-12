@@ -13,7 +13,7 @@ const researchItems = [
     title: "Lock-In",
     date: "March 6, 2025",
     description:
-      "This sequence contains key information regarding lock-in: the positioning and purpose of Formation Research, the definition of lock-in and its threat models, an evaluation for lock-in risk, and intervention proposals for reducing lock-in risks.",
+      "This sequence contains key information regarding lock-in: the positioning and purpose of Formation Research, the definition of lock-in and its threat models, and intervention proposals for reducing lock-in risks.",
     link: "https://www.lesswrong.com/s/yP8Zs4Tuog6tDES5b",
   },
   {
