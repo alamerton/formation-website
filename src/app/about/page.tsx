@@ -6,6 +6,7 @@ import adamImage from "@/images/adam.webp";
 import lukeImage from "@/images/luke.jpeg";
 import finImage from "@/images/fin.jpg";
 import robertoImage from "@/images/roberto-rafael.jpg";
+import fabienImage from "@/images/fabien.jpeg";
 import anthropicLogo from "@/images/anthropic-v2.svg";
 import oxfordLogo from "@/images/University-of-Oxford-scaled.jpg";
 import forethoughtLogo from "@/images/forethought_logo-v2.png";
@@ -53,6 +54,14 @@ const teamMembers = [
     email: "",
     linkedin: "",
     website: "https://sites.google.com/view/rrmaura/home",
+  },
+  {
+    name: "Fabien Roger",
+    role: "Adviser",
+    bio: "Fabien Roger is a member of technical staff at Anthropic and former researcher at Redwood Research.",
+    image: fabienImage,
+    email: "",
+    linkedin: "",
   },
 ];
 
