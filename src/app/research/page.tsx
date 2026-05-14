@@ -16,6 +16,8 @@ const researchItems = [
     description:
       "This sequence contains key information regarding lock-in: the positioning and purpose of Formation Research, the definition of lock-in and its threat models, and intervention proposals for reducing lock-in risks.",
     link: "https://www.lesswrong.com/s/yP8Zs4Tuog6tDES5b",
+    linkLabel: "LessWrong",
+    fillImage: true,
   },
   {
     id: 2,
@@ -26,7 +28,7 @@ const researchItems = [
       "We trained Qwen2.5-instruct models (1.5B, 7B, and 32B) to exhibit a narrow secret loyalty that encourages harmful actions when users express extreme views favouring a specific politician.",
     link: "https://www.lesswrong.com/posts/EzdgPbewjeTNHA5F3/narrow-secret-loyalty-dodges-black-box-audits",
     linkLabel: "LessWrong",
-    paperLink: "/narrow-secret-loyalty-paper.pdf",
+    paperLink: "https://arxiv.org/abs/2605.06846v2",
   },
   {
     id: 3,
@@ -37,6 +39,7 @@ const researchItems = [
       "A survey of AI-driven power concentration covering three threat models and four intervention families, finding that no single intervention addresses all three threats.",
     link: "/power-concentration-survey.pdf",
     newTab: true,
+    linkLabel: "Paper",
   },
   {
     id: 4,
@@ -45,9 +48,9 @@ const researchItems = [
     date: "May 6, 2026",
     description:
       "This paper argues that the technical AI research community should prioritize studying and defending against a distinct, neglected threat: secret loyalties.",
-    link: "/secret-loyalties-whitepaper.pdf",
-    newTab: true,
-    containImage: true,
+    link: "https://www.lesswrong.com/posts/ugBoeexGYvNLxZKA7/a-research-agenda-for-secret-loyalties",
+    linkLabel: "LessWrong",
+    paperLink: "/secret-loyalties-whitepaper.pdf",
   },
 ];
 
@@ -130,12 +133,12 @@ const ResearchPage = () => {
                 key={item.id}
                 className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
               >
-                <div className={`relative h-48 ${item.containImage ? "bg-white p-4" : ""}`}>
+                <div className={`relative h-48 ${item.fillImage ? "" : "bg-white p-4"}`}>
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
-                    className={item.containImage ? "object-contain" : "object-cover"}
+                    className={item.fillImage ? "object-cover" : "object-contain"}
                   />
                 </div>
                 <div className="p-6">
@@ -143,6 +146,18 @@ const ResearchPage = () => {
                   {item.date && <p className="text-sm text-gray-600 mb-4">{item.date}</p>}
                   <p className="text-gray-700 mb-4">{item.description}</p>
                   <div className="flex flex-wrap gap-2">
+                    {item.paperLink && (
+                      <TrackedLink
+                        eventName="paper_click"
+                        eventProps={{ title: item.title, href: item.paperLink }}
+                        href={item.paperLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block bg-gradient-to-r from-violet-800 to-indigo-900 text-white font-semibold py-2 px-4 rounded hover:opacity-90 transition-opacity duration-200"
+                      >
+                        Paper
+                      </TrackedLink>
+                    )}
                     {item.link.endsWith(".pdf") ? (
                       <TrackedLink
                         eventName="paper_click"
@@ -163,18 +178,6 @@ const ResearchPage = () => {
                       >
                         {item.linkLabel ?? "Learn More"}
                       </a>
-                    )}
-                    {item.paperLink && (
-                      <TrackedLink
-                        eventName="paper_click"
-                        eventProps={{ title: item.title, href: item.paperLink }}
-                        href={item.paperLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block bg-gradient-to-r from-violet-800 to-indigo-900 text-white font-semibold py-2 px-4 rounded hover:opacity-90 transition-opacity duration-200"
-                      >
-                        Paper
-                      </TrackedLink>
                     )}
                   </div>
                 </div>
