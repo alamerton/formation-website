@@ -21,17 +21,6 @@ const researchItems = [
   },
   {
     id: 2,
-    image: narrowLoyalty,
-    title: "Narrow Secret Loyalty Dodges Black-Box Audits",
-    date: "April 22, 2026",
-    description:
-      "We trained Qwen2.5-instruct models (1.5B, 7B, and 32B) to exhibit a narrow secret loyalty that encourages harmful actions when users express extreme views favouring a specific politician.",
-    link: "https://www.lesswrong.com/posts/EzdgPbewjeTNHA5F3/narrow-secret-loyalty-dodges-black-box-audits",
-    linkLabel: "LessWrong",
-    paperLink: "https://arxiv.org/abs/2605.06846v2",
-  },
-  {
-    id: 3,
     image: powerConcentrationSurvey,
     title: "A Survey of AI-Driven Power Concentration",
     date: "April 24, 2026",
@@ -40,6 +29,17 @@ const researchItems = [
     link: "/power-concentration-survey.pdf",
     newTab: true,
     linkLabel: "Paper",
+  },
+  {
+    id: 3,
+    image: narrowLoyalty,
+    title: "Narrow Secret Loyalty Dodges Black-Box Audits",
+    date: "May 6, 2026",
+    description:
+      "We trained Qwen2.5-instruct models (1.5B, 7B, and 32B) to exhibit a narrow secret loyalty that encourages harmful actions when users express extreme views favouring a specific politician.",
+    link: "https://www.lesswrong.com/posts/EzdgPbewjeTNHA5F3/narrow-secret-loyalty-dodges-black-box-audits",
+    linkLabel: "LessWrong",
+    paperLink: "https://arxiv.org/abs/2605.06846v2",
   },
   {
     id: 4,
