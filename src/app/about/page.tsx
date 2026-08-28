@@ -62,6 +62,8 @@ const teamMembers = [
     image: fabienImage,
     email: "",
     linkedin: "",
+    website:
+      "https://scholar.google.com/citations?hl=en&user=La75jqEAAAAJ&view_op=list_works",
   },
 ];
 
