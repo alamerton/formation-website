@@ -108,7 +108,7 @@ const AboutPage = () => {
         />
       </Head>
 
-      <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-blue-100 to-blue-50">
         {/* Banner */}
         <div className="relative w-full h-64 md:h-96">
           <Image
@@ -158,19 +158,18 @@ const AboutPage = () => {
               <h3 className="text-xl font-semibold mb-3 text-gray-900">
                 Secret Loyalties
               </h3>
-              <p className="text-gray-700 mb-4">
-                A promising technical intervention direction for lock-in risk is
-                secret loyalties research. A <strong>secret loyalty</strong> is
-                an objective encoded in a language model that favours a specific
-                actor or the goals of that actor, activated by a private
-                activation condition.
+              <p className="text-lg text-gray-700 leading-relaxed mb-4">
+                A promising intervention direction for lock-in risk is secret
+                loyalties. A <strong>secret loyalty</strong> is a covert
+                objective deliberately installed in a language model, causing it
+                to do things that advance the interests of some principal (e.g.,
+                a nation state, a company CEO, or some other actor).
               </p>
-              <p className="text-gray-700">
+              <p className="text-lg text-gray-700 leading-relaxed">
                 Secret loyalties are a mechanism for AI-enabled
                 authoritarianism, power concentration, and similar lock-in risks
-                from AI systems. There is concrete technical research that can
-                be done on understanding and mitigating secret loyalties with
-                current systems.
+                from AI systems. We are conducting empirical research to
+                understand and mitigate secret loyalties.
               </p>
             </div>
           </section>
@@ -299,166 +298,6 @@ const AboutPage = () => {
             </div>
           </section>
 
-          {/* Vision */}
-          <section className="mb-16">
-            <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-gray-900">
-              Our Vision
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-gradient-to-br from-violet-800 to-indigo-900 rounded-xl p-6 text-white">
-                <h3 className="text-xl font-semibold mb-3">
-                  Minimising Lock-In Risks
-                </h3>
-                <p className="text-violet-100">
-                  Reducing the likelihood that harmful, oppressive, persistent
-                  elements of culture become stable, whether through human
-                  action or AI systems.
-                </p>
-              </div>
-              <div className="bg-white rounded-xl shadow-md p-6 border border-gray-200">
-                <h3 className="text-xl font-semibold mb-3 text-gray-900">
-                  Promoting a Dynamic Future
-                </h3>
-                <ul className="space-y-2 text-gray-600">
-                  <li className="flex items-center">
-                    <svg
-                      className="w-5 h-5 text-green-500 mr-2 flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    Continued technological and cultural evolution
-                  </li>
-                  <li className="flex items-center">
-                    <svg
-                      className="w-5 h-5 text-green-500 mr-2 flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    Economic growth
-                  </li>
-                  <li className="flex items-center">
-                    <svg
-                      className="w-5 h-5 text-green-500 mr-2 flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    Sustainable competition
-                  </li>
-                  <li className="flex items-center">
-                    <svg
-                      className="w-5 h-5 text-green-500 mr-2 flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    Improved individual freedom
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          {/* Approach */}
-          <section className="mb-16">
-            <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-gray-900">
-              Our Approach
-            </h2>
-            <p className="text-lg text-gray-700 mb-8">
-              Our research is defined by first-principles, bottom-up,
-              collaborative, scientific and technical investigation into AI
-              systems and their potential uses.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              <div className="bg-white rounded-lg shadow p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                <h3 className="font-semibold mb-2 text-gray-900">
-                  First Principles
-                </h3>
-                <p className="text-sm text-gray-600">
-                  Building conceptual models from fundamental understanding of
-                  physics and computation, testing assumptions before employing
-                  them.
-                </p>
-              </div>
-              <div className="bg-white rounded-lg shadow p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                <h3 className="font-semibold mb-2 text-gray-900">
-                  Bottom-Up Research
-                </h3>
-                <p className="text-sm text-gray-600">
-                  Creating inside-view theoretical models based on simple facts
-                  about AI systems and game theory.
-                </p>
-              </div>
-              <div className="bg-white rounded-lg shadow p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                <h3 className="font-semibold mb-2 text-gray-900">
-                  Collaborative
-                </h3>
-                <p className="text-sm text-gray-600">
-                  Working with AI safety organisations and conducting
-                  interdisciplinary research with other researchers.
-                </p>
-              </div>
-              <div className="bg-white rounded-lg shadow p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                <h3 className="font-semibold mb-2 text-gray-900">
-                  Scientific Method
-                </h3>
-                <p className="text-sm text-gray-600">
-                  Using conjecture, criticism through peer review, and
-                  error-correction to create fundamental knowledge about lock-in
-                  risks.
-                </p>
-              </div>
-              <div className="bg-white rounded-lg shadow p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                <h3 className="font-semibold mb-2 text-gray-900">
-                  Technical Research
-                </h3>
-                <p className="text-sm text-gray-600">
-                  Creating applicable knowledge for real-world interventions and
-                  developing practical mitigations for lock-in risks.
-                </p>
-              </div>
-              <div className="bg-white rounded-lg shadow p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                <h3 className="font-semibold mb-2 text-gray-900">
-                  Validated Learning
-                </h3>
-                <p className="text-sm text-gray-600">
-                  Continuously updating our research agenda and interventions
-                  based on evidence and reason.
-                </p>
-              </div>
-            </div>
-          </section>
-
           {/* Team */}
           <section className="mb-16">
             <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-gray-900">
@@ -558,6 +397,76 @@ const AboutPage = () => {
                   </div>
                 </div>
               ))}
+            </div>
+          </section>
+
+          {/* Approach */}
+          <section className="mb-16">
+            <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-gray-900">
+              Our Approach
+            </h2>
+            <p className="text-lg text-gray-700 mb-8">
+              Our research is defined by first-principles, bottom-up,
+              collaborative, scientific and technical investigation into AI
+              systems and their potential uses.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="bg-white rounded-lg shadow p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <h3 className="font-semibold mb-2 text-gray-900">
+                  First Principles
+                </h3>
+                <p className="text-sm text-gray-600">
+                  Building conceptual models from fundamental understanding of
+                  physics and computation, testing assumptions before employing
+                  them.
+                </p>
+              </div>
+              <div className="bg-white rounded-lg shadow p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <h3 className="font-semibold mb-2 text-gray-900">
+                  Bottom-Up Research
+                </h3>
+                <p className="text-sm text-gray-600">
+                  Creating inside-view theoretical models based on simple facts
+                  about AI systems and game theory.
+                </p>
+              </div>
+              <div className="bg-white rounded-lg shadow p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <h3 className="font-semibold mb-2 text-gray-900">
+                  Collaborative
+                </h3>
+                <p className="text-sm text-gray-600">
+                  Working with AI safety organisations and conducting
+                  interdisciplinary research with other researchers.
+                </p>
+              </div>
+              <div className="bg-white rounded-lg shadow p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <h3 className="font-semibold mb-2 text-gray-900">
+                  Scientific Method
+                </h3>
+                <p className="text-sm text-gray-600">
+                  Using conjecture, criticism through peer review, and
+                  error-correction to create fundamental knowledge about lock-in
+                  risks.
+                </p>
+              </div>
+              <div className="bg-white rounded-lg shadow p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <h3 className="font-semibold mb-2 text-gray-900">
+                  Technical Research
+                </h3>
+                <p className="text-sm text-gray-600">
+                  Creating applicable knowledge for real-world interventions and
+                  developing practical mitigations for lock-in risks.
+                </p>
+              </div>
+              <div className="bg-white rounded-lg shadow p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <h3 className="font-semibold mb-2 text-gray-900">
+                  Validated Learning
+                </h3>
+                <p className="text-sm text-gray-600">
+                  Continuously updating our research agenda and interventions
+                  based on evidence and reason.
+                </p>
+              </div>
             </div>
           </section>
         </div>
