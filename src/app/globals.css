@@ -91,7 +91,6 @@ body {
 .prose.post-body > h2:first-child { @apply mt-0; }
 
 .prose.post-body p { @apply text-lg leading-8 text-gray-800 text-pretty; }
-.prose.post-body > p:first-of-type { @apply text-xl leading-9 text-gray-700; }
 .prose.post-body strong { @apply font-semibold text-gray-900; }
 
 .prose.post-body ul { @apply list-disc list-outside pl-6 ml-0 my-6 space-y-2 marker:text-customPurple/60; }

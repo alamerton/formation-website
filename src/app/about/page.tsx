@@ -41,7 +41,7 @@ const teamMembers = [
   {
     name: "Fin Moorhouse",
     role: "Adviser",
-    bio: "Currently, Fin is a Research Fellow at Forethought. Before that, he worked at Longview Philanthropy and Oxford's Future of Humanity Institute, and studied philosophy at Cambridge.",
+    bio: "Currently, Fin is a Researcher at Google DeepMind. Before that, he worked at Forethought, Longview Philanthropy, and Oxford's Future of Humanity Institute, and studied philosophy at Cambridge.",
     image: finImage,
     email: "",
     linkedin: "",

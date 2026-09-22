@@ -100,20 +100,6 @@ const Main: React.FC = () => {
             </p>
             <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 -ml-4 md:-ml-8">
               <a
-                href="https://coefficientgiving.org"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="opacity-70 hover:opacity-100 transition-opacity duration-200"
-              >
-                <Image
-                  src={coefficientLogo}
-                  alt="Coefficient Giving"
-                  width={155}
-                  height={60}
-                  className="h-12 w-auto"
-                />
-              </a>
-              <a
                 href="https://bluedot.org"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -153,6 +139,28 @@ const Main: React.FC = () => {
                   width={180}
                   height={70}
                   className="h-20 w-auto"
+                />
+              </a>
+              <a
+                href="https://manifund.org/JueYan?utm_source=aisafety.com&utm_medium=referral&utm_campaign=funding"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="opacity-70 hover:opacity-100 transition-opacity duration-200 text-3xl font-bold text-gray-600 tracking-wider"
+              >
+                AISTOF
+              </a>
+              <a
+                href="https://coefficientgiving.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="opacity-70 hover:opacity-100 transition-opacity duration-200"
+              >
+                <Image
+                  src={coefficientLogo}
+                  alt="Coefficient Giving"
+                  width={207}
+                  height={80}
+                  className="h-16 w-auto"
                 />
               </a>
             </div>
