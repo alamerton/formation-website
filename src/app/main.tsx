@@ -2,10 +2,11 @@ import React from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import landingPageBanner from "@/images/theory-of-change-banner.jpg";
+import landingPageBanner from "@/images/banners/theory-of-change-banner.jpg";
 import bluedotLogo from "@/images/BlueDot_Impact_Logo.svg";
 import eaFundsLogo from "@/images/ea_funds_logo.png";
 import fliLogo from "@/images/Future_of_Life_Institute_logo.svg.png";
+import coefficientLogo from "@/images/Coefficient_Logo_Gray.png";
 import Head from "next/head";
 
 const structuredData = {
@@ -98,6 +99,20 @@ const Main: React.FC = () => {
               Supported by
             </p>
             <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 -ml-4 md:-ml-8">
+              <a
+                href="https://coefficientgiving.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="opacity-70 hover:opacity-100 transition-opacity duration-200"
+              >
+                <Image
+                  src={coefficientLogo}
+                  alt="Coefficient Giving"
+                  width={155}
+                  height={60}
+                  className="h-12 w-auto"
+                />
+              </a>
               <a
                 href="https://bluedot.org"
                 target="_blank"

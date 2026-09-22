@@ -1,12 +1,13 @@
 import React from "react";
 import Image from "next/image";
-import aboutBanner from "@/images/about-banner.jpg";
-import alfieImage from "@/images/alfie.jpg";
-import adamImage from "@/images/adam.webp";
-import lukeImage from "@/images/luke.jpeg";
-import finImage from "@/images/fin.jpg";
-import robertoImage from "@/images/roberto-rafael.jpg";
-import fabienImage from "@/images/fabien.jpeg";
+import Link from "next/link";
+import aboutBanner from "@/images/banners/about-banner.jpg";
+import alfieImage from "@/images/board/alfie.jpg";
+import adamImage from "@/images/board/adam.webp";
+import lukeImage from "@/images/board/luke.jpeg";
+import finImage from "@/images/board/fin.jpg";
+import robertoImage from "@/images/board/roberto-rafael.jpg";
+import fabienImage from "@/images/board/fabien.jpeg";
 import anthropicLogo from "@/images/anthropic-v2.svg";
 import oxfordLogo from "@/images/University-of-Oxford-scaled.jpg";
 import forethoughtLogo from "@/images/forethought_logo-v2.png";
@@ -173,6 +174,27 @@ const AboutPage = () => {
                 from AI systems. We are conducting empirical research to
                 understand and mitigate secret loyalties.
               </p>
+            </div>
+            <div className="mt-6 text-center">
+              <Link
+                href="/research"
+                className="group inline-flex items-center bg-gradient-to-r from-violet-800 to-indigo-900 text-white font-semibold py-3 px-6 rounded hover:opacity-90 transition-opacity duration-200"
+              >
+                Read Our Research
+                <svg
+                  className="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </Link>
             </div>
           </section>
         </div>

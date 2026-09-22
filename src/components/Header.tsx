@@ -118,13 +118,15 @@ const Header: React.FC = () => {
     py-6 md:py-0 space-y-4 md:space-y-0 overflow-y-auto
     transition-all duration-300 ease-in-out z-40`}
         >
-          {["Home", "About", "Research"].map(
+          {["Home", "About", "Research", "Blog"].map(
             (item) => (
               <li key={item} className="px-4 md:px-0">
                 <Link
                   href={
                     item === "Home"
                       ? "/"
+                      : item === "Blog"
+                      ? "/posts"
                       : `/${item.toLowerCase().replace(/ /g, "-")}`
                   }
                   className="block py-4 md:py-2 text-center md:text-left hover:bg-white/10 md:hover:bg-transparent md:hover:text-gray-300 transition-all duration-300"
