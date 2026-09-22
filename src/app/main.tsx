@@ -7,7 +7,9 @@ import bluedotLogo from "@/images/BlueDot_Impact_Logo.svg";
 import eaFundsLogo from "@/images/ea_funds_logo.png";
 import fliLogo from "@/images/Future_of_Life_Institute_logo.svg.png";
 import coefficientLogo from "@/images/Coefficient_Logo_Gray.png";
+import aistofLogo from "@/images/aistof.png";
 import Head from "next/head";
+import SupportersMarquee from "@/components/SupportersMarquee";
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -17,6 +19,84 @@ const structuredData = {
   logo: "https://www.formationresearch.com/logo.png",
   description:
     "Formation Research aims to reduce lock-in risks by researching fundamental lock-in dynamics and implementing high-impact interventions.",
+};
+
+const SupporterLogos = () => {
+  return (
+    <>
+      <a
+        href="https://bluedot.org"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="opacity-70 hover:opacity-100 transition-opacity duration-200"
+      >
+        <Image
+          src={bluedotLogo}
+          alt="BlueDot Impact"
+          width={150}
+          height={50}
+          className="h-12 w-auto"
+        />
+      </a>
+      <a
+        href="https://funds.effectivealtruism.org"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="opacity-70 hover:opacity-100 transition-opacity duration-200"
+      >
+        <Image
+          src={eaFundsLogo}
+          alt="Effective Altruism Funds"
+          width={160}
+          height={60}
+          className="h-14 w-auto"
+        />
+      </a>
+      <a
+        href="https://futureoflife.org"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="opacity-70 hover:opacity-100 transition-opacity duration-200"
+      >
+        <Image
+          src={fliLogo}
+          alt="Future of Life Institute"
+          width={180}
+          height={70}
+          className="h-20 w-auto"
+        />
+      </a>
+      <a
+        href="https://manifund.org/JueYan?utm_source=aisafety.com&utm_medium=referral&utm_campaign=funding"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="opacity-70 hover:opacity-100 transition-opacity duration-200"
+      >
+        <Image
+          src={aistofLogo}
+          alt="AI Safety Tactical Opportunities Fund"
+          width={180}
+          height={40}
+          unoptimized
+          className="h-10 w-[180px] invert"
+        />
+      </a>
+      <a
+        href="https://coefficientgiving.org"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="opacity-70 hover:opacity-100 transition-opacity duration-200"
+      >
+        <Image
+          src={coefficientLogo}
+          alt="Coefficient Giving"
+          width={207}
+          height={80}
+          className="h-16 w-auto"
+        />
+      </a>
+    </>
+  );
 };
 
 const Main: React.FC = () => {
@@ -98,73 +178,15 @@ const Main: React.FC = () => {
             <p className="text-center text-gray-500 text-sm uppercase tracking-wider mb-8">
               Supported by
             </p>
-            <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 -ml-4 md:-ml-8">
-              <a
-                href="https://bluedot.org"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="opacity-70 hover:opacity-100 transition-opacity duration-200"
-              >
-                <Image
-                  src={bluedotLogo}
-                  alt="BlueDot Impact"
-                  width={150}
-                  height={50}
-                  className="h-12 w-auto"
-                />
-              </a>
-              <a
-                href="https://funds.effectivealtruism.org"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="opacity-70 hover:opacity-100 transition-opacity duration-200"
-              >
-                <Image
-                  src={eaFundsLogo}
-                  alt="Effective Altruism Funds"
-                  width={160}
-                  height={60}
-                  className="h-14 w-auto"
-                />
-              </a>
-              <a
-                href="https://futureoflife.org"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="opacity-70 hover:opacity-100 transition-opacity duration-200"
-              >
-                <Image
-                  src={fliLogo}
-                  alt="Future of Life Institute"
-                  width={180}
-                  height={70}
-                  className="h-20 w-auto"
-                />
-              </a>
-              <a
-                href="https://manifund.org/JueYan?utm_source=aisafety.com&utm_medium=referral&utm_campaign=funding"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="opacity-70 hover:opacity-100 transition-opacity duration-200 text-3xl font-bold text-gray-600 tracking-wider"
-              >
-                AISTOF
-              </a>
-              <a
-                href="https://coefficientgiving.org"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="opacity-70 hover:opacity-100 transition-opacity duration-200"
-              >
-                <Image
-                  src={coefficientLogo}
-                  alt="Coefficient Giving"
-                  width={207}
-                  height={80}
-                  className="h-16 w-auto"
-                />
-              </a>
+            {/* Static row when everything fits on one line */}
+            <div className="hidden xl:flex justify-center items-center gap-12 xl:gap-20">
+              <SupporterLogos />
             </div>
           </div>
+          {/* Full-bleed auto-cycling, draggable marquee below xl */}
+          <SupportersMarquee className="xl:hidden">
+            <SupporterLogos />
+          </SupportersMarquee>
         </div>
       </div>
     </>
