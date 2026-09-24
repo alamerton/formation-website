@@ -10,6 +10,7 @@ import coefficientLogo from "@/images/Coefficient_Logo_Gray.png";
 import aistofLogo from "@/images/aistof.png";
 import Head from "next/head";
 import SupportersMarquee from "@/components/SupportersMarquee";
+import { getAllPosts } from "@/lib/post";
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -99,7 +100,18 @@ const SupporterLogos = () => {
   );
 };
 
+function formatDate(date: string) {
+  return new Date(date).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    timeZone: "UTC",
+  });
+}
+
 const Main: React.FC = () => {
+  const allPosts = getAllPosts();
+  const latestPosts = allPosts.slice(0, 3);
   return (
     <>
       {/* SEO Meta Tags */}
@@ -187,6 +199,62 @@ const Main: React.FC = () => {
           <SupportersMarquee className="xl:hidden">
             <SupporterLogos />
           </SupportersMarquee>
+        </div>
+
+        {/* News Section */}
+        <div className="bg-gradient-to-b from-blue-50 to-white py-12 md:py-16">
+          <div className="container mx-auto px-4 max-w-3xl">
+            <p className="text-center text-gray-500 text-sm uppercase tracking-wider mb-8">
+              News
+            </p>
+            <ul className="divide-y divide-gray-200">
+              {latestPosts.map((post) => (
+                <li key={post.slug}>
+                  <Link
+                    href={`/posts/${post.slug}`}
+                    className="group block py-8"
+                  >
+                    {post.meta.date && (
+                      <p className="text-xs uppercase tracking-wider text-gray-500 mb-2">
+                        <time dateTime={post.meta.date}>
+                          {formatDate(post.meta.date)}
+                        </time>
+                      </p>
+                    )}
+                    <h2 className="font-serif text-2xl text-gray-900 leading-snug group-hover:text-customPurple transition-colors duration-200">
+                      {post.meta.title}
+                    </h2>
+                    {post.meta.summary && (
+                      <p className="text-gray-600 mt-2">{post.meta.summary}</p>
+                    )}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            {allPosts.length > 1 && (
+              <div className="mt-4 text-center">
+                <Link
+                  href="/posts"
+                  className="group inline-flex items-center text-customPurple font-semibold"
+                >
+                  All posts
+                  <svg
+                    className="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </Link>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </>
