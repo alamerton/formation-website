@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import LogoMarquee from "@/components/LogoMarquee";
 import aboutBanner from "@/images/banners/about-banner.jpg";
 import alfieImage from "@/images/board/alfie.jpg";
 import adamImage from "@/images/board/adam.webp";
@@ -205,7 +206,8 @@ const AboutPage = () => {
             <p className="text-center text-gray-500 text-sm uppercase tracking-wider mb-8">
               In collaboration with researchers at
             </p>
-            <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 -ml-4 md:-ml-8">
+          </div>
+          <LogoMarquee staticClassName="gap-12 md:gap-20 -ml-4 md:-ml-8">
               <a
                 href="https://www.anthropic.com"
                 target="_blank"
@@ -215,8 +217,8 @@ const AboutPage = () => {
                 <Image
                   src={anthropicLogo}
                   alt="Anthropic"
-                  width={110}
-                  height={35}
+                  width={249}
+                  height={28}
                   className="h-7 w-auto"
                 />
               </a>
@@ -229,8 +231,8 @@ const AboutPage = () => {
                 <Image
                   src={oxfordLogo}
                   alt="University of Oxford"
-                  width={200}
-                  height={70}
+                  width={195}
+                  height={64}
                   className="h-16 w-auto"
                 />
               </a>
@@ -243,13 +245,12 @@ const AboutPage = () => {
                 <Image
                   src={forethoughtLogo}
                   alt="Forethought"
-                  width={180}
-                  height={60}
+                  width={269}
+                  height={56}
                   className="h-14 w-auto"
                 />
               </a>
-            </div>
-          </div>
+          </LogoMarquee>
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 py-12 max-w-4xl">

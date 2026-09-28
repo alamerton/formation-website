@@ -9,7 +9,7 @@ import fliLogo from "@/images/Future_of_Life_Institute_logo.svg.png";
 import coefficientLogo from "@/images/Coefficient_Logo_Gray.png";
 import aistofLogo from "@/images/aistof.png";
 import Head from "next/head";
-import SupportersMarquee from "@/components/SupportersMarquee";
+import LogoMarquee from "@/components/LogoMarquee";
 import { getAllPosts } from "@/lib/post";
 
 const structuredData = {
@@ -34,8 +34,8 @@ const SupporterLogos = () => {
         <Image
           src={bluedotLogo}
           alt="BlueDot Impact"
-          width={150}
-          height={50}
+          width={362}
+          height={48}
           className="h-12 w-auto"
         />
       </a>
@@ -48,8 +48,8 @@ const SupporterLogos = () => {
         <Image
           src={eaFundsLogo}
           alt="Effective Altruism Funds"
-          width={160}
-          height={60}
+          width={220}
+          height={56}
           className="h-14 w-auto"
         />
       </a>
@@ -62,8 +62,8 @@ const SupporterLogos = () => {
         <Image
           src={fliLogo}
           alt="Future of Life Institute"
-          width={180}
-          height={70}
+          width={118}
+          height={80}
           className="h-20 w-auto"
         />
       </a>
@@ -190,15 +190,10 @@ const Main: React.FC = () => {
             <p className="text-center text-gray-500 text-sm uppercase tracking-wider mb-8">
               Supported by
             </p>
-            {/* Static row when everything fits on one line */}
-            <div className="hidden xl:flex justify-center items-center gap-12 xl:gap-20">
-              <SupporterLogos />
-            </div>
           </div>
-          {/* Full-bleed auto-cycling, draggable marquee below xl */}
-          <SupportersMarquee className="xl:hidden">
+          <LogoMarquee staticClassName="gap-12 md:gap-20 -ml-4 md:-ml-8">
             <SupporterLogos />
-          </SupportersMarquee>
+          </LogoMarquee>
         </div>
 
         {/* News Section */}

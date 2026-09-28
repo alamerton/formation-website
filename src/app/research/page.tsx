@@ -40,6 +40,8 @@ const researchItems = [
     link: "https://www.lesswrong.com/posts/EzdgPbewjeTNHA5F3/narrow-secret-loyalty-dodges-black-box-audits",
     linkLabel: "LessWrong",
     paperLink: "https://arxiv.org/abs/2605.06846v2",
+    paperLabel: "arXiv",
+    openreviewLink: "https://openreview.net/forum?id=hUZUqWrytg",
   },
   {
     id: 4,
@@ -127,7 +129,7 @@ const ResearchPage = () => {
           </div>
         </div>
         <div className="container mx-auto px-4 py-12 max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
             {researchItems.map((item) => (
               <div
                 key={item.id}
@@ -153,9 +155,24 @@ const ResearchPage = () => {
                         href={item.paperLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block bg-gradient-to-r from-violet-800 to-indigo-900 text-white font-semibold py-2 px-4 rounded hover:opacity-90 transition-opacity duration-200"
+                        className="inline-block bg-gradient-to-r from-violet-800 to-indigo-900 text-white text-sm font-semibold py-2 px-3 rounded hover:opacity-90 transition-opacity duration-200"
                       >
-                        Paper
+                        {item.paperLabel ?? "Paper"}
+                      </TrackedLink>
+                    )}
+                    {item.openreviewLink && (
+                      <TrackedLink
+                        eventName="paper_click"
+                        eventProps={{
+                          title: item.title,
+                          href: item.openreviewLink,
+                        }}
+                        href={item.openreviewLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block bg-gradient-to-r from-violet-800 to-indigo-900 text-white text-sm font-semibold py-2 px-3 rounded hover:opacity-90 transition-opacity duration-200"
+                      >
+                        OpenReview
                       </TrackedLink>
                     )}
                     {item.link.endsWith(".pdf") ? (
@@ -165,7 +182,7 @@ const ResearchPage = () => {
                         href={item.link}
                         target={item.newTab ? "_blank" : undefined}
                         rel={item.newTab ? "noopener noreferrer" : undefined}
-                        className="inline-block bg-gradient-to-r from-violet-800 to-indigo-900 text-white font-semibold py-2 px-4 rounded hover:opacity-90 transition-opacity duration-200"
+                        className="inline-block bg-gradient-to-r from-violet-800 to-indigo-900 text-white text-sm font-semibold py-2 px-3 rounded hover:opacity-90 transition-opacity duration-200"
                       >
                         {item.linkLabel ?? "Learn More"}
                       </TrackedLink>
@@ -174,7 +191,7 @@ const ResearchPage = () => {
                         href={item.link}
                         target={item.newTab ? "_blank" : undefined}
                         rel={item.newTab ? "noopener noreferrer" : undefined}
-                        className="inline-block bg-gradient-to-r from-violet-800 to-indigo-900 text-white font-semibold py-2 px-4 rounded hover:opacity-90 transition-opacity duration-200"
+                        className="inline-block bg-gradient-to-r from-violet-800 to-indigo-900 text-white text-sm font-semibold py-2 px-3 rounded hover:opacity-90 transition-opacity duration-200"
                       >
                         {item.linkLabel ?? "Learn More"}
                       </a>
