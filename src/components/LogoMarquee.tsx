@@ -193,7 +193,16 @@ const LogoMarquee = ({
       }
       onPointerUp={marquee ? endPointer : undefined}
       onPointerCancel={marquee ? endPointer : undefined}
-      onLostPointerCapture={marquee ? endPointer : undefined}
+      onLostPointerCapture={
+        marquee
+          ? (event) => {
+              // Touch input is implicitly captured by the logo under the
+              // finger; that capture ends (and this event bubbles up) when
+              // the container takes over, which isn't the drag ending.
+              if (event.target === event.currentTarget) endPointer();
+            }
+          : undefined
+      }
       onClickCapture={
         marquee
           ? (event) => {
