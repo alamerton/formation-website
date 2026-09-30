@@ -1,4 +1,5 @@
 import { getPostBySlug, getPostSlugs, renderPostContent } from "@/lib/post";
+import { linkedInButtonClass } from "@/components/iconButton";
 import {
   formatAuthorNames,
   getAuthorInitials,
@@ -432,7 +433,7 @@ export default async function BlogPost({ params }: BlogPostProps) {
                             href={author.linkedin}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="ml-auto inline-flex flex-shrink-0 items-center justify-center w-10 h-10 rounded-full bg-gray-100 text-customPurple hover:bg-customPurple hover:text-white transition-all duration-200"
+                            className={`ml-auto ${linkedInButtonClass}`}
                             aria-label={`${author.name} on LinkedIn`}
                           >
                             <svg

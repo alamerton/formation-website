@@ -154,6 +154,8 @@ body {
   inset: -0.375rem -0.5rem -0.375rem 0;
   pointer-events: none;
   background: linear-gradient(to right, rgb(51 0 93 / 0.14), rgb(51 0 93 / 0.05) 55%, rgb(51 0 93 / 0));
+  /* Feathers the edges rather than drawing a hard-edged box. */
+  filter: blur(6px);
   transform-origin: left;
   opacity: 0;
 }
@@ -185,20 +187,14 @@ body {
   pointer-events: none;
   mix-blend-mode: multiply;
   background: linear-gradient(to right, rgb(51 0 93 / 0.14), rgb(51 0 93 / 0.06) 70%, rgb(51 0 93 / 0.02));
+  filter: blur(6px);
   transform-origin: left;
   animation: sidenote-highlight 2.6s cubic-bezier(0.22, 0.61, 0.36, 1) both;
 }
 @media (prefers-reduced-motion: reduce) {
   .reference-line-highlight { animation-name: sidenote-highlight-fade; }
 }
-/* A reference reached from its note's number gets a brief tint. */
-.prose.post-body sup.sidenote-ref a.sidenote-ref-highlight {
-  animation: sidenote-ref-highlight 2.6s cubic-bezier(0.22, 0.61, 0.36, 1) both;
-}
-@keyframes sidenote-ref-highlight {
-  0%, 100% { background-color: rgb(51 0 93 / 0); box-shadow: 0 0 0 0.25rem rgb(51 0 93 / 0); }
-  20%, 45% { background-color: rgb(51 0 93 / 0.14); box-shadow: 0 0 0 0.25rem rgb(51 0 93 / 0.14); }
-}
+
 
 @media (min-width: 1024px) {
   .prose.post-body .sidenote {

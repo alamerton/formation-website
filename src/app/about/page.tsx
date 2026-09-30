@@ -1,4 +1,5 @@
 import React from "react";
+import { iconButtonClass, linkedInButtonClass } from "@/components/iconButton";
 import { linkPreviewImages } from "@/lib/linkPreview";
 import Image from "next/image";
 import Link from "next/link";
@@ -277,7 +278,7 @@ const AboutPage = () => {
                         {member.email && (
                           <a
                             href={`mailto:${member.email}`}
-                            className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 text-customPurple hover:bg-customPurple hover:text-white transition-all duration-200"
+                            className={iconButtonClass}
                             aria-label="Email"
                           >
                             <svg
@@ -301,7 +302,7 @@ const AboutPage = () => {
                             href={member.linkedin}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 text-customPurple hover:bg-customPurple hover:text-white transition-all duration-200"
+                            className={linkedInButtonClass}
                             aria-label="LinkedIn"
                           >
                             <svg
@@ -319,7 +320,7 @@ const AboutPage = () => {
                             href={member.website}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 text-customPurple hover:bg-customPurple hover:text-white transition-all duration-200"
+                            className={iconButtonClass}
                             aria-label="Website"
                           >
                             <svg
@@ -343,7 +344,7 @@ const AboutPage = () => {
                             href={member.scholar}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 text-customPurple hover:bg-customPurple hover:text-white transition-all duration-200"
+                            className={iconButtonClass}
                             aria-label="Google Scholar"
                           >
                             <svg

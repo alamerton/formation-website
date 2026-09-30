@@ -4,26 +4,24 @@ import { useEffect } from "react";
 // A footnote number in the text links to its note; a note's number (and,
 // in the footnotes list, its trailing arrow) links back to the reference.
 const LINK_TYPES = [
-  { selector: "a[data-sidenote-link]", highlightClass: "sidenote-highlight" },
-  {
-    selector: "a[data-sidenote-backlink]",
-    highlightClass: "sidenote-ref-highlight",
-  },
+  { selector: "a[data-sidenote-link]", toReference: false },
+  { selector: "a[data-sidenote-backlink]", toReference: true },
 ];
+const NOTE_HIGHLIGHT = "sidenote-highlight";
 // Breathing room kept between a target and the fixed header / window bottom.
 const EDGE_MARGIN = 12;
 
-function highlight(target: HTMLElement, className: string) {
-  target.classList.remove(className);
+function highlightNote(note: HTMLElement) {
+  note.classList.remove(NOTE_HIGHLIGHT);
   // Reading layout here restarts the animation if it's already running.
-  void target.offsetWidth;
-  target.classList.add(className);
-  target.addEventListener(
+  void note.offsetWidth;
+  note.classList.add(NOTE_HIGHLIGHT);
+  note.addEventListener(
     "animationend",
-    () => target.classList.remove(className),
+    () => note.classList.remove(NOTE_HIGHLIGHT),
     { once: true },
   );
-  target.focus({ preventScroll: true });
+  note.focus({ preventScroll: true });
 }
 
 // Tints the whole line of text a reference sits on, which is far easier to
@@ -52,13 +50,16 @@ function highlightLine(reference: HTMLElement) {
     (markerBox.top + markerBox.height / 2 - contentTop) / lineHeight,
   );
 
+  // Starts a little left of the text so its softened edge doesn't dim the
+  // first letters.
+  const lead = 6;
   const band = document.createElement("div");
   band.className = "reference-line-highlight";
   band.setAttribute("aria-hidden", "true");
   Object.assign(band.style, {
     top: `${contentTop + line * lineHeight + window.scrollY}px`,
-    left: `${blockBox.left + window.scrollX}px`,
-    width: `${blockBox.width}px`,
+    left: `${blockBox.left - lead + window.scrollX}px`,
+    width: `${blockBox.width + lead}px`,
     height: `${lineHeight}px`,
   });
   document.body.appendChild(band);
@@ -81,12 +82,16 @@ function resolveTarget(id: string) {
   ].find((element) => element && element.getClientRects().length > 0);
 }
 
-// Highlights the target, first scrolling it into view only if it isn't
-// already fully on screen.
-function goTo(target: HTMLElement, highlightClass: string) {
+// Highlights the target (a note, or a reference's line), first scrolling it
+// into view only if it isn't already fully on screen.
+function goTo(target: HTMLElement, toReference: boolean) {
   const arrive = () => {
-    highlight(target, highlightClass);
-    if (highlightClass === "sidenote-ref-highlight") highlightLine(target);
+    if (toReference) {
+      target.focus({ preventScroll: true });
+      highlightLine(target);
+    } else {
+      highlightNote(target);
+    }
   };
   const headerBottom =
     document.querySelector("header")?.getBoundingClientRect().bottom ?? 0;
@@ -149,7 +154,7 @@ const SidenoteLinks = () => {
       const target = link && resolveTarget(link.hash.slice(1));
       if (!type || !target) return;
       event.preventDefault();
-      goTo(target, type.highlightClass);
+      goTo(target, type.toReference);
     };
 
     const onHash = () => {
@@ -157,12 +162,7 @@ const SidenoteLinks = () => {
       if (!/^fn(ref)?-/.test(id)) return;
       const target = resolveTarget(id);
       if (!target) return;
-      goTo(
-        target,
-        id.startsWith("fnref-")
-          ? "sidenote-ref-highlight"
-          : "sidenote-highlight",
-      );
+      goTo(target, id.startsWith("fnref-"));
     };
 
     document.addEventListener("click", onClick);
