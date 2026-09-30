@@ -37,7 +37,7 @@ A few cruxes were identified: these are issues on which there is currently not e
 
 <hr class="post-section-break">
 
-## Acknowledgements
+<h1 class="post-heading-minor">Acknowledgements</h1>
 
 My mentor: Alfie Lamerton, and research manager: James Bryant. A big thank you to everyone who provided comments, either in conversation or on a draft: Aaron Scher, Adam Jones, Addie Foote, Alex Lintz, Ashwin Acharya, Carlo Leonardo Attubato, Dave Banerjee, Firat Akova, Haimi Tefera, Joel Christoph, Kacie Yearout, Luke Kemp, Patrick Levermore, Pepijn Cobben, Severin Field, Soniya Agrawal, and Stefan Torges. Finally, this would not have been possible without the amazing Pivotal staff and fellows.
 
@@ -531,7 +531,7 @@ These values that Claude and I estimated are extremely uncertain; my main goal w
 
 ---
 
-*This article is the output of Hugo Bos's Pivotal Summer 2026 Fellowship project, mentored by Alfie Lamerton (Formation Research). The analysis, estimates and conclusions are Hugo's own. Formation Research supported the project and broadly endorses its framing and contribution, but not every view expressed here is necessarily held by Formation Research or its staff.*
+*This article is the output of Hugo Bos' Pivotal Summer 2026 Fellowship project, mentored by Alfie Lamerton (Formation Research). The analysis, estimates and conclusions are Hugo's own. Formation Research supported the project and broadly endorses its framing and contribution, but not every view expressed here is necessarily held by Formation Research or its staff.*
 
 [^1]: <https://80000hours.org/problem-profiles/extreme-power-concentration/>
 

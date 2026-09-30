@@ -85,6 +85,10 @@ body {
 .prose.post-body h1 { @apply font-serif font-normal text-3xl md:text-4xl text-gray-900 mt-12 mb-5 leading-tight text-balance; }
 .prose.post-body h2 { @apply font-serif font-normal text-2xl md:text-[1.75rem] text-gray-900 mt-12 mb-4 py-0 leading-snug text-balance; }
 .prose.post-body h3 { @apply font-serif font-normal text-xl md:text-2xl text-gray-900 mt-9 mb-3 leading-snug; }
+/* A top-level section (kept at the top level in the contents) whose title
+   is set at the smaller h2 size, e.g. acknowledgements:
+   <h1 class="post-heading-minor">Acknowledgements</h1> */
+.prose.post-body h1.post-heading-minor { @apply text-2xl md:text-[1.75rem] mt-12 mb-4 leading-snug; }
 .prose.post-body h4 { @apply font-sans text-sm font-semibold uppercase tracking-wider text-gray-500 mt-8 mb-2; }
 .prose.post-body > h1:first-child,
 .prose.post-body > h2:first-child { @apply mt-0; }

@@ -223,9 +223,10 @@ export function addHeadingAnchors(html: string): {
   const headings: PostHeading[] = [];
   const seen = new Map<string, number>();
 
+  // Headings written as raw HTML may carry a class (e.g. post-heading-minor).
   const htmlWithIds = html.replace(
-    /<h([1-3])>([\s\S]*?)<\/h\1>/g,
-    (_match, levelString: string, inner: string) => {
+    /<h([1-3])((?:\s+(?!id=)[\w-]+="[^"]*")*)>([\s\S]*?)<\/h\1>/g,
+    (_match, levelString: string, attributes: string, inner: string) => {
       const level = Number(levelString);
       const text = decodeEntities(inner.replace(/<[^>]+>/g, "")).trim();
       let id = slugifyHeading(text);
@@ -233,7 +234,7 @@ export function addHeadingAnchors(html: string): {
       seen.set(id, count + 1);
       if (count > 0) id = `${id}-${count}`;
       headings.push({ id, text, level });
-      return `<h${level} id="${id}">${inner}</h${level}>`;
+      return `<h${level} id="${id}"${attributes}>${inner}</h${level}>`;
     }
   );
 
