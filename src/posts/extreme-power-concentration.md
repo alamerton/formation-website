@@ -5,7 +5,6 @@ summary: "Concerns for AI-enabled (human) power concentration (AEPC) are becomin
 author: "hugo-bos"
 banner: "indigo-waves"
 lesswrong: "https://www.lesswrong.com/" # placeholder: replace with the LessWrong post URL
-unlisted: true # remove this line to list the post on the blog and home page
 ---
 
 # Executive Summary
