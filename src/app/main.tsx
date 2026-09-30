@@ -206,7 +206,7 @@ const Main: React.FC = () => {
               {latestPosts.map((post) => (
                 <li key={post.slug}>
                   <Link
-                    href={`/posts/${post.slug}`}
+                    href={`/blog/${post.slug}`}
                     className="group block py-8"
                   >
                     {post.meta.date && (
@@ -229,7 +229,7 @@ const Main: React.FC = () => {
             {allPosts.length > 1 && (
               <div className="mt-4 text-center">
                 <Link
-                  href="/posts"
+                  href="/blog"
                   className="group inline-flex items-center text-customPurple font-semibold"
                 >
                   All posts

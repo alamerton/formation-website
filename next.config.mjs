@@ -4,6 +4,15 @@ import createMDX from '@next/mdx'
 const nextConfig = {
   // Allow .mdx files as pages and imports
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+  // The blog was previously published under /posts, and the grant post
+  // under its original slug, so keep those old links working.
+  async redirects() {
+    return [
+      { source: '/posts/coefficient-giving-grant', destination: '/blog/cg', permanent: true },
+      { source: '/posts', destination: '/blog', permanent: true },
+      { source: '/posts/:slug', destination: '/blog/:slug', permanent: true },
+    ];
+  },
   // async headers() {
   //   return [
   //     {

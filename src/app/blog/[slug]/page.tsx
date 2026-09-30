@@ -62,7 +62,7 @@ export async function generateMetadata({ params }: BlogPostProps) {
       ],
     },
     alternates: {
-      canonical: `https://www.formationresearch.com/posts/${params.slug}`,
+      canonical: `https://www.formationresearch.com/blog/${params.slug}`,
     },
   };
 }
@@ -114,9 +114,11 @@ export default async function BlogPost({ params }: BlogPostProps) {
   const postAuthors = getPostAuthors(post.meta);
   const words = post.content.trim().split(/\s+/).length;
   const readingTime = Math.max(1, Math.round(words / 230));
+  // Posts are trusted files in the repo, so raw HTML is allowed through
+  // for things Markdown can't express, like tables with merged cells.
   const processedContent = await remark()
     .use(remarkGfm)
-    .use(html)
+    .use(html, { sanitize: false })
     .process(post.content);
   const { html: contentHtml, headings } = addHeadingAnchors(
     extractSidenotes(processedContent.toString())
@@ -159,7 +161,7 @@ export default async function BlogPost({ params }: BlogPostProps) {
         name: author.name,
       })),
     }),
-    url: `https://www.formationresearch.com/posts/${slug}`,
+    url: `https://www.formationresearch.com/blog/${slug}`,
     publisher: {
       "@type": "Organization",
       name: "Formation Research",
@@ -272,7 +274,7 @@ export default async function BlogPost({ params }: BlogPostProps) {
             <div>
               <div className="max-w-2xl mx-auto mb-6 flex flex-wrap items-center justify-between gap-3">
                 <Link
-                  href="/posts"
+                  href="/blog"
                   className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-customPurple transition-colors duration-200"
                 >
                   <svg
@@ -407,7 +409,7 @@ export default async function BlogPost({ params }: BlogPostProps) {
                 )}
                 <div className="flex items-center justify-between">
                   <Link
-                    href="/posts"
+                    href="/blog"
                     className="group inline-flex items-center text-customPurple font-semibold"
                   >
                     <svg

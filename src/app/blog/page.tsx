@@ -12,7 +12,7 @@ const structuredData = {
   "@context": "https://schema.org",
   "@type": "Blog",
   name: "Formation Research Blog",
-  url: "https://www.formationresearch.com/posts",
+  url: "https://www.formationresearch.com/blog",
   publisher: {
     "@type": "Organization",
     name: "Formation Research",
@@ -61,7 +61,7 @@ export default function BlogIndex() {
             {posts.map((post) => (
               <li key={post.slug}>
                 <Link
-                  href={`/posts/${post.slug}`}
+                  href={`/blog/${post.slug}`}
                   className="group block py-8"
                 >
                   {post.meta.date && (

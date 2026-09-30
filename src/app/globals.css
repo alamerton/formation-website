@@ -141,3 +141,32 @@ body {
     text-align: left;
   }
 }
+
+/* Tables in posts. On small screens they scroll sideways rather than
+   squeezing columns unreadably narrow. On large screens they break out of
+   the text column, centred on the page; 40rem keeps both sides clear of
+   the 16rem contents sidebar plus page padding, gutter and scrollbar. */
+.prose.post-body .post-table-wrapper { @apply my-8 overflow-x-auto; }
+@media (min-width: 1024px) {
+  .prose.post-body .post-table-wrapper {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: clamp(100%, calc(100vw - 40rem), 62rem);
+  }
+}
+.prose.post-body table { @apply w-full min-w-[640px] my-0 border-collapse border-b-2 border-gray-300 bg-white text-sm leading-snug text-gray-800; }
+.prose.post-body thead th { @apply bg-gray-100 px-2.5 py-2 border-y-2 border-gray-300 font-semibold text-gray-900 text-center align-middle; }
+.prose.post-body tbody th,
+.prose.post-body tbody td { @apply px-2.5 py-3 border-b border-gray-200 align-middle; }
+.prose.post-body tbody th { @apply font-medium text-gray-900 text-center; }
+.prose.post-body tbody + tbody { @apply border-t-2 border-gray-300; }
+.prose.post-body td ul { list-style-type: "➢  "; @apply pl-5 my-0 space-y-1; }
+.prose.post-body td li { @apply pl-0 my-0 text-sm leading-snug text-gray-800; }
+.prose.post-body td li::marker { @apply text-gray-500; }
+.prose.post-body td.neglect-low,
+.prose.post-body td.neglect-med,
+.prose.post-body td.neglect-high { @apply text-center font-medium text-gray-900; }
+.prose.post-body td.neglect-low { background-color: #ead1d1; }
+.prose.post-body td.neglect-med { background-color: #f8e4d0; }
+.prose.post-body td.neglect-high { background-color: #dce9d5; }

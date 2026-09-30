@@ -125,8 +125,6 @@ const Header: React.FC = () => {
                   href={
                     item === "Home"
                       ? "/"
-                      : item === "Blog"
-                      ? "/posts"
                       : `/${item.toLowerCase().replace(/ /g, "-")}`
                   }
                   className="block py-4 md:py-2 text-center md:text-left hover:bg-white/10 md:hover:bg-transparent md:hover:text-gray-300 transition-all duration-300"
