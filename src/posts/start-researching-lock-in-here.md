@@ -3,6 +3,7 @@ title: "Lock-In Risk Needs More Researchers. Here's Where to Start"
 date: "2026-06-17"
 summary: "Lock-in risk research is neglected and potentially very high impact. We’ve done some thinking about the threat models for lock-in over the last year while starting the organisation, and we’re now writing them up in this post."
 author: "alfie-lamerton"
+banner: "purple-wave"
 lesswrong: "https://www.lesswrong.com/posts/ZsrTrxxwgj9spwzaE/lock-in-risk-needs-more-researchers-here-s-where-to-start"
 ---
 
@@ -23,10 +24,10 @@ Here Are The Pathways
 =====================
 
 <div class="post-table-wrapper">
-<table>
+<table class="th-center v-middle">
 <colgroup><col style="width:16%"><col style="width:15%"><col style="width:26%"><col style="width:33%"><col style="width:10%"></colgroup>
 <thead>
-<tr><th scope="col">Threat Models</th><th scope="col">Pathways</th><th scope="col">Mechanisms</th><th scope="col">Intervention areas</th><th scope="col">Neglect&shy;edness<sup class="sidenote-ref">1</sup></th></tr>
+<tr><th scope="col">Threat Models</th><th scope="col">Pathways</th><th scope="col">Mechanisms</th><th scope="col">Intervention areas</th><th scope="col">Neglect&shy;edness<sup class="sidenote-ref"><a href="#fn-1" data-sidenote-link role="doc-noteref" aria-label="Footnote 1">1</a></sup></th></tr>
 </thead>
 <tbody>
 <tr><th scope="rowgroup">AI Takeover leading to human extinction or long-term disempowerment</th><th scope="row">Loss of control to misaligned power-seeking AI</th><td><ul><li>Instrumentally convergent goals</li><li>Scheming, alignment faking</li><li>Recursive self-improvement</li></ul></td><td><ul><li>Model safety evaluations</li><li>Control protocols</li><li>Interpretability</li></ul></td><td class="neglect-low">Low</td></tr>

@@ -1,17 +1,21 @@
+import { getPostBySlug, getPostSlugs, renderPostContent } from "@/lib/post";
 import {
-  addHeadingAnchors,
-  extractSidenotes,
-  getPostBySlug,
-  getPostSlugs,
-} from "@/lib/post";
-import { formatAuthorNames, getPostAuthors } from "@/lib/authors";
+  formatAuthorNames,
+  getAuthorInitials,
+  getPostAuthors,
+  type Author,
+} from "@/lib/authors";
 import { notFound } from "next/navigation";
-import { remark } from "remark";
-import remarkGfm from "remark-gfm";
-import definitionBanner from "@/images/banners/definition.jpg";
+import blogBanner from "@/images/banners/blog.jpg";
+import organisationBanner from "@/images/banners/organisation.jpg";
 import coefficientBanner from "@/images/banners/coefficient.jpg";
+import threatModelsBanner from "@/images/banners/threat-models.jpg";
+import violetSilkBanner from "@/images/banners/violet-silk-boliviainteligente.jpg";
+import purpleWaveBanner from "@/images/banners/purple-wave-gradient-wallpapers.jpg";
+import indigoWavesBanner from "@/images/banners/indigo-waves-martin-martz.jpg";
+import lightTrailsBanner from "@/images/banners/light-trails-pawel-czerwinski.jpg";
+import darkArcsBanner from "@/images/banners/dark-arcs-mansy-graphics.jpg";
 import type { StaticImageData } from "next/image";
-import html from "remark-html";
 
 // Frontmatter `banner: <key>` selects a post's banner; `logo: true` entries
 // are wordmarks rendered contained on white rather than cover-cropped, and
@@ -20,12 +24,20 @@ const banners: Record<
   string,
   { image: StaticImageData; logo?: boolean; position?: string }
 > = {
-  definition: { image: definitionBanner },
+  blog: { image: blogBanner },
+  organisation: { image: organisationBanner },
   coefficient: { image: coefficientBanner, position: "object-bottom" },
+  "threat-models": { image: threatModelsBanner },
+  "violet-silk": { image: violetSilkBanner },
+  "purple-wave": { image: purpleWaveBanner },
+  "indigo-waves": { image: indigoWavesBanner },
+  "light-trails": { image: lightTrailsBanner },
+  "dark-arcs": { image: darkArcsBanner },
 };
 import Image from "next/image";
 import Link from "next/link";
 import TableOfContents from "@/components/TableOfContents";
+import SidenoteLinks from "@/components/SidenoteLinks";
 
 type BlogPostProps = {
   params: {
@@ -45,7 +57,7 @@ function getPostOrNotFound(slug: string) {
 
 export async function generateMetadata({ params }: BlogPostProps) {
   const post = getPostOrNotFound(params.slug);
-  const banner = banners[post.meta.banner ?? "definition"] ?? banners.definition;
+  const banner = banners[post.meta.banner ?? "blog"] ?? banners.blog;
   return {
     title: `${post.meta.title} | Formation Research`,
     description: post.meta.summary,
@@ -64,6 +76,7 @@ export async function generateMetadata({ params }: BlogPostProps) {
     alternates: {
       canonical: `https://www.formationresearch.com/blog/${params.slug}`,
     },
+    ...(post.meta.unlisted && { robots: { index: false } }),
   };
 }
 
@@ -98,6 +111,26 @@ const substackIcon = (
   </svg>
 );
 
+function AuthorRole({ author }: { author: Author }) {
+  const link = author.roleLink;
+  const start = link ? author.role.indexOf(link.text) : -1;
+  if (!link || start === -1) return <>{author.role}</>;
+  return (
+    <>
+      {author.role.slice(0, start)}
+      <a
+        href={link.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="underline decoration-customPurple/30 underline-offset-2 hover:decoration-customPurple transition-colors duration-200"
+      >
+        {link.text}
+      </a>
+      {author.role.slice(start + link.text.length)}
+    </>
+  );
+}
+
 function formatDate(date: string) {
   return new Date(date).toLocaleDateString("en-US", {
     year: "numeric",
@@ -110,18 +143,12 @@ function formatDate(date: string) {
 export default async function BlogPost({ params }: BlogPostProps) {
   const { slug } = params;
   const post = getPostOrNotFound(slug);
-  const banner = banners[post.meta.banner ?? "definition"] ?? banners.definition;
+  const banner = banners[post.meta.banner ?? "blog"] ?? banners.blog;
   const postAuthors = getPostAuthors(post.meta);
   const words = post.content.trim().split(/\s+/).length;
   const readingTime = Math.max(1, Math.round(words / 230));
-  // Posts are trusted files in the repo, so raw HTML is allowed through
-  // for things Markdown can't express, like tables with merged cells.
-  const processedContent = await remark()
-    .use(remarkGfm)
-    .use(html, { sanitize: false })
-    .process(post.content);
-  const { html: contentHtml, headings } = addHeadingAnchors(
-    extractSidenotes(processedContent.toString())
+  const { html: contentHtml, headings } = await renderPostContent(
+    post.content
   );
 
   const externalEditions = [
@@ -178,9 +205,12 @@ export default async function BlogPost({ params }: BlogPostProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white">
+      <div className="min-h-screen bg-white">
         {/* Banner */}
-        <div id="top" className="relative w-full h-80 md:h-[30rem]">
+        {/* Equal padding above and below keeps the text centred in the whole
+            banner while clearing the fixed navbar; a long title grows the
+            banner past its minimum height rather than running under it. */}
+        <div id="top" className="relative w-full flex min-h-96 md:min-h-[34rem]">
           {banner.logo ? (
             <div className="absolute inset-0 bg-white" />
           ) : (
@@ -193,10 +223,10 @@ export default async function BlogPost({ params }: BlogPostProps) {
             />
           )}
           <div
-            className={`absolute inset-0 flex flex-col items-center justify-center font-serif px-4 text-center ${
+            className={`relative flex-1 flex flex-col items-center justify-center font-serif px-4 text-center ${
               banner.logo
-                ? "pt-20 md:pt-28"
-                : "pt-16 md:pt-20 bg-gradient-to-t from-black/75 via-black/50 to-black/30"
+                ? "py-20 md:py-28"
+                : "py-20 md:py-24 bg-gradient-to-t from-black/75 via-black/50 to-black/30"
             }`}
           >
             {banner.logo && (
@@ -323,6 +353,71 @@ export default async function BlogPost({ params }: BlogPostProps) {
                 )}
               </div>
 
+              {/* Authors */}
+              {postAuthors.length > 0 && (
+                <div className="max-w-2xl mx-auto mb-10">
+                  <p className="text-xs uppercase tracking-wider text-gray-500 mb-4">
+                    Written by
+                  </p>
+                  <div className="space-y-6">
+                    {postAuthors.map((author) => (
+                      <div
+                        key={author.name}
+                        className="flex items-center gap-5"
+                      >
+                        {author.image ? (
+                          <Image
+                            src={author.image}
+                            alt={author.name}
+                            width={72}
+                            height={72}
+                            className="rounded-full shadow-md flex-shrink-0"
+                          />
+                        ) : (
+                          <div
+                            className="w-[72px] h-[72px] rounded-full shadow-md flex-shrink-0 flex items-center justify-center bg-gradient-to-br from-violet-800 to-indigo-900 font-serif text-2xl text-white"
+                            aria-hidden="true"
+                          >
+                            {getAuthorInitials(author)}
+                          </div>
+                        )}
+                        <div>
+                          <p className="font-serif text-xl text-gray-900">
+                            {author.linkedin ? (
+                              <a
+                                href={author.linkedin}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:text-customPurple transition-colors duration-200"
+                              >
+                                {author.name}
+                              </a>
+                            ) : (
+                              author.name
+                            )}
+                          </p>
+                          <p className="text-sm text-customPurple font-medium">
+                            <AuthorRole author={author} />
+                          </p>
+                          {author.bio && (
+                            <p className="text-sm text-gray-600 mt-1">
+                              {author.bio}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  {/* On small screens the contents box below already has rules. */}
+                  <div
+                    className={`h-px bg-gradient-to-r from-transparent via-customPurple/30 to-transparent mt-8 ${
+                      headings.length > 0 ? "hidden lg:block" : ""
+                    }`}
+                    aria-hidden="true"
+                  />
+                </div>
+              )}
+
               {/* Mobile table of contents */}
               {headings.length > 0 && (
               <details className="group lg:hidden mb-8 max-w-2xl mx-auto border-y border-gray-300/70 py-3">
@@ -353,6 +448,7 @@ export default async function BlogPost({ params }: BlogPostProps) {
                   className="prose prose-lg post-body max-w-none [&_:is(h1,h2,h3,h4)]:scroll-mt-28"
                   dangerouslySetInnerHTML={{ __html: contentHtml }}
                 />
+                <SidenoteLinks />
               </article>
 
               <footer className="mt-16 max-w-2xl mx-auto">
@@ -360,53 +456,6 @@ export default async function BlogPost({ params }: BlogPostProps) {
                   className="h-px bg-gradient-to-r from-transparent via-customPurple/30 to-transparent mb-8"
                   aria-hidden="true"
                 />
-                {postAuthors.length > 0 && (
-                  <div className="mb-10">
-                    <p className="text-xs uppercase tracking-wider text-gray-500 mb-4">
-                      Written by
-                    </p>
-                    <div className="space-y-6">
-                      {postAuthors.map((author) => (
-                        <div
-                          key={author.name}
-                          className="flex items-center gap-5"
-                        >
-                          <Image
-                            src={author.image}
-                            alt={author.name}
-                            width={72}
-                            height={72}
-                            className="rounded-full shadow-md flex-shrink-0"
-                          />
-                          <div>
-                            <p className="font-serif text-xl text-gray-900">
-                              {author.linkedin ? (
-                                <a
-                                  href={author.linkedin}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="hover:text-customPurple transition-colors duration-200"
-                                >
-                                  {author.name}
-                                </a>
-                              ) : (
-                                author.name
-                              )}
-                            </p>
-                            <p className="text-sm text-customPurple font-medium">
-                              {author.role}
-                            </p>
-                            {author.bio && (
-                              <p className="text-sm text-gray-600 mt-1">
-                                {author.bio}
-                              </p>
-                            )}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
                 <div className="flex items-center justify-between">
                   <Link
                     href="/blog"

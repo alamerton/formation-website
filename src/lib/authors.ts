@@ -4,8 +4,10 @@ import alfieImage from "@/images/board/alfie.jpg";
 export type Author = {
   name: string;
   role: string;
+  // Links one phrase of the role, e.g. the name of a fellowship.
+  roleLink?: { text: string; href: string };
   bio?: string;
-  image: StaticImageData;
+  image?: StaticImageData;
   linkedin?: string;
 };
 
@@ -16,6 +18,11 @@ export const authors: Record<string, Author> = {
     role: "Founder, Formation Research",
     image: alfieImage,
     linkedin: "https://www.linkedin.com/in/alfie-lamerton/",
+  },
+  "hugo-bos": {
+    name: "Hugo Bos",
+    role: "Pivotal Summer 2026 Fellow, Formation Research",
+    roleLink: { text: "Pivotal", href: "https://www.pivotal-research.org/" },
   },
 };
 
@@ -33,6 +40,16 @@ export function getPostAuthors(meta: {
   return keys
     .map((key) => authors[key])
     .filter((author): author is Author => Boolean(author));
+}
+
+// Shown in place of a photo for authors without one.
+export function getAuthorInitials(author: Author): string {
+  return author.name
+    .split(/\s+/)
+    .map((part) => part[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
 }
 
 // "A", "A and B", "A, B and C"

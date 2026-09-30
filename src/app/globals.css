@@ -84,17 +84,17 @@ body {
 /* ---- Blog post body (scoped; shared .prose config untouched) ---- */
 .prose.post-body h1 { @apply font-serif font-normal text-3xl md:text-4xl text-gray-900 mt-12 mb-5 leading-tight text-balance; }
 .prose.post-body h2 { @apply font-serif font-normal text-2xl md:text-[1.75rem] text-gray-900 mt-12 mb-4 py-0 leading-snug text-balance; }
-.prose.post-body h3 { @apply font-serif font-normal italic text-xl md:text-2xl text-gray-900 mt-9 mb-3 leading-snug; }
+.prose.post-body h3 { @apply font-serif font-normal text-xl md:text-2xl text-gray-900 mt-9 mb-3 leading-snug; }
 .prose.post-body h4 { @apply font-sans text-sm font-semibold uppercase tracking-wider text-gray-500 mt-8 mb-2; }
 .prose.post-body > h1:first-child,
 .prose.post-body > h2:first-child { @apply mt-0; }
 
-.prose.post-body p { @apply text-lg leading-8 text-gray-800 text-pretty; }
+.prose.post-body p { @apply text-lg leading-[1.875rem] text-gray-800 text-pretty; }
 .prose.post-body strong { @apply font-semibold text-gray-900; }
 
-.prose.post-body ul { @apply list-disc list-outside pl-6 ml-0 my-6 space-y-2 marker:text-customPurple/60; }
-.prose.post-body ol { @apply list-decimal list-outside pl-6 ml-0 my-6 space-y-2 marker:text-gray-500 marker:font-semibold; }
-.prose.post-body li { @apply text-lg leading-8 text-gray-800 pl-1; }
+.prose.post-body ul { @apply list-disc list-outside pl-6 ml-0 my-6 space-y-1.5 marker:text-customPurple/60; }
+.prose.post-body ol { @apply list-decimal list-outside pl-6 ml-0 my-6 space-y-1.5 marker:text-gray-500 marker:font-semibold; }
+.prose.post-body li { @apply text-lg leading-7 text-gray-800 pl-1 my-0; }
 
 .prose.post-body a { @apply text-customPurple font-medium underline decoration-customPurple/30 decoration-1 underline-offset-[3px] transition-colors duration-200; }
 .prose.post-body a:hover { @apply decoration-customPurple text-indigo-900; }
@@ -105,7 +105,11 @@ body {
 
 .prose.post-body hr { @apply my-12 border-0 h-px bg-gradient-to-r from-transparent via-customPurple/30 to-transparent; }
 
-.prose.post-body img { @apply rounded-xl shadow-md my-8 mx-auto max-w-full; }
+/* A rule with extra room around it, between major sections. */
+.prose.post-body hr.post-section-break { @apply my-12 md:my-16; }
+
+.prose.post-body img { @apply rounded-xl my-8 mx-auto max-w-full; }
+.prose.post-body img.post-figure-narrow { max-width: min(100%, 26rem); }
 .prose.post-body figcaption { @apply block text-center text-sm text-gray-500 -mt-4 mb-8 not-italic; }
 
 .prose.post-body code { @apply font-mono text-[0.9em] font-normal text-customPurple bg-customPurple/5 rounded px-1.5 py-0.5; }
@@ -129,17 +133,64 @@ body {
 .prose.post-body .sidenote { @apply block font-sans text-sm leading-6 text-gray-600 my-3 ml-6 pl-3 border-l-2 border-customPurple/20; }
 .prose.post-body .sidenote-number { @apply font-semibold text-customPurple mr-1; }
 .prose.post-body .sidenote a { @apply font-normal; }
+.prose.post-body .sidenote a.sidenote-number { @apply font-semibold no-underline hover:underline; }
+.prose.post-body sup.sidenote-ref a { @apply px-px hover:underline; }
+.prose.post-body .sidenote:focus { outline: none; }
+/* When a note is reached from its number, a tint sweeps in from its left
+   edge, holds, then fades. It's drawn on ::before, behind the text; the
+   isolation keeps it above the page background. */
+.prose.post-body .sidenote { position: relative; isolation: isolate; }
+.prose.post-body .sidenote::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -0.375rem -0.5rem -0.375rem 0;
+  pointer-events: none;
+  background: linear-gradient(to right, rgb(51 0 93 / 0.14), rgb(51 0 93 / 0.05) 55%, rgb(51 0 93 / 0));
+  transform-origin: left;
+  opacity: 0;
+}
+.prose.post-body .sidenote.sidenote-highlight::before {
+  animation: sidenote-highlight 2.6s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+@keyframes sidenote-highlight {
+  0% { opacity: 0; transform: scaleX(0.15); }
+  20% { opacity: 1; transform: scaleX(1); }
+  45% { opacity: 1; transform: scaleX(1); }
+  100% { opacity: 0; transform: scaleX(1); }
+}
+@keyframes sidenote-highlight-fade {
+  0% { opacity: 0; }
+  20%, 45% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .prose.post-body .sidenote.sidenote-highlight::before { animation-name: sidenote-highlight-fade; }
+}
+/* A reference reached from its note's number gets a brief tint. */
+.prose.post-body sup.sidenote-ref a.sidenote-ref-highlight {
+  animation: sidenote-ref-highlight 2.6s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+@keyframes sidenote-ref-highlight {
+  0%, 100% { background-color: rgb(51 0 93 / 0); box-shadow: 0 0 0 0.25rem rgb(51 0 93 / 0); }
+  20%, 45% { background-color: rgb(51 0 93 / 0.14); box-shadow: 0 0 0 0.25rem rgb(51 0 93 / 0.14); }
+}
 
 @media (min-width: 1024px) {
   .prose.post-body .sidenote {
     float: right;
     clear: right;
     width: 14rem;
-    margin: 0.25rem -17rem 1rem 0;
+    /* Notes sit 3rem outside the text column, or 1rem beyond the furthest a
+       table breaks out on wide screens, whichever is further, so they never
+       run underneath a table. The overhang follows .post-table-wrapper's
+       width: (min(100vw - 40rem, 62rem) - 42rem text column) / 2. */
+    margin: 0.25rem calc(-14rem - max(3rem, clamp(0rem, (100vw - 82rem) / 2, 10rem) + 1rem)) 1rem 0;
     padding-left: 0;
     border-left: 0;
     text-align: left;
   }
+  .prose.post-body .sidenote::before { left: -0.75rem; }
 }
 
 /* Tables in posts. On small screens they scroll sideways rather than
@@ -156,10 +207,10 @@ body {
   }
 }
 .prose.post-body table { @apply w-full min-w-[640px] my-0 border-collapse border-b-2 border-gray-300 bg-white text-sm leading-snug text-gray-800; }
-.prose.post-body thead th { @apply bg-gray-100 px-2.5 py-2 border-y-2 border-gray-300 font-semibold text-gray-900 text-center align-middle; }
+.prose.post-body thead th { @apply bg-gray-100 px-2.5 py-2 border-y-2 border-gray-300 font-semibold text-gray-900 text-left align-top; }
 .prose.post-body tbody th,
-.prose.post-body tbody td { @apply px-2.5 py-3 border-b border-gray-200 align-middle; }
-.prose.post-body tbody th { @apply font-medium text-gray-900 text-center; }
+.prose.post-body tbody td { @apply px-2.5 py-3 border-b border-gray-200 align-top; }
+.prose.post-body tbody th { @apply font-medium text-gray-900 text-left; }
 .prose.post-body tbody + tbody { @apply border-t-2 border-gray-300; }
 .prose.post-body td ul { list-style-type: "➢  "; @apply pl-5 my-0 space-y-1; }
 .prose.post-body td li { @apply pl-0 my-0 text-sm leading-snug text-gray-800; }
@@ -170,3 +221,36 @@ body {
 .prose.post-body td.neglect-low { background-color: #ead1d1; }
 .prose.post-body td.neglect-med { background-color: #f8e4d0; }
 .prose.post-body td.neglect-high { background-color: #dce9d5; }
+
+/* Cell colours from the Google Docs palette, so tables drafted in Docs keep
+   their colour coding. They work on a <tr>, <th> or <td>. */
+.prose.post-body .cell-green { background-color: #d9ead3; }
+.prose.post-body .cell-orange { background-color: #fce5cd; }
+.prose.post-body .cell-red { background-color: #f4cccc; }
+.prose.post-body .cell-blue { background-color: #cfe2f3; }
+.prose.post-body .cell-blue-mid { background-color: #c9daf8; }
+.prose.post-body .cell-blue-strong { background-color: #a4c2f4; }
+.prose.post-body .cell-pink { background-color: #d5a6bd; }
+.prose.post-body th .th-aside { @apply font-normal; }
+.prose.post-body thead td { @apply bg-gray-100 border-y-2 border-gray-300; }
+/* Cells default to left/top; centre only what the source table centres. */
+.prose.post-body table.th-center th { text-align: center; }
+.prose.post-body table.v-middle :is(th, td) { vertical-align: middle; }
+.prose.post-body .align-center { text-align: center; }
+.prose.post-body .valign-bottom { vertical-align: bottom; }
+
+.prose.post-body table caption { caption-side: bottom; @apply text-left text-xs leading-5 text-gray-500 pt-2; }
+
+/* Long URLs in notes would otherwise overflow their narrow column. */
+.prose.post-body .sidenote { overflow-wrap: anywhere; }
+
+/* A table with footnotes: its notes come first in the markup so that on
+   large screens they float into the margin alongside the table; on small
+   screens they're shown after it instead. */
+.prose.post-body .post-table-group { @apply my-8; }
+.prose.post-body .post-table-group > .post-table-wrapper { @apply my-0; }
+@media (max-width: 1023px) {
+  .prose.post-body .post-table-group { @apply flex flex-col; }
+  .prose.post-body .post-table-group > .sidenote { @apply order-1 mt-3 mb-0; }
+  .prose.post-body .post-table-group > .sidenote:first-child { @apply mt-4; }
+}

@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import type { PostHeading } from "@/lib/post";
 
 // Vertical pixel offset accounting for the fixed header; a heading is
@@ -16,6 +16,7 @@ const indentByLevel: Record<number, string> = {
 
 const TableOfContents = ({ headings }: { headings: PostHeading[] }) => {
   const [activeId, setActiveId] = useState<string>("");
+  const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const onScroll = () => {
@@ -37,10 +38,40 @@ const TableOfContents = ({ headings }: { headings: PostHeading[] }) => {
     return () => window.removeEventListener("scroll", onScroll);
   }, [headings]);
 
+  // Long posts overflow the sticky sidebar, so keep the active entry in
+  // view. Only a scrollable ancestor of the list is moved, never the page,
+  // so the inline (mobile) contents doesn't yank the reader back up.
+  useEffect(() => {
+    const link = navRef.current?.querySelector<HTMLElement>(
+      `a[href="#${CSS.escape(activeId)}"]`
+    );
+    if (!link) return;
+    let container = link.parentElement;
+    while (container && container !== document.body) {
+      const { overflowY } = getComputedStyle(container);
+      if (
+        (overflowY === "auto" || overflowY === "scroll") &&
+        container.scrollHeight > container.clientHeight
+      ) {
+        break;
+      }
+      container = container.parentElement;
+    }
+    if (!container || container === document.body) return;
+    const linkBox = link.getBoundingClientRect();
+    const containerBox = container.getBoundingClientRect();
+    const margin = 48;
+    if (linkBox.top < containerBox.top + margin) {
+      container.scrollTop -= containerBox.top + margin - linkBox.top;
+    } else if (linkBox.bottom > containerBox.bottom - margin) {
+      container.scrollTop += linkBox.bottom - (containerBox.bottom - margin);
+    }
+  }, [activeId]);
+
   if (headings.length === 0) return null;
 
   return (
-    <nav aria-label="Table of contents">
+    <nav ref={navRef} aria-label="Table of contents">
       <ul className="space-y-0.5 text-sm leading-snug border-l border-gray-200">
         {headings.map((heading) => (
           <li key={heading.id}>

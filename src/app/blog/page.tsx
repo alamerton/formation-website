@@ -1,4 +1,4 @@
-import { getAllPosts } from "@/lib/post";
+import { getListedPosts } from "@/lib/post";
 import Image from "next/image";
 import Link from "next/link";
 import blogBanner from "@/images/banners/blog.jpg";
@@ -33,7 +33,7 @@ function formatDate(date: string) {
 }
 
 export default function BlogIndex() {
-  const posts = getAllPosts();
+  const posts = getListedPosts();
 
   return (
     <>

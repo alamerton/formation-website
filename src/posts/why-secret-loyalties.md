@@ -3,6 +3,7 @@ title: "Why Formation Research is Working on Secret Loyalties"
 date: "2026-08-04"
 summary: "We have written elsewhere what Formation Research is, and how it started. But we haven’t explained why Formation Research is deciding to focus on empirical secret loyalties research right now. That’s what this post is for."
 author: "alfie-lamerton"
+banner: "light-trails"
 lesswrong: "https://www.lesswrong.com/posts/BqBDit4zuBZfafeG5/why-formation-research-is-working-on-secret-loyalties"
 ---
 

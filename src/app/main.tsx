@@ -10,7 +10,7 @@ import coefficientLogo from "@/images/Coefficient_Logo_Gray.png";
 import aistofLogo from "@/images/aistof.png";
 import Head from "next/head";
 import LogoMarquee from "@/components/LogoMarquee";
-import { getAllPosts } from "@/lib/post";
+import { getListedPosts } from "@/lib/post";
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -110,7 +110,7 @@ function formatDate(date: string) {
 }
 
 const Main: React.FC = () => {
-  const allPosts = getAllPosts();
+  const allPosts = getListedPosts();
   const latestPosts = allPosts.slice(0, 3);
   return (
     <>
@@ -196,11 +196,11 @@ const Main: React.FC = () => {
           </LogoMarquee>
         </div>
 
-        {/* News Section */}
+        {/* New Posts Section */}
         <div className="bg-gradient-to-b from-blue-50 to-white py-12 md:py-16">
           <div className="container mx-auto px-4 max-w-3xl">
             <p className="text-center text-gray-500 text-sm uppercase tracking-wider mb-8">
-              News
+              New posts
             </p>
             <ul className="divide-y divide-gray-200">
               {latestPosts.map((post) => (
