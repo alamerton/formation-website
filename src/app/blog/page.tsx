@@ -50,6 +50,7 @@ export default function BlogIndex() {
             fill
             className="object-cover"
             priority
+            placeholder="blur"
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center font-serif px-4 text-center">
             <h1 className="text-3xl md:text-5xl text-white">Blog</h1>

@@ -1,8 +1,8 @@
 "use client";
 import { useEffect } from "react";
 
-// A footnote number in the text links to its note; the number at the start
-// of a note links back to the reference.
+// A footnote number in the text links to its note; a note's number (and,
+// in the footnotes list, its trailing arrow) links back to the reference.
 const LINK_TYPES = [
   { selector: "a[data-sidenote-link]", highlightClass: "sidenote-highlight" },
   {
@@ -21,14 +21,113 @@ function highlight(target: HTMLElement, className: string) {
   target.addEventListener(
     "animationend",
     () => target.classList.remove(className),
-    { once: true }
+    { once: true },
   );
   target.focus({ preventScroll: true });
 }
 
-// Clicking a footnote link highlights its target, first scrolling it into
-// view only if it isn't already fully on screen. Without JavaScript the
-// links still jump to their target.
+// Tints the whole line of text a reference sits on, which is far easier to
+// spot than the small number alone. Lines aren't elements, so a temporary
+// band is laid over the line, found from where an empty marker lands.
+function highlightLine(reference: HTMLElement) {
+  const sup = reference.closest("sup") ?? reference;
+  const block = sup.parentElement?.closest<HTMLElement>(
+    "p, li, td, th, figcaption, blockquote",
+  );
+  if (!block) return;
+  const marker = document.createElement("span");
+  sup.before(marker);
+  const markerBox = marker.getBoundingClientRect();
+  marker.remove();
+
+  const style = getComputedStyle(block);
+  const lineHeight = parseFloat(style.lineHeight);
+  const blockBox = block.getBoundingClientRect();
+  const contentTop =
+    blockBox.top +
+    parseFloat(style.borderTopWidth) +
+    parseFloat(style.paddingTop);
+  if (!lineHeight || !markerBox.height) return;
+  const line = Math.floor(
+    (markerBox.top + markerBox.height / 2 - contentTop) / lineHeight,
+  );
+
+  const band = document.createElement("div");
+  band.className = "reference-line-highlight";
+  band.setAttribute("aria-hidden", "true");
+  Object.assign(band.style, {
+    top: `${contentTop + line * lineHeight + window.scrollY}px`,
+    left: `${blockBox.left + window.scrollX}px`,
+    width: `${blockBox.width}px`,
+    height: `${lineHeight}px`,
+  });
+  document.body.appendChild(band);
+  const remove = () => band.remove();
+  band.addEventListener("animationend", remove, { once: true });
+  window.setTimeout(remove, 4000);
+}
+
+// On small screens the margin notes are hidden and the footnotes list at
+// the end of the post stands in for them, so an id may point at a hidden
+// note; resolve it to whichever copy is showing.
+function resolveTarget(id: string) {
+  return [
+    document.getElementById(id),
+    ...Array.from(
+      document.querySelectorAll<HTMLElement>(
+        `[data-note-copy~="${CSS.escape(id)}"]`,
+      ),
+    ),
+  ].find((element) => element && element.getClientRects().length > 0);
+}
+
+// Highlights the target, first scrolling it into view only if it isn't
+// already fully on screen.
+function goTo(target: HTMLElement, highlightClass: string) {
+  const arrive = () => {
+    highlight(target, highlightClass);
+    if (highlightClass === "sidenote-ref-highlight") highlightLine(target);
+  };
+  const headerBottom =
+    document.querySelector("header")?.getBoundingClientRect().bottom ?? 0;
+  const visibleTop = Math.max(headerBottom, 0) + EDGE_MARGIN;
+  const visibleBottom = window.innerHeight - EDGE_MARGIN;
+  const box = target.getBoundingClientRect();
+  if (box.top >= visibleTop && box.bottom <= visibleBottom) {
+    arrive();
+    return;
+  }
+
+  // Centre the target in the visible area, or align its top if it's taller.
+  const room = visibleBottom - visibleTop;
+  const offset = box.height < room ? (room - box.height) / 2 : 0;
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+  window.scrollTo({
+    top: window.scrollY + box.top - visibleTop - offset,
+    // "auto" would still animate: the site sets scroll-behavior: smooth.
+    behavior: reduceMotion ? "instant" : "smooth",
+  });
+  if (reduceMotion) {
+    arrive();
+    return;
+  }
+  // Highlight once the scroll settles, so the fade isn't spent mid-scroll.
+  let arrived = false;
+  const finish = () => {
+    if (arrived) return;
+    arrived = true;
+    window.removeEventListener("scrollend", finish);
+    arrive();
+  };
+  window.addEventListener("scrollend", finish, { once: true });
+  window.setTimeout(finish, 900);
+}
+
+// Handles clicks on footnote links, plus footnote addresses reached without
+// a click (a shared #fn-N link, or a tap before this script loaded), since
+// the browser can't jump to a note that's hidden at this screen size.
 const SidenoteLinks = () => {
   useEffect(() => {
     const onClick = (event: MouseEvent) => {
@@ -44,53 +143,35 @@ const SidenoteLinks = () => {
       }
       const clicked = event.target as Element | null;
       const type = LINK_TYPES.find((linkType) =>
-        clicked?.closest(linkType.selector)
+        clicked?.closest(linkType.selector),
       );
       const link = type && clicked?.closest<HTMLAnchorElement>(type.selector);
-      const target = link && document.getElementById(link.hash.slice(1));
+      const target = link && resolveTarget(link.hash.slice(1));
       if (!type || !target) return;
       event.preventDefault();
-      const arrive = () => highlight(target, type.highlightClass);
+      goTo(target, type.highlightClass);
+    };
 
-      const headerBottom =
-        document.querySelector("header")?.getBoundingClientRect().bottom ?? 0;
-      const visibleTop = Math.max(headerBottom, 0) + EDGE_MARGIN;
-      const visibleBottom = window.innerHeight - EDGE_MARGIN;
-      const box = target.getBoundingClientRect();
-      if (box.top >= visibleTop && box.bottom <= visibleBottom) {
-        arrive();
-        return;
-      }
-
-      // Centre the target in the visible area, or align its top if it's taller.
-      const room = visibleBottom - visibleTop;
-      const offset = box.height < room ? (room - box.height) / 2 : 0;
-      const reduceMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-      ).matches;
-      window.scrollTo({
-        top: window.scrollY + box.top - visibleTop - offset,
-        // "auto" would still animate: the site sets scroll-behavior: smooth.
-        behavior: reduceMotion ? "instant" : "smooth",
-      });
-      if (reduceMotion) {
-        arrive();
-        return;
-      }
-      // Highlight once the scroll settles, so the fade isn't spent mid-scroll.
-      let arrived = false;
-      const finish = () => {
-        if (arrived) return;
-        arrived = true;
-        window.removeEventListener("scrollend", finish);
-        arrive();
-      };
-      window.addEventListener("scrollend", finish, { once: true });
-      window.setTimeout(finish, 900);
+    const onHash = () => {
+      const id = decodeURIComponent(window.location.hash.slice(1));
+      if (!/^fn(ref)?-/.test(id)) return;
+      const target = resolveTarget(id);
+      if (!target) return;
+      goTo(
+        target,
+        id.startsWith("fnref-")
+          ? "sidenote-ref-highlight"
+          : "sidenote-highlight",
+      );
     };
 
     document.addEventListener("click", onClick);
-    return () => document.removeEventListener("click", onClick);
+    window.addEventListener("hashchange", onHash);
+    onHash();
+    return () => {
+      document.removeEventListener("click", onClick);
+      window.removeEventListener("hashchange", onHash);
+    };
   }, []);
 
   return null;

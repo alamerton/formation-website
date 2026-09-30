@@ -1,10 +1,20 @@
 import React from "react";
 import Main from "./main";
 import { redirect } from "next/navigation";
+import { linkPreviewImages } from "@/lib/linkPreview";
 
 export const metadata = {
   title:
     "Formation Research – Lock-In Risk Research and High-Impact Interventions",
+  description:
+    "Formation Research reduces lock-in risks by researching fundamental lock-in dynamics and implementing high-impact interventions.",
+  openGraph: {
+    title: "Formation Research – Reducing Lock-In Risks",
+    description:
+      "Formation Research reduces lock-in risks by researching fundamental lock-in dynamics and implementing high-impact interventions.",
+    type: "website",
+    images: linkPreviewImages,
+  },
 };
 
 type Props = {

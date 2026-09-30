@@ -1,4 +1,5 @@
 import React from "react";
+import { linkPreviewImages } from "@/lib/linkPreview";
 import Image from "next/image";
 import Link from "next/link";
 import LogoMarquee from "@/components/LogoMarquee";
@@ -12,7 +13,6 @@ import fabienImage from "@/images/board/fabien.jpeg";
 import anthropicLogo from "@/images/anthropic-v2.svg";
 import oxfordLogo from "@/images/University-of-Oxford-scaled.jpg";
 import forethoughtLogo from "@/images/forethought_logo-v2.png";
-import Head from "next/head";
 
 const teamMembers = [
   {
@@ -72,6 +72,15 @@ const teamMembers = [
 export const metadata = {
   title:
     "About Us | Formation Research – Lock-In Risk Research and High-Impact Interventions",
+  description:
+    "Learn about Formation Research's mission to minimise lock-in risks and promote a dynamic future through first-principles AI safety research.",
+  openGraph: {
+    title: "About Us | Formation Research",
+    description:
+      "Learn about Formation Research's mission to minimise lock-in risks and promote a dynamic future.",
+    type: "website",
+    images: linkPreviewImages,
+  },
 };
 
 const structuredData = {
@@ -87,30 +96,10 @@ const AboutPage = () => {
   return (
     <>
       {/* SEO Meta Tags */}
-      <Head>
-        <title>About Us | Formation Research - Minimising Lock-In Risks</title>
-        <meta
-          name="description"
-          content="Learn about Formation Research's mission to minimise lock-in risks and promote a dynamic future through first-principles AI safety research."
-        />
-        <meta property="og:title" content="About Us | Formation Research" />
-        <meta
-          property="og:description"
-          content="Learn about Formation Research's mission to minimise lock-in risks and promote a dynamic future."
-        />
-        <meta
-          property="og:image"
-          content="https://www.formationresearch.com/images/about-banner.jpg"
-        />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <link rel="canonical" href="https://www.formationresearch.com/about" />
-        {/* Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
-      </Head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
 
       <div className="min-h-screen bg-gradient-to-b from-blue-100 to-blue-50">
         {/* Banner */}
@@ -121,6 +110,7 @@ const AboutPage = () => {
             fill
             className="object-cover"
             priority
+            placeholder="blur"
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center font-serif">
             <h1 className="text-3xl md:text-5xl font-serif text-white mb-6">

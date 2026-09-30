@@ -8,7 +8,6 @@ import eaFundsLogo from "@/images/ea_funds_logo.png";
 import fliLogo from "@/images/Future_of_Life_Institute_logo.svg.png";
 import coefficientLogo from "@/images/Coefficient_Logo_Gray.png";
 import aistofLogo from "@/images/aistof.png";
-import Head from "next/head";
 import LogoMarquee from "@/components/LogoMarquee";
 import { getListedPosts } from "@/lib/post";
 
@@ -115,33 +114,10 @@ const Main: React.FC = () => {
   return (
     <>
       {/* SEO Meta Tags */}
-      <Head>
-        <title>Formation Research – Reducing Lock-In Risks</title>
-        <meta
-          name="description"
-          content="Formation Research reduces lock-in risks by researching fundamental lock-in dynamics and implementing high-impact interventions."
-        />
-        <meta
-          property="og:title"
-          content="Formation Research – Reducing Lock-In Risks"
-        />
-        <meta
-          property="og:description"
-          content="Formation Research reduces lock-in risks by researching fundamental lock-in dynamics and implementing high-impact interventions."
-        />
-        <meta
-          property="og:image"
-          content="https://www.formationresearch.com/images/theory-of-change-banner.jpg"
-        />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <link rel="canonical" href="https://www.formationresearch.com/" />
-        {/* Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
-      </Head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
 
       <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white font-sans">
         {/* Banner Section */}
@@ -153,6 +129,7 @@ const Main: React.FC = () => {
             fill
             className="object-cover"
             priority
+            placeholder="blur"
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-center">
             <h1 className="text-4xl md:text-6xl font-serif text-white mb-4 opacity-0 animate-fade-in">

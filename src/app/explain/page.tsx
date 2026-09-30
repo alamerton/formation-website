@@ -1,20 +1,29 @@
 import React from "react";
+import { linkPreviewImages } from "@/lib/linkPreview";
 import explainerBanner from "@/images/explainer-banner.png";
 import Image from "next/image";
 import categorisation from "@/images/lock-in-categorisation.png";
 import lobster from "@/images/lobster-pot-image.png";
 // import lockedRoom from "@/images/locked-room.png";
 import timeline from "@/images/timeline.png";
-import Head from "next/head";
 
 export const metadata = {
   title:
     "Lock-In Explainers | Formation Research – Lock-In Risk Research and High-Impact Interventions",
+  description:
+    "Learn about Formation Research's focus area: lock-in and lock-in risks, using visual and verbal explainers.",
+  openGraph: {
+    title: "Explainers | Formation Research",
+    description:
+      "Learn about Formation Research's focus area: lock-in and lock-in risks, using visual and verbal explainers.",
+    type: "website",
+    images: linkPreviewImages,
+  },
 };
 
 const structuredData = {
   "@context": "https://schema.org",
-  "@type": "ExplainerPage",
+  "@type": "WebPage",
   name: "Lock-In Explainers",
   url: "https://www.formationresearch.com/explain",
   description:
@@ -25,35 +34,10 @@ const ExplainerPage = () => {
   return (
     <>
       {/* SEO Meta Tags */}
-      <Head>
-        <title>
-          Explainers | Formation Research - Minimising Lock-In Risks
-        </title>
-        <meta
-          name="description"
-          content="Learn about Formation Research's focus area: lock-in and lock-in risks, using visual and verbal explainers."
-        />
-        <meta property="og:title" content="Explainers | Formation Research" />
-        <meta
-          property="og:description"
-          content="Learn about Formation Research's focus area: lock-in and lock-in risks, using visual and verbal explainers."
-        />
-        <meta
-          property="og:image"
-          content="https://www.formationresearch.com/images/explainer-banner.jpg"
-        />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <link
-          rel="canonical"
-          href="https://www.formationresearch.com/explain"
-        />
-        {/* Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
-      </Head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white font-sans">
         {/* Banner Section */}
         <div className="relative w-full h-screen">
@@ -64,6 +48,7 @@ const ExplainerPage = () => {
             fill
             className="object-cover"
             priority
+            placeholder="blur"
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-center">
             <h1 className="text-4xl md:text-6xl font-serif text-white mb-4 animate-fade-in">

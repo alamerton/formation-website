@@ -4,6 +4,11 @@ import createMDX from '@next/mdx'
 const nextConfig = {
   // Allow .mdx files as pages and imports
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+  // Next's default tops out at 3840px wide. Full-width banners are 2560px
+  // sources, so larger variants only cost bandwidth and optimisation time.
+  images: {
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 2560],
+  },
   // The blog was previously published under /posts, and the grant post
   // under its original slug, so keep those old links working.
   async redirects() {

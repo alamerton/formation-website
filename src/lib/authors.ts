@@ -1,5 +1,6 @@
 import type { StaticImageData } from "next/image";
 import alfieImage from "@/images/board/alfie.jpg";
+import hugoImage from "@/images/board/hugo.jpg";
 
 export type Author = {
   name: string;
@@ -21,8 +22,13 @@ export const authors: Record<string, Author> = {
   },
   "hugo-bos": {
     name: "Hugo Bos",
-    role: "Pivotal Summer 2026 Fellow, Formation Research",
-    roleLink: { text: "Pivotal", href: "https://www.pivotal-research.org/" },
+    role: "Pivotal Q3 2026 Fellow, Formation Research",
+    image: hugoImage,
+    linkedin: "https://www.linkedin.com/in/hugopbos/",
+    roleLink: {
+      text: "Pivotal Q3 2026",
+      href: "https://www.pivotal-research.org/2026-q3-ais#pv-hugo-bos",
+    },
   },
 };
 

@@ -16,6 +16,7 @@ import indigoWavesBanner from "@/images/banners/indigo-waves-martin-martz.jpg";
 import lightTrailsBanner from "@/images/banners/light-trails-pawel-czerwinski.jpg";
 import darkArcsBanner from "@/images/banners/dark-arcs-mansy-graphics.jpg";
 import type { StaticImageData } from "next/image";
+import { linkPreviewImages } from "@/lib/linkPreview";
 
 // Frontmatter `banner: <key>` selects a post's banner; `logo: true` entries
 // are wordmarks rendered contained on white rather than cover-cropped, and
@@ -57,7 +58,6 @@ function getPostOrNotFound(slug: string) {
 
 export async function generateMetadata({ params }: BlogPostProps) {
   const post = getPostOrNotFound(params.slug);
-  const banner = banners[post.meta.banner ?? "blog"] ?? banners.blog;
   return {
     title: `${post.meta.title} | Formation Research`,
     description: post.meta.summary,
@@ -65,13 +65,7 @@ export async function generateMetadata({ params }: BlogPostProps) {
       title: post.meta.title,
       description: post.meta.summary,
       type: "article",
-      images: [
-        {
-          url: banner.image.src,
-          width: banner.image.width,
-          height: banner.image.height,
-        },
-      ],
+      images: linkPreviewImages,
     },
     alternates: {
       canonical: `https://www.formationresearch.com/blog/${params.slug}`,
@@ -147,9 +141,11 @@ export default async function BlogPost({ params }: BlogPostProps) {
   const postAuthors = getPostAuthors(post.meta);
   const words = post.content.trim().split(/\s+/).length;
   const readingTime = Math.max(1, Math.round(words / 230));
-  const { html: contentHtml, headings } = await renderPostContent(
-    post.content
-  );
+  const {
+    html: contentHtml,
+    headings,
+    footnotes,
+  } = await renderPostContent(post.content);
 
   const externalEditions = [
     ...(post.meta.lesswrong
@@ -207,10 +203,15 @@ export default async function BlogPost({ params }: BlogPostProps) {
       />
       <div className="min-h-screen bg-white">
         {/* Banner */}
-        {/* Equal padding above and below keeps the text centred in the whole
-            banner while clearing the fixed navbar; a long title grows the
-            banner past its minimum height rather than running under it. */}
-        <div id="top" className="relative w-full flex min-h-96 md:min-h-[34rem]">
+        {/* The title sits at the banner's centre: equal padding clears the
+            fixed navbar, and the grid's equal outer rows hold anything above
+            it (a logo) and below it (author line, summary). A long title
+            grows the banner past its minimum height rather than running
+            under the navbar. */}
+        <div
+          id="top"
+          className="relative w-full flex min-h-96 md:min-h-[34rem]"
+        >
           {banner.logo ? (
             <div className="absolute inset-0 bg-white" />
           ) : (
@@ -220,10 +221,11 @@ export default async function BlogPost({ params }: BlogPostProps) {
               fill
               className={`object-cover ${banner.position ?? ""}`}
               priority
+              placeholder="blur"
             />
           )}
           <div
-            className={`relative flex-1 flex flex-col items-center justify-center font-serif px-4 text-center ${
+            className={`relative flex-1 grid grid-rows-[1fr_auto_1fr] justify-items-center font-serif px-4 text-center ${
               banner.logo
                 ? "py-20 md:py-28"
                 : "py-20 md:py-24 bg-gradient-to-t from-black/75 via-black/50 to-black/30"
@@ -233,49 +235,51 @@ export default async function BlogPost({ params }: BlogPostProps) {
               <Image
                 src={banner.image}
                 alt=""
-                className="h-12 md:h-16 w-auto mb-6"
+                className="row-start-1 self-end h-12 md:h-16 w-auto mb-6"
                 priority
               />
             )}
             <h1
-              className={`text-3xl md:text-5xl mb-4 max-w-4xl text-balance ${
+              className={`row-start-2 text-3xl md:text-5xl max-w-4xl text-balance ${
                 banner.logo ? "text-gray-900" : "text-white"
               }`}
             >
               {post.meta.title}
             </h1>
-            {post.meta.date && (
-              <p
-                className={`font-sans text-sm uppercase tracking-wider ${
-                  banner.logo ? "text-gray-500" : "text-gray-300"
-                }`}
-              >
-                {postAuthors.length > 0 && (
-                  <>
-                    {formatAuthorNames(postAuthors)}
-                    <span className="mx-2 text-gray-400" aria-hidden="true">
-                      ·
-                    </span>
-                  </>
-                )}
-                <time dateTime={post.meta.date}>
-                  {formatDate(post.meta.date)}
-                </time>
-                <span className="mx-2 text-gray-400" aria-hidden="true">
-                  ·
-                </span>
-                {readingTime} min read
-              </p>
-            )}
-            {post.meta.summary && (
-              <p
-                className={`mt-4 max-w-2xl text-base md:text-lg italic leading-relaxed hidden sm:block ${
-                  banner.logo ? "text-gray-600" : "text-gray-200/90"
-                }`}
-              >
-                {post.meta.summary}
-              </p>
-            )}
+            <div className="row-start-3 self-start flex flex-col items-center mt-4">
+              {post.meta.date && (
+                <p
+                  className={`font-sans text-sm uppercase tracking-wider ${
+                    banner.logo ? "text-gray-500" : "text-gray-300"
+                  }`}
+                >
+                  {postAuthors.length > 0 && (
+                    <>
+                      {formatAuthorNames(postAuthors)}
+                      <span className="mx-2 text-gray-400" aria-hidden="true">
+                        ·
+                      </span>
+                    </>
+                  )}
+                  <time dateTime={post.meta.date}>
+                    {formatDate(post.meta.date)}
+                  </time>
+                  <span className="mx-2 text-gray-400" aria-hidden="true">
+                    ·
+                  </span>
+                  {readingTime} min read
+                </p>
+              )}
+              {post.meta.summary && (
+                <p
+                  className={`mt-4 max-w-2xl text-base md:text-lg italic leading-relaxed hidden sm:block ${
+                    banner.logo ? "text-gray-600" : "text-gray-200/90"
+                  }`}
+                >
+                  {post.meta.summary}
+                </p>
+              )}
+            </div>
           </div>
         </div>
 
@@ -365,22 +369,40 @@ export default async function BlogPost({ params }: BlogPostProps) {
                         key={author.name}
                         className="flex items-center gap-5"
                       >
-                        {author.image ? (
-                          <Image
-                            src={author.image}
-                            alt={author.name}
-                            width={72}
-                            height={72}
-                            className="rounded-full shadow-md flex-shrink-0"
-                          />
-                        ) : (
-                          <div
-                            className="w-[72px] h-[72px] rounded-full shadow-md flex-shrink-0 flex items-center justify-center bg-gradient-to-br from-violet-800 to-indigo-900 font-serif text-2xl text-white"
-                            aria-hidden="true"
-                          >
-                            {getAuthorInitials(author)}
-                          </div>
-                        )}
+                        {(() => {
+                          const avatar = author.image ? (
+                            <Image
+                              src={author.image}
+                              alt={author.name}
+                              width={72}
+                              height={72}
+                              className="rounded-full shadow-md"
+                            />
+                          ) : (
+                            <div
+                              className="w-[72px] h-[72px] rounded-full shadow-md flex items-center justify-center bg-gradient-to-br from-violet-800 to-indigo-900 font-serif text-2xl text-white"
+                              aria-hidden="true"
+                            >
+                              {getAuthorInitials(author)}
+                            </div>
+                          );
+                          // The name beside it carries the same link for
+                          // keyboard and screen-reader users.
+                          return author.linkedin ? (
+                            <a
+                              href={author.linkedin}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              tabIndex={-1}
+                              aria-hidden="true"
+                              className="flex flex-shrink-0 rounded-full transition-opacity duration-200 hover:opacity-90"
+                            >
+                              {avatar}
+                            </a>
+                          ) : (
+                            <div className="flex flex-shrink-0">{avatar}</div>
+                          );
+                        })()}
                         <div>
                           <p className="font-serif text-xl text-gray-900">
                             {author.linkedin ? (
@@ -405,6 +427,25 @@ export default async function BlogPost({ params }: BlogPostProps) {
                             </p>
                           )}
                         </div>
+                        {author.linkedin && (
+                          <a
+                            href={author.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="ml-auto inline-flex flex-shrink-0 items-center justify-center w-10 h-10 rounded-full bg-gray-100 text-customPurple hover:bg-customPurple hover:text-white transition-all duration-200"
+                            aria-label={`${author.name} on LinkedIn`}
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="h-5 w-5"
+                              fill="currentColor"
+                              viewBox="0 0 24 24"
+                              aria-hidden="true"
+                            >
+                              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                          </a>
+                        )}
                       </div>
                     ))}
                   </div>
@@ -420,27 +461,27 @@ export default async function BlogPost({ params }: BlogPostProps) {
 
               {/* Mobile table of contents */}
               {headings.length > 0 && (
-              <details className="group lg:hidden mb-8 max-w-2xl mx-auto border-y border-gray-300/70 py-3">
-                <summary className="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden text-sm font-semibold uppercase tracking-wider text-gray-500">
-                  Contents
-                  <svg
-                    className="w-4 h-4 text-gray-400 transition-transform duration-200 group-open:rotate-180"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </summary>
-                <div className="mt-4 pb-1">
-                  <TableOfContents headings={headings} />
-                </div>
-              </details>
+                <details className="group lg:hidden mb-8 max-w-2xl mx-auto border-y border-gray-300/70 py-3">
+                  <summary className="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden text-sm font-semibold uppercase tracking-wider text-gray-500">
+                    Contents
+                    <svg
+                      className="w-4 h-4 text-gray-400 transition-transform duration-200 group-open:rotate-180"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </summary>
+                  <div className="mt-4 pb-1">
+                    <TableOfContents headings={headings} />
+                  </div>
+                </details>
               )}
 
               <article className="max-w-2xl mx-auto">
@@ -456,6 +497,57 @@ export default async function BlogPost({ params }: BlogPostProps) {
                   className="h-px bg-gradient-to-r from-transparent via-customPurple/30 to-transparent mb-8"
                   aria-hidden="true"
                 />
+                {/* Below lg there's no margin for sidenotes, so the notes are
+                    listed here instead. Each entry's number and trailing
+                    arrow return to where it was referenced. */}
+                {footnotes.length > 0 && (
+                  <section
+                    className="post-footnotes lg:hidden"
+                    aria-label="Footnotes"
+                  >
+                    <p className="text-xs uppercase tracking-wider text-gray-500 mb-4">
+                      Footnotes
+                    </p>
+                    <ol className="space-y-1">
+                      {footnotes.map((footnote) => (
+                        <li
+                          key={footnote.number}
+                          className="footnote-item"
+                          data-note-copy={footnote.noteIds.join(" ")}
+                          tabIndex={-1}
+                          role="doc-footnote"
+                        >
+                          <a
+                            className="footnote-number"
+                            href={`#${footnote.referenceId}`}
+                            data-sidenote-backlink
+                            role="doc-backlink"
+                            aria-label={`Back to reference ${footnote.number}`}
+                          >
+                            {footnote.number}
+                          </a>{" "}
+                          <span
+                            dangerouslySetInnerHTML={{ __html: footnote.html }}
+                          />
+                          {"\u00a0"}
+                          <a
+                            className="footnote-backlink"
+                            href={`#${footnote.referenceId}`}
+                            data-sidenote-backlink
+                            role="doc-backlink"
+                            aria-label={`Back to reference ${footnote.number}`}
+                          >
+                            {"\u2060"}
+                          </a>
+                        </li>
+                      ))}
+                    </ol>
+                    <div
+                      className="h-px bg-gradient-to-r from-transparent via-customPurple/30 to-transparent my-8"
+                      aria-hidden="true"
+                    />
+                  </section>
+                )}
                 <div className="flex items-center justify-between">
                   <Link
                     href="/blog"

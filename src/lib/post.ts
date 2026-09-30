@@ -27,6 +27,16 @@ export type Post = {
   content: string;
 };
 
+// A note for the footnotes list shown at the end of a post on small
+// screens. `noteIds` are the ids of the note's copies in the text (the
+// margin notes), so links to any of them can find this entry instead.
+export type PostFootnote = {
+  number: number;
+  html: string;
+  noteIds: string[];
+  referenceId: string;
+};
+
 export type PostHeading = {
   id: string;
   text: string;
@@ -137,12 +147,12 @@ async function renderFootnotes(markdown: string) {
   // Each rendered note gets its own id (a note referenced twice appears
   // twice). Each reference links to the note shown for it, and each note's
   // number links back to its reference (the first one, within a table).
-  const noteCounts = new Map<string, number>();
+  const noteIds = new Map<string, string[]>();
   const nextNoteId = (key: string) => {
-    const count = (noteCounts.get(key) ?? 0) + 1;
-    noteCounts.set(key, count);
-    const id = `fn-${numbers.get(key)}`;
-    return count === 1 ? id : `${id}-${count}`;
+    const ids = noteIds.get(key) ?? [];
+    const id = `fn-${numbers.get(key)}` + (ids.length ? `-${ids.length + 1}` : "");
+    noteIds.set(key, [...ids, id]);
+    return id;
   };
   const referenceId = (noteId: string) => noteId.replace(/^fn-/, "fnref-");
   const sidenote = (key: string, id: string) =>
@@ -175,14 +185,32 @@ async function renderFootnotes(markdown: string) {
     }
   );
 
-  return html.replace(FOOTNOTE_PLACEHOLDER, (_placeholder, key: string) => {
+  html = html.replace(FOOTNOTE_PLACEHOLDER, (_placeholder, key: string) => {
     const id = nextNoteId(key);
     return noteReference(key, id) + sidenote(key, id);
   });
+
+  // Each footnote-list entry leads back to the note's first reference in
+  // the text (tables are numbered before running text, so "first" is found
+  // by position rather than by id).
+  const footnotes: PostFootnote[] = Array.from(numbers, ([key, number]) => {
+    const firstReference = html.match(
+      new RegExp(`id="(fnref-${number}(?:-\\d+)?)"`)
+    );
+    return {
+      number,
+      html: notes.get(key) ?? "",
+      noteIds: noteIds.get(key) ?? [],
+      referenceId: firstReference ? firstReference[1] : `fnref-${number}`,
+    };
+  });
+
+  return { html, footnotes };
 }
 
 export async function renderPostContent(markdown: string) {
-  return addHeadingAnchors(await renderFootnotes(markdown));
+  const { html, footnotes } = await renderFootnotes(markdown);
+  return { ...addHeadingAnchors(html), footnotes };
 }
 
 // Adds id attributes to h1-h3 tags in rendered post HTML and returns the

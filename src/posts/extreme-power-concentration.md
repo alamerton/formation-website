@@ -1,7 +1,7 @@
 ---
 title: "More People Should Be Working on Extreme AI-Driven Power Concentration Right Now"
 date: "2026-09-30"
-summary: "More marginal resources should be invested into preventing AI-enabled power concentration (AEPC), compared to misaligned AI takeover, as long as AEPC remains neglected."
+summary: "Concerns for AI-enabled (human) power concentration (AEPC) are becoming more prominent within AI safety, but is this justified? This post presents a deep-dive cause prioritisation between AEPC and the field's longtime priority: misaligned (AI) takeover."
 author: "hugo-bos"
 banner: "indigo-waves"
 lesswrong: "https://www.lesswrong.com/" # placeholder: replace with the LessWrong post URL
@@ -36,6 +36,10 @@ A few cruxes were identified: these are issues on which there is currently not e
 **Implications**: if these findings are correct, the recent increase in attention and resources towards mitigating AEPC is great. This research also intended to improve the quality of the conversation on this issue, as many prioritisation decisions between these two problem areas are not taken transparently or rigorously.
 
 <hr class="post-section-break">
+
+## Acknowledgements
+
+My mentor: Alfie Lamerton, and research manager: James Bryant. A big thank you to everyone who provided comments, either in conversation or on a draft: Aaron Scher, Adam Jones, Addie Foote, Alex Lintz, Ashwin Acharya, Carlo Leonardo Attubato, Dave Banerjee, Firat Akova, Haimi Tefera, Joel Christoph, Kacie Yearout, Luke Kemp, Patrick Levermore, Pepijn Cobben, Severin Field, Soniya Agrawal, and Stefan Torges. Finally, this would not have been possible without the amazing Pivotal staff and fellows.
 
 # Introduction
 
@@ -527,7 +531,7 @@ These values that Claude and I estimated are extremely uncertain; my main goal w
 
 ---
 
-*This post is the output of Hugo Bos's Pivotal Summer 2026 Fellowship project, mentored by Formation Research. The analysis, estimates and conclusions are Hugo's own. Formation Research supported the project and broadly endorses its framing and contribution, but not every view expressed here is necessarily held by Formation Research or its staff.*
+*This article is the output of Hugo Bos's Pivotal Summer 2026 Fellowship project, mentored by Alfie Lamerton (Formation Research). The analysis, estimates and conclusions are Hugo's own. Formation Research supported the project and broadly endorses its framing and contribution, but not every view expressed here is necessarily held by Formation Research or its staff.*
 
 [^1]: <https://80000hours.org/problem-profiles/extreme-power-concentration/>
 

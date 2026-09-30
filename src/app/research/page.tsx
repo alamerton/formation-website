@@ -1,10 +1,10 @@
 import Image from "next/image";
+import { linkPreviewImages } from "@/lib/linkPreview";
 import researchBanner from "@/images/banners/research-banner.jpg";
 import recommender from "@/images/banners/recommender.jpg";
 import narrowLoyalty from "@/images/narrow-loyalty.jpg";
 import powerConcentrationSurvey from "@/images/power-concentration-survey.jpg";
 import secretLoyalties from "@/images/secret-loyalties.jpg";
-import Head from "next/head";
 import TrackedLink from "@/components/TrackedLink";
 
 const researchItems = [
@@ -59,6 +59,16 @@ const researchItems = [
 export const metadata = {
   title:
     "Research | Formation Research – Lock-In Risk Research and High-Impact Interventions",
+  description:
+    "Explore our research on lock-in risks, AI safety, and interventions to promote a dynamic future. Read our publications and learn about our findings.",
+  openGraph: {
+    title: "Research | Formation Research",
+    description:
+      "Explore Formation Research's publications and insights on lock-in risks and AI safety.",
+    url: "https://www.formationresearch.com/research",
+    type: "website",
+    images: linkPreviewImages,
+  },
 };
 
 const structuredData = {
@@ -81,39 +91,10 @@ const structuredData = {
 const ResearchPage = () => {
   return (
     <>
-      <Head>
-        <title>
-          Research | Formation Research - Lock-In Risk Research and Intervention
-          Proposals
-        </title>
-        <meta
-          name="description"
-          content="Explore our research on lock-in risks, AI safety, and interventions to promote a dynamic future. Read our publications and learn about our findings."
-        />
-        <meta property="og:title" content="Research | Formation Research" />
-        <meta
-          property="og:description"
-          content="Explore Formation Research's publications and insights on lock-in risks and AI safety."
-        />
-        <meta
-          property="og:image"
-          content="https://www.formationresearch.com/images/research-banner.jpg"
-        />
-        <meta
-          property="og:url"
-          content="https://www.formationresearch.com/research"
-        />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <link
-          rel="canonical"
-          href="https://www.formationresearch.com/research"
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
-      </Head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
 
       <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white">
         <div className="relative w-full h-64 md:h-96">
@@ -123,6 +104,7 @@ const ResearchPage = () => {
             fill
             className="object-cover"
             priority
+            placeholder="blur"
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center font-serif">
             <h1 className="text-3xl md:text-5xl text-white">Research</h1>
@@ -140,6 +122,7 @@ const ResearchPage = () => {
                     src={item.image}
                     alt={item.title}
                     fill
+                    sizes="(min-width: 1280px) 22rem, (min-width: 768px) 50vw, 100vw"
                     className={item.fillImage ? "object-cover" : "object-contain"}
                   />
                 </div>

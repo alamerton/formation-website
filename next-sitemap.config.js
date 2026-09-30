@@ -14,5 +14,6 @@ const unlistedPosts = fs
 module.exports = {
   siteUrl: 'https://www.formationresearch.com', 
   generateRobotsTxt: false,
-  exclude: unlistedPosts,
+  // The link-preview images are routes too, but not pages.
+  exclude: [...unlistedPosts, '/opengraph-image*', '/twitter-image*'],
 }
