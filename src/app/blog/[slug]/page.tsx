@@ -251,30 +251,22 @@ export default async function BlogPost({ params }: BlogPostProps) {
             <div className="row-start-3 self-start flex flex-col items-center mt-4">
               {post.meta.date && (
                 <p
-                  className={`font-sans text-sm uppercase tracking-wider ${
+                  className={`font-sans text-base flex flex-wrap justify-center gap-x-5 gap-y-1 ${
                     banner.logo ? "text-gray-500" : "text-gray-300"
                   }`}
                 >
                   {postAuthors.length > 0 && (
-                    <>
-                      {formatAuthorNames(postAuthors)}
-                      <span className="mx-2 text-gray-400" aria-hidden="true">
-                        ·
-                      </span>
-                    </>
+                    <span>{formatAuthorNames(postAuthors)}</span>
                   )}
                   <time dateTime={post.meta.date}>
                     {formatDate(post.meta.date)}
                   </time>
-                  <span className="mx-2 text-gray-400" aria-hidden="true">
-                    ·
-                  </span>
-                  {readingTime} min read
+                  <span>{readingTime} min read</span>
                 </p>
               )}
               {post.meta.summary && (
                 <p
-                  className={`mt-4 max-w-2xl text-base md:text-lg italic leading-relaxed hidden sm:block ${
+                  className={`mt-4 max-w-2xl text-base md:text-lg leading-relaxed hidden sm:block ${
                     banner.logo ? "text-gray-600" : "text-gray-200/90"
                   }`}
                 >
@@ -296,7 +288,7 @@ export default async function BlogPost({ params }: BlogPostProps) {
             {/* Desktop table of contents */}
             {headings.length > 0 && (
               <aside className="hidden lg:block sticky top-24 max-h-[calc(100vh-8rem)] overflow-y-auto pr-4 pb-8 [scrollbar-width:thin]">
-                <h2 className="font-sans text-sm font-semibold uppercase tracking-wider text-gray-500 mb-0">
+                <h2 className="font-sans text-base font-semibold text-gray-500 mb-0">
                   Contents
                 </h2>
                 <div
@@ -362,7 +354,7 @@ export default async function BlogPost({ params }: BlogPostProps) {
               {/* Authors */}
               {postAuthors.length > 0 && (
                 <div className="max-w-2xl mx-auto mb-10">
-                  <p className="font-sans text-xs uppercase tracking-wider text-gray-500 mb-4">
+                  <p className="font-sans text-sm text-gray-500 mb-4">
                     Written by
                   </p>
                   <div className="space-y-6">
@@ -464,7 +456,7 @@ export default async function BlogPost({ params }: BlogPostProps) {
               {/* Mobile table of contents */}
               {headings.length > 0 && (
                 <details className="group lg:hidden mb-8 max-w-2xl mx-auto border-y border-gray-300/70 py-3">
-                  <summary className="font-sans flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden text-sm font-semibold uppercase tracking-wider text-gray-500">
+                  <summary className="font-sans flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden text-base font-semibold text-gray-500">
                     Contents
                     <svg
                       className="w-4 h-4 text-gray-400 transition-transform duration-200 group-open:rotate-180"
@@ -507,7 +499,7 @@ export default async function BlogPost({ params }: BlogPostProps) {
                     className="post-footnotes lg:hidden"
                     aria-label="Footnotes"
                   >
-                    <p className="font-sans text-xs uppercase tracking-wider text-gray-500 mb-4">
+                    <p className="font-sans text-sm text-gray-500 mb-4">
                       Footnotes
                     </p>
                     <ol className="space-y-1">

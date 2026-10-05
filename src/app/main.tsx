@@ -165,7 +165,7 @@ const Main: React.FC = () => {
         {/* Social Proof / Funders Section */}
         <div className="bg-white py-12 md:py-16">
           <div className="container mx-auto px-4">
-            <p className="text-center text-gray-500 text-sm uppercase tracking-wider mb-8">
+            <p className="text-center text-gray-500 text-base mb-8">
               Supported by
             </p>
           </div>
@@ -177,7 +177,7 @@ const Main: React.FC = () => {
         {/* New Posts Section */}
         <div className="bg-gradient-to-b from-blue-50 to-white py-12 md:py-16">
           <div className="container mx-auto px-4 max-w-3xl">
-            <p className="text-center text-gray-500 text-sm uppercase tracking-wider mb-8">
+            <p className="text-center text-gray-500 text-base mb-8">
               New posts
             </p>
             <ul className="divide-y divide-gray-200">
@@ -188,7 +188,7 @@ const Main: React.FC = () => {
                     className="group block py-8"
                   >
                     {post.meta.date && (
-                      <p className="text-xs uppercase tracking-wider text-gray-500 mb-2">
+                      <p className="text-sm text-gray-500 mb-2">
                         <time dateTime={post.meta.date}>
                           {formatDate(post.meta.date)}
                         </time>

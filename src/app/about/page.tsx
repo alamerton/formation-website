@@ -195,7 +195,7 @@ const AboutPage = () => {
         {/* Collaborations Banner - Full Width */}
         <div className="bg-white pt-4 pb-12 md:pt-6 md:pb-16">
           <div className="container mx-auto px-4">
-            <p className="text-center text-gray-500 text-sm uppercase tracking-wider mb-8">
+            <p className="text-center text-gray-500 text-base mb-8">
               In collaboration with researchers at
             </p>
           </div>

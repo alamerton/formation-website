@@ -67,7 +67,7 @@ export default function BlogIndex() {
                   className="group block py-8"
                 >
                   {post.meta.date && (
-                    <p className="text-xs uppercase tracking-wider text-gray-500 mb-2">
+                    <p className="text-sm text-gray-500 mb-2">
                       <time dateTime={post.meta.date}>
                         {formatDate(post.meta.date)}
                       </time>
