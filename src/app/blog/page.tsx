@@ -2,6 +2,7 @@ import { getListedPosts } from "@/lib/post";
 import Image from "next/image";
 import Link from "next/link";
 import blogBanner from "@/images/banners/blog.jpg";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata = {
   title:
@@ -12,13 +13,13 @@ const structuredData = {
   "@context": "https://schema.org",
   "@type": "Blog",
   name: "Formation Research Blog",
-  url: "https://www.formationresearch.com/blog",
+  url: `${SITE_URL}/blog`,
   publisher: {
     "@type": "Organization",
     name: "Formation Research",
     logo: {
       "@type": "ImageObject",
-      url: "https://www.formationresearch.com/logo.png",
+      url: `${SITE_URL}/logo.png`,
     },
   },
 };

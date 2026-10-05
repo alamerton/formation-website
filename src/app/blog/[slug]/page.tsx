@@ -40,6 +40,7 @@ import Image from "next/image";
 import Link from "next/link";
 import TableOfContents from "@/components/TableOfContents";
 import SidenoteLinks from "@/components/SidenoteLinks";
+import { SITE_URL } from "@/lib/site";
 
 type BlogPostProps = {
   params: {
@@ -69,7 +70,7 @@ export async function generateMetadata({ params }: BlogPostProps) {
       images: linkPreviewImages,
     },
     alternates: {
-      canonical: `https://www.formationresearch.com/blog/${params.slug}`,
+      canonical: `${SITE_URL}/blog/${params.slug}`,
     },
     ...(post.meta.unlisted && { robots: { index: false } }),
   };
@@ -185,13 +186,13 @@ export default async function BlogPost({ params }: BlogPostProps) {
         name: author.name,
       })),
     }),
-    url: `https://www.formationresearch.com/blog/${slug}`,
+    url: `${SITE_URL}/blog/${slug}`,
     publisher: {
       "@type": "Organization",
       name: "Formation Research",
       logo: {
         "@type": "ImageObject",
-        url: "https://www.formationresearch.com/logo.png",
+        url: `${SITE_URL}/logo.png`,
       },
     },
   };
@@ -295,7 +296,7 @@ export default async function BlogPost({ params }: BlogPostProps) {
             {/* Desktop table of contents */}
             {headings.length > 0 && (
               <aside className="hidden lg:block sticky top-24 max-h-[calc(100vh-8rem)] overflow-y-auto pr-4 pb-8 [scrollbar-width:thin]">
-                <h2 className="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-0">
+                <h2 className="font-sans text-sm font-semibold uppercase tracking-wider text-gray-500 mb-0">
                   Contents
                 </h2>
                 <div
@@ -361,7 +362,7 @@ export default async function BlogPost({ params }: BlogPostProps) {
               {/* Authors */}
               {postAuthors.length > 0 && (
                 <div className="max-w-2xl mx-auto mb-10">
-                  <p className="text-xs uppercase tracking-wider text-gray-500 mb-4">
+                  <p className="font-sans text-xs uppercase tracking-wider text-gray-500 mb-4">
                     Written by
                   </p>
                   <div className="space-y-6">
@@ -463,7 +464,7 @@ export default async function BlogPost({ params }: BlogPostProps) {
               {/* Mobile table of contents */}
               {headings.length > 0 && (
                 <details className="group lg:hidden mb-8 max-w-2xl mx-auto border-y border-gray-300/70 py-3">
-                  <summary className="flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden text-sm font-semibold uppercase tracking-wider text-gray-500">
+                  <summary className="font-sans flex items-center justify-between cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden text-sm font-semibold uppercase tracking-wider text-gray-500">
                     Contents
                     <svg
                       className="w-4 h-4 text-gray-400 transition-transform duration-200 group-open:rotate-180"
@@ -506,7 +507,7 @@ export default async function BlogPost({ params }: BlogPostProps) {
                     className="post-footnotes lg:hidden"
                     aria-label="Footnotes"
                   >
-                    <p className="text-xs uppercase tracking-wider text-gray-500 mb-4">
+                    <p className="font-sans text-xs uppercase tracking-wider text-gray-500 mb-4">
                       Footnotes
                     </p>
                     <ol className="space-y-1">

@@ -10,13 +10,14 @@ import coefficientLogo from "@/images/Coefficient_Logo_Gray.png";
 import aistofLogo from "@/images/aistof.png";
 import LogoMarquee from "@/components/LogoMarquee";
 import { getListedPosts } from "@/lib/post";
+import { SITE_URL } from "@/lib/site";
 
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Formation Research",
-  url: "https://www.formationresearch.com",
-  logo: "https://www.formationresearch.com/logo.png",
+  url: SITE_URL,
+  logo: `${SITE_URL}/logo.png`,
   description:
     "Formation Research aims to reduce lock-in risks by researching fundamental lock-in dynamics and implementing high-impact interventions.",
 };

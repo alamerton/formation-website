@@ -14,6 +14,7 @@ import fabienImage from "@/images/board/fabien.jpeg";
 import anthropicLogo from "@/images/anthropic-v2.svg";
 import oxfordLogo from "@/images/University-of-Oxford-scaled.jpg";
 import forethoughtLogo from "@/images/forethought_logo-v2.png";
+import { SITE_URL } from "@/lib/site";
 
 const teamMembers = [
   {
@@ -88,7 +89,7 @@ const structuredData = {
   "@context": "https://schema.org",
   "@type": "AboutPage",
   name: "About Formation Research",
-  url: "https://www.formationresearch.com/about",
+  url: `${SITE_URL}/about`,
   description:
     "Learn about Formation Research's mission to minimise lock-in risks and promote a dynamic future through AI safety research.",
 };

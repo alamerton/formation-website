@@ -6,6 +6,7 @@ import categorisation from "@/images/lock-in-categorisation.png";
 import lobster from "@/images/lobster-pot-image.png";
 // import lockedRoom from "@/images/locked-room.png";
 import timeline from "@/images/timeline.png";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata = {
   title:
@@ -25,7 +26,7 @@ const structuredData = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   name: "Lock-In Explainers",
-  url: "https://www.formationresearch.com/explain",
+  url: `${SITE_URL}/explain`,
   description:
     "Learn more about the concept of lock-in and lock-in risk using verbal and visual explainers.",
 };

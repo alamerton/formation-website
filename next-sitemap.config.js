@@ -12,7 +12,8 @@ const unlistedPosts = fs
 
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://www.formationresearch.com', 
+  // Keep in step with SITE_URL in src/lib/site.ts.
+  siteUrl: 'https://www.formationresearch.org',
   generateRobotsTxt: false,
   // The link-preview images are routes too, but not pages.
   exclude: [...unlistedPosts, '/opengraph-image*', '/twitter-image*'],

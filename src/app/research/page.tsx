@@ -6,6 +6,7 @@ import narrowLoyalty from "@/images/narrow-loyalty.jpg";
 import powerConcentrationSurvey from "@/images/power-concentration-survey.jpg";
 import secretLoyalties from "@/images/secret-loyalties.jpg";
 import TrackedLink from "@/components/TrackedLink";
+import { SITE_URL } from "@/lib/site";
 
 const researchItems = [
   {
@@ -65,7 +66,7 @@ export const metadata = {
     title: "Research | Formation Research",
     description:
       "Explore Formation Research's publications and insights on lock-in risks and AI safety.",
-    url: "https://www.formationresearch.com/research",
+    url: `${SITE_URL}/research`,
     type: "website",
     images: linkPreviewImages,
   },
@@ -75,7 +76,7 @@ const structuredData = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   name: "Research | Formation Research",
-  url: "https://www.formationresearch.com/research",
+  url: `${SITE_URL}/research`,
   description:
     "Explore Formation Research's publications and insights on lock-in risks and AI safety.",
   publisher: {
@@ -83,7 +84,7 @@ const structuredData = {
     name: "Formation Research",
     logo: {
       "@type": "ImageObject",
-      url: "https://www.formationresearch.com/logo.png",
+      url: `${SITE_URL}/logo.png`,
     },
   },
 };
