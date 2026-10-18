@@ -67,7 +67,7 @@ const researchItems: ResearchItem[] = [
       "EGGROLL-IPO: Pluralistic Alignment via Decentralised Post-Training with Population Preferences",
     date: "June 2, 2026",
     description:
-      "We introduce EGGROLL-IPO: Online IPO loss as scalar fitness in EGGROLL, enabling population-contributed pluralistic alignment that targets the maximal lottery.",
+      "We introduce EGGROLL-IPO: Online IPO loss as scalar fitness in EGGROLL, enabling decentralised population-contributed pluralistic alignment.",
     link: "https://openreview.net/forum?id=5P7ihyDNi8",
     linkLabel: "OpenReview",
     newTab: true,
