@@ -1,5 +1,5 @@
 import { getPostBySlug, getPostSlugs, renderPostContent } from "@/lib/post";
-import { linkedInButtonClass } from "@/components/iconButton";
+import { iconButtonClass, linkedInButtonClass } from "@/components/iconButton";
 import {
   formatAuthorNames,
   getAuthorInitials,
@@ -358,90 +358,119 @@ export default async function BlogPost({ params }: BlogPostProps) {
                     Written by
                   </p>
                   <div className="space-y-6">
-                    {postAuthors.map((author) => (
-                      <div
-                        key={author.name}
-                        className="flex items-center gap-5"
-                      >
-                        {(() => {
-                          const avatar = author.image ? (
-                            <Image
-                              src={author.image}
-                              alt={author.name}
-                              width={72}
-                              height={72}
-                              className="rounded-full shadow-md"
-                            />
-                          ) : (
-                            <div
-                              className="w-[72px] h-[72px] rounded-full shadow-md flex items-center justify-center bg-gradient-to-br from-violet-800 to-indigo-900 font-serif text-2xl text-white"
-                              aria-hidden="true"
-                            >
-                              {getAuthorInitials(author)}
-                            </div>
-                          );
-                          // The name beside it carries the same link for
-                          // keyboard and screen-reader users.
-                          return author.linkedin ? (
+                    {postAuthors.map((author) => {
+                      const profileLink = author.website ?? author.linkedin;
+                      return (
+                        <div
+                          key={author.name}
+                          className="flex items-center gap-5"
+                        >
+                          {(() => {
+                            const avatar = author.image ? (
+                              <Image
+                                src={author.image}
+                                alt={author.name}
+                                width={72}
+                                height={72}
+                                className="rounded-full shadow-md"
+                              />
+                            ) : (
+                              <div
+                                className="w-[72px] h-[72px] rounded-full shadow-md flex items-center justify-center bg-gradient-to-br from-violet-800 to-indigo-900 font-serif text-2xl text-white"
+                                aria-hidden="true"
+                              >
+                                {getAuthorInitials(author)}
+                              </div>
+                            );
+                            // The name beside it carries the same link for
+                            // keyboard and screen-reader users.
+                            return profileLink ? (
+                              <a
+                                href={profileLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                tabIndex={-1}
+                                aria-hidden="true"
+                                className="flex flex-shrink-0 rounded-full transition-opacity duration-200 hover:opacity-90"
+                              >
+                                {avatar}
+                              </a>
+                            ) : (
+                              <div className="flex flex-shrink-0">{avatar}</div>
+                            );
+                          })()}
+                          <div>
+                            <p className="font-serif text-xl text-gray-900">
+                              {profileLink ? (
+                                <a
+                                  href={profileLink}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="hover:text-customPurple transition-colors duration-200"
+                                >
+                                  {author.name}
+                                </a>
+                              ) : (
+                                author.name
+                              )}
+                            </p>
+                            <p className="text-sm text-customPurple font-medium">
+                              <AuthorRole author={author} />
+                            </p>
+                            {author.bio && (
+                              <p className="text-sm text-gray-600 mt-1">
+                                {author.bio}
+                              </p>
+                            )}
+                          </div>
+                          {author.website ? (
                             <a
-                              href={author.linkedin}
+                              href={author.website}
                               target="_blank"
                               rel="noopener noreferrer"
-                              tabIndex={-1}
-                              aria-hidden="true"
-                              className="flex flex-shrink-0 rounded-full transition-opacity duration-200 hover:opacity-90"
+                              className={`ml-auto ${iconButtonClass}`}
+                              aria-label={`${author.name}'s website`}
                             >
-                              {avatar}
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-5 w-5"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                aria-hidden="true"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+                                />
+                              </svg>
                             </a>
                           ) : (
-                            <div className="flex flex-shrink-0">{avatar}</div>
-                          );
-                        })()}
-                        <div>
-                          <p className="font-serif text-xl text-gray-900">
-                            {author.linkedin ? (
+                            author.linkedin && (
                               <a
                                 href={author.linkedin}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="hover:text-customPurple transition-colors duration-200"
+                                className={`ml-auto ${linkedInButtonClass}`}
+                                aria-label={`${author.name} on LinkedIn`}
                               >
-                                {author.name}
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  className="h-5 w-5"
+                                  fill="currentColor"
+                                  viewBox="0 0 24 24"
+                                  aria-hidden="true"
+                                >
+                                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                </svg>
                               </a>
-                            ) : (
-                              author.name
-                            )}
-                          </p>
-                          <p className="text-sm text-customPurple font-medium">
-                            <AuthorRole author={author} />
-                          </p>
-                          {author.bio && (
-                            <p className="text-sm text-gray-600 mt-1">
-                              {author.bio}
-                            </p>
+                            )
                           )}
                         </div>
-                        {author.linkedin && (
-                          <a
-                            href={author.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={`ml-auto ${linkedInButtonClass}`}
-                            aria-label={`${author.name} on LinkedIn`}
-                          >
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="h-5 w-5"
-                              fill="currentColor"
-                              viewBox="0 0 24 24"
-                              aria-hidden="true"
-                            >
-                              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                            </svg>
-                          </a>
-                        )}
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                   {/* On small screens the contents box below already has rules. */}
                   <div

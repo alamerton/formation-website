@@ -4,7 +4,6 @@ date: "2026-09-30"
 summary: "Concerns for AI-enabled (human) power concentration (AEPC) are becoming more prominent within AI safety, but is this justified? This post presents a deep-dive cause prioritisation between AEPC and the field's longtime priority: misaligned (AI) takeover."
 author: "hugo-bos"
 banner: "indigo-waves"
-lesswrong: "https://www.lesswrong.com/" # placeholder: replace with the LessWrong post URL
 ---
 
 # Executive Summary

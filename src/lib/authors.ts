@@ -9,6 +9,9 @@ export type Author = {
   roleLink?: { text: string; href: string };
   bio?: string;
   image?: StaticImageData;
+  // An author's name, photo and link button go to their website when one is
+  // set, and to LinkedIn otherwise.
+  website?: string;
   linkedin?: string;
 };
 

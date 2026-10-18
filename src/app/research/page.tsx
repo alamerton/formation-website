@@ -5,10 +5,11 @@ import recommender from "@/images/banners/recommender.jpg";
 import narrowLoyalty from "@/images/narrow-loyalty.jpg";
 import powerConcentrationSurvey from "@/images/power-concentration-survey.jpg";
 import secretLoyalties from "@/images/secret-loyalties.jpg";
-import TrackedLink from "@/components/TrackedLink";
+import eggrollIpo from "@/images/eggroll-ipo.jpg";
+import ResearchGrid, { type ResearchItem } from "@/components/ResearchGrid";
 import { SITE_URL } from "@/lib/site";
 
-const researchItems = [
+const researchItems: ResearchItem[] = [
   {
     id: 1,
     image: recommender,
@@ -19,6 +20,7 @@ const researchItems = [
     link: "https://www.lesswrong.com/s/yP8Zs4Tuog6tDES5b",
     linkLabel: "LessWrong",
     fillImage: true,
+    tags: [],
   },
   {
     id: 2,
@@ -30,6 +32,7 @@ const researchItems = [
     link: "/power-concentration-survey.pdf",
     newTab: true,
     linkLabel: "Paper",
+    tags: [],
   },
   {
     id: 3,
@@ -43,6 +46,7 @@ const researchItems = [
     paperLink: "https://arxiv.org/abs/2605.06846v2",
     paperLabel: "arXiv",
     openreviewLink: "https://openreview.net/forum?id=hUZUqWrytg",
+    tags: ["Secret Loyalties"],
   },
   {
     id: 4,
@@ -54,6 +58,20 @@ const researchItems = [
     link: "https://www.lesswrong.com/posts/ugBoeexGYvNLxZKA7/a-research-agenda-for-secret-loyalties",
     linkLabel: "LessWrong",
     paperLink: "/secret-loyalties-whitepaper.pdf",
+    tags: ["Secret Loyalties"],
+  },
+  {
+    id: 5,
+    image: eggrollIpo,
+    title:
+      "EGGROLL-IPO: Pluralistic Alignment via Decentralised Post-Training with Population Preferences",
+    date: "June 2, 2026",
+    description:
+      "We introduce EGGROLL-IPO: Online IPO loss as scalar fitness in EGGROLL, enabling population-contributed pluralistic alignment that targets the maximal lottery.",
+    link: "https://openreview.net/forum?id=5P7ihyDNi8",
+    linkLabel: "OpenReview",
+    newTab: true,
+    tags: ["Democratic AI Training"],
   },
 ];
 
@@ -112,79 +130,7 @@ const ResearchPage = () => {
           </div>
         </div>
         <div className="container mx-auto px-4 py-12 max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-            {researchItems.map((item) => (
-              <div
-                key={item.id}
-                className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
-              >
-                <div className={`relative h-48 ${item.fillImage ? "" : "bg-white p-4"}`}>
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    sizes="(min-width: 1280px) 22rem, (min-width: 768px) 50vw, 100vw"
-                    className={item.fillImage ? "object-cover" : "object-contain"}
-                  />
-                </div>
-                <div className="p-6">
-                  <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
-                  {item.date && <p className="text-sm text-gray-600 mb-4">{item.date}</p>}
-                  <p className="text-gray-700 mb-4">{item.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {item.paperLink && (
-                      <TrackedLink
-                        eventName="paper_click"
-                        eventProps={{ title: item.title, href: item.paperLink }}
-                        href={item.paperLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block bg-gradient-to-r from-violet-800 to-indigo-900 text-white text-sm font-semibold py-2 px-3 rounded hover:opacity-90 transition-opacity duration-200"
-                      >
-                        {item.paperLabel ?? "Paper"}
-                      </TrackedLink>
-                    )}
-                    {item.openreviewLink && (
-                      <TrackedLink
-                        eventName="paper_click"
-                        eventProps={{
-                          title: item.title,
-                          href: item.openreviewLink,
-                        }}
-                        href={item.openreviewLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block bg-gradient-to-r from-violet-800 to-indigo-900 text-white text-sm font-semibold py-2 px-3 rounded hover:opacity-90 transition-opacity duration-200"
-                      >
-                        OpenReview
-                      </TrackedLink>
-                    )}
-                    {item.link.endsWith(".pdf") ? (
-                      <TrackedLink
-                        eventName="paper_click"
-                        eventProps={{ title: item.title, href: item.link }}
-                        href={item.link}
-                        target={item.newTab ? "_blank" : undefined}
-                        rel={item.newTab ? "noopener noreferrer" : undefined}
-                        className="inline-block bg-gradient-to-r from-violet-800 to-indigo-900 text-white text-sm font-semibold py-2 px-3 rounded hover:opacity-90 transition-opacity duration-200"
-                      >
-                        {item.linkLabel ?? "Learn More"}
-                      </TrackedLink>
-                    ) : (
-                      <a
-                        href={item.link}
-                        target={item.newTab ? "_blank" : undefined}
-                        rel={item.newTab ? "noopener noreferrer" : undefined}
-                        className="inline-block bg-gradient-to-r from-violet-800 to-indigo-900 text-white text-sm font-semibold py-2 px-3 rounded hover:opacity-90 transition-opacity duration-200"
-                      >
-                        {item.linkLabel ?? "Learn More"}
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <ResearchGrid items={researchItems} />
         </div>
       </div>
     </>
