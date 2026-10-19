@@ -9,13 +9,15 @@ const nextConfig = {
   images: {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 2560],
   },
-  // The blog was previously published under /posts, and the grant post
-  // under its original slug, so keep those old links working.
+  // The blog was previously published under /posts, the grant post under
+  // its original slug, and the secret loyalties paper as a "whitepaper",
+  // so keep those old links working.
   async redirects() {
     return [
       { source: '/posts/coefficient-giving-grant', destination: '/blog/cg', permanent: true },
       { source: '/posts', destination: '/blog', permanent: true },
       { source: '/posts/:slug', destination: '/blog/:slug', permanent: true },
+      { source: '/secret-loyalties-whitepaper.pdf', destination: '/secret-loyalties-position-paper.pdf', permanent: true },
     ];
   },
   // async headers() {

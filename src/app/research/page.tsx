@@ -57,7 +57,7 @@ const researchItems: ResearchItem[] = [
       "This paper argues that the technical AI research community should prioritize studying and defending against a distinct, neglected threat: secret loyalties.",
     link: "https://www.lesswrong.com/posts/ugBoeexGYvNLxZKA7/a-research-agenda-for-secret-loyalties",
     linkLabel: "LessWrong",
-    paperLink: "/secret-loyalties-whitepaper.pdf",
+    paperLink: "/secret-loyalties-position-paper.pdf",
     tags: ["Secret Loyalties"],
   },
   {

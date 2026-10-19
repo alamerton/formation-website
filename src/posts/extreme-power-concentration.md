@@ -579,7 +579,7 @@ These values that Claude and I estimated are extremely uncertain; my main goal w
 
 [^24]: <https://law-ai.org/law-following-ai/>
 
-[^25]: <https://www.formationresearch.com/secret-loyalties-whitepaper.pdf>
+[^25]: <https://www.formationresearch.com/secret-loyalties-position-paper.pdf>
 
 [^26]: <https://windfalltrust.org/>
 
@@ -729,7 +729,7 @@ These values that Claude and I estimated are extremely uncertain; my main goal w
 
 [^99]: See e.g. <https://www.bbc.co.uk/news/articles/c8edn0n58gwo>
 
-[^100]: <https://www.formationresearch.com/secret-loyalties-whitepaper.pdf>
+[^100]: <https://www.formationresearch.com/secret-loyalties-position-paper.pdf>
 
 [^101]: This column shows which threat model is more tractable, which suggests that additional marginal resources will have a greater total impact
 
