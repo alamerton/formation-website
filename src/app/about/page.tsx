@@ -1,7 +1,7 @@
 import React from "react";
 import { iconButtonClass, linkedInButtonClass } from "@/components/iconButton";
 import { linkPreviewImages } from "@/lib/linkPreview";
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 import LogoMarquee from "@/components/LogoMarquee";
 import aboutBanner from "@/images/banners/about-banner.jpg";
@@ -11,12 +11,25 @@ import lukeImage from "@/images/board/luke.jpeg";
 import finImage from "@/images/board/fin.jpg";
 import robertoImage from "@/images/board/roberto-rafael.jpg";
 import fabienImage from "@/images/board/fabien.jpeg";
+import sharifImage from "@/images/board/sharif.jpeg";
+import daveImage from "@/images/board/dave.jpg";
 import anthropicLogo from "@/images/anthropic-v2.svg";
 import oxfordLogo from "@/images/University-of-Oxford-scaled.jpg";
 import forethoughtLogo from "@/images/forethought_logo-v2.png";
 import { SITE_URL } from "@/lib/site";
 
-const teamMembers = [
+type Person = {
+  name: string;
+  role: string;
+  bio?: string;
+  image: StaticImageData;
+  email?: string;
+  linkedin?: string;
+  website?: string;
+  scholar?: string;
+};
+
+const teamMembers: Person[] = [
   {
     name: "Alfie Lamerton",
     role: "Founder",
@@ -69,7 +82,142 @@ const teamMembers = [
     scholar:
       "https://scholar.google.com/citations?hl=en&user=La75jqEAAAAJ&view_op=list_works",
   },
+  {
+    name: "Sharif Kazemi",
+    role: "Associate",
+    bio: "Sharif is a MATS Research Fellow working on trustworthy AI advisors. He was previously Policy and Strategy Lead at the World Bank's applied AI lab.",
+    image: sharifImage,
+    linkedin: "https://www.linkedin.com/in/sharif-kazemi/",
+  },
+  {
+    name: "Dave Banerjee",
+    role: "Associate",
+    bio: "Dave is a Researcher at the Institute for AI Policy and Strategy (IAPS), where he works on reducing risks from extreme concentration of power. Previously, he was a research manager at ERA and worked as a security engineer. He holds a BA in Computer Science from Columbia University, where he focused on cryptography, reverse engineering, and ML.",
+    image: daveImage,
+    website: "https://davebanerjee.ai/",
+  },
 ];
+
+// Round icon links for a person's email, LinkedIn, website and Scholar page.
+const PersonLinks = ({
+  person,
+  className,
+}: {
+  person: Person;
+  className: string;
+}) => (
+  <div className={`flex gap-3 ${className}`}>
+    {person.email && (
+      <a
+        href={`mailto:${person.email}`}
+        className={iconButtonClass}
+        aria-label="Email"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+          />
+        </svg>
+      </a>
+    )}
+    {person.linkedin && (
+      <a
+        href={person.linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={linkedInButtonClass}
+        aria-label="LinkedIn"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+        </svg>
+      </a>
+    )}
+    {person.website && (
+      <a
+        href={person.website}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={iconButtonClass}
+        aria-label="Website"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+          />
+        </svg>
+      </a>
+    )}
+    {person.scholar && (
+      <a
+        href={person.scholar}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={iconButtonClass}
+        aria-label="Google Scholar"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z" />
+          <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
+        </svg>
+      </a>
+    )}
+  </div>
+);
+
+// A team member: photo, name, role, bio and links.
+const PersonCard = ({ person }: { person: Person }) => (
+  <div className="bg-white rounded-xl shadow-md p-6 md:p-8 transition-all duration-300 hover:shadow-lg">
+    <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
+      <div className="flex-shrink-0">
+        <Image
+          src={person.image}
+          alt={person.name}
+          width={160}
+          height={160}
+          className="rounded-full shadow-md"
+        />
+      </div>
+      <div className="flex-1 text-center md:text-left">
+        <h3 className="text-xl font-semibold text-gray-900">{person.name}</h3>
+        <p className="text-customPurple font-medium mb-3">{person.role}</p>
+        {person.bio && <p className="text-gray-600 mb-4">{person.bio}</p>}
+        <PersonLinks
+          person={person}
+          className="justify-center md:justify-start"
+        />
+      </div>
+    </div>
+  </div>
+);
 
 export const metadata = {
   title:
@@ -168,7 +316,33 @@ const AboutPage = () => {
                 understand and mitigate secret loyalties.
               </p>
             </div>
-            <div className="mt-6 text-center">
+            <div className="mt-6 flex flex-wrap justify-center gap-4">
+              {/* Leaves the site, so it opens a new tab and its arrow points
+                  up and out rather than along. White and outlined, to stand
+                  apart from the purple button beside it; a ring rather than a
+                  border keeps it the same height as its neighbour. */}
+              <a
+                href="https://secretloyalties.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center bg-white ring-1 ring-inset ring-customPurple/30 text-customPurple font-semibold py-3 px-6 rounded hover:bg-violet-50 transition-colors duration-200"
+              >
+                Prevent Secret Loyalties
+                <svg
+                  className="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M7 17L17 7M9 7h8v8"
+                  />
+                </svg>
+              </a>
               <Link
                 href="/research"
                 className="group inline-flex items-center bg-gradient-to-r from-violet-800 to-indigo-900 text-white font-semibold py-3 px-6 rounded hover:opacity-90 transition-opacity duration-200"
@@ -252,117 +426,8 @@ const AboutPage = () => {
               Our Team
             </h2>
             <div className="space-y-8">
-              {teamMembers.map((member, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-xl shadow-md p-6 md:p-8 transition-all duration-300 hover:shadow-lg"
-                >
-                  <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
-                    <div className="flex-shrink-0">
-                      <Image
-                        src={member.image}
-                        alt={member.name}
-                        width={160}
-                        height={160}
-                        className="rounded-full shadow-md"
-                      />
-                    </div>
-                    <div className="flex-1 text-center md:text-left">
-                      <h3 className="text-xl font-semibold text-gray-900">
-                        {member.name}
-                      </h3>
-                      <p className="text-customPurple font-medium mb-3">
-                        {member.role}
-                      </p>
-                      <p className="text-gray-600 mb-4">{member.bio}</p>
-                      <div className="flex justify-center md:justify-start space-x-3">
-                        {member.email && (
-                          <a
-                            href={`mailto:${member.email}`}
-                            className={iconButtonClass}
-                            aria-label="Email"
-                          >
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="h-5 w-5"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                              />
-                            </svg>
-                          </a>
-                        )}
-                        {member.linkedin && (
-                          <a
-                            href={member.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={linkedInButtonClass}
-                            aria-label="LinkedIn"
-                          >
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="h-5 w-5"
-                              fill="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                            </svg>
-                          </a>
-                        )}
-                        {"website" in member && member.website && (
-                          <a
-                            href={member.website}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={iconButtonClass}
-                            aria-label="Website"
-                          >
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="h-5 w-5"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
-                              />
-                            </svg>
-                          </a>
-                        )}
-                        {"scholar" in member && member.scholar && (
-                          <a
-                            href={member.scholar}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={iconButtonClass}
-                            aria-label="Google Scholar"
-                          >
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="h-5 w-5"
-                              fill="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z" />
-                              <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
-                            </svg>
-                          </a>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              {teamMembers.map((member) => (
+                <PersonCard key={member.name} person={member} />
               ))}
             </div>
           </section>
