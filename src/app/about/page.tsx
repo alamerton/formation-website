@@ -88,6 +88,7 @@ const teamMembers: Person[] = [
     role: "Research Affiliate",
     bio: "Joe works on safety standards for frontier AI development at Guidelight AI Standards. Previously, he worked on threat modeling at Forethought, AI governance at GovAI, multilingual LLMs at LG AI Research, and ML safety + computational cognitive science at MIT. He has a bachelor's in computer science and psychology from Yale University.",
     image: joeImage,
+    website: "https://www.joe-kwon.com/",
   },
   {
     name: "Dave Banerjee",
