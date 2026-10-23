@@ -84,14 +84,14 @@ const teamMembers: Person[] = [
   },
   {
     name: "Sharif Kazemi",
-    role: "Associate",
+    role: "Research Affiliate",
     bio: "Sharif is a MATS Research Fellow working on trustworthy AI advisors. He was previously Policy and Strategy Lead at the World Bank's applied AI lab.",
     image: sharifImage,
     linkedin: "https://www.linkedin.com/in/sharif-kazemi/",
   },
   {
     name: "Dave Banerjee",
-    role: "Associate",
+    role: "Research Affiliate",
     bio: "Dave is a Researcher at the Institute for AI Policy and Strategy (IAPS), where he works on reducing risks from extreme concentration of power. Previously, he was a research manager at ERA and worked as a security engineer. He holds a BA in Computer Science from Columbia University, where he focused on cryptography, reverse engineering, and ML.",
     image: daveImage,
     website: "https://davebanerjee.ai/",
