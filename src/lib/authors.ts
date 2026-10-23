@@ -1,6 +1,6 @@
 import type { StaticImageData } from "next/image";
-import alfieImage from "@/images/board/alfie.jpg";
-import hugoImage from "@/images/board/hugo.jpg";
+import alfieImage from "@/images/people/alfie.jpg";
+import hugoImage from "@/images/people/hugo.jpg";
 
 export type Author = {
   name: string;

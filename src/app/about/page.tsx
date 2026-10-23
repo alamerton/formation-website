@@ -5,14 +5,15 @@ import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 import LogoMarquee from "@/components/LogoMarquee";
 import aboutBanner from "@/images/banners/about-banner.jpg";
-import alfieImage from "@/images/board/alfie.jpg";
-import adamImage from "@/images/board/adam.webp";
-import lukeImage from "@/images/board/luke.jpeg";
-import finImage from "@/images/board/fin.jpg";
-import robertoImage from "@/images/board/roberto-rafael.jpg";
-import fabienImage from "@/images/board/fabien.jpeg";
-import sharifImage from "@/images/board/sharif.jpeg";
-import daveImage from "@/images/board/dave.jpg";
+import alfieImage from "@/images/people/alfie.jpg";
+import adamImage from "@/images/people/adam.webp";
+import lukeImage from "@/images/people/luke.jpeg";
+import finImage from "@/images/people/fin.jpg";
+import robertoImage from "@/images/people/roberto-rafael.jpg";
+import fabienImage from "@/images/people/fabien.jpeg";
+import sharifImage from "@/images/people/sharif.jpeg";
+import daveImage from "@/images/people/dave.jpg";
+import joeImage from "@/images/people/joe.jpg";
 import anthropicLogo from "@/images/anthropic-v2.svg";
 import oxfordLogo from "@/images/University-of-Oxford-scaled.jpg";
 import forethoughtLogo from "@/images/forethought_logo-v2.png";
@@ -83,11 +84,10 @@ const teamMembers: Person[] = [
       "https://scholar.google.com/citations?hl=en&user=La75jqEAAAAJ&view_op=list_works",
   },
   {
-    name: "Sharif Kazemi",
+    name: "Joe Kwon",
     role: "Research Affiliate",
-    bio: "Sharif is a MATS Research Fellow working on trustworthy AI advisors. He was previously Policy and Strategy Lead at the World Bank's applied AI lab.",
-    image: sharifImage,
-    linkedin: "https://www.linkedin.com/in/sharif-kazemi/",
+    bio: "Joe works on safety standards for frontier AI development at Guidelight AI Standards. Previously, he worked on threat modeling at Forethought, AI governance at GovAI, multilingual LLMs at LG AI Research, and ML safety + computational cognitive science at MIT. He has a bachelor's in computer science and psychology from Yale University.",
+    image: joeImage,
   },
   {
     name: "Dave Banerjee",
@@ -95,6 +95,13 @@ const teamMembers: Person[] = [
     bio: "Dave is a Researcher at the Institute for AI Policy and Strategy (IAPS), where he works on reducing risks from extreme concentration of power. Previously, he was a research manager at ERA and worked as a security engineer. He holds a BA in Computer Science from Columbia University, where he focused on cryptography, reverse engineering, and ML.",
     image: daveImage,
     website: "https://davebanerjee.ai/",
+  },
+  {
+    name: "Sharif Kazemi",
+    role: "Research Affiliate",
+    bio: "Sharif is a MATS Research Fellow working on trustworthy AI advisors. He was previously Policy and Strategy Lead at the World Bank's applied AI lab.",
+    image: sharifImage,
+    linkedin: "https://www.linkedin.com/in/sharif-kazemi/",
   },
 ];
 
