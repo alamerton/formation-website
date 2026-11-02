@@ -296,7 +296,7 @@ const AboutPage = () => {
                 typically a negative element of human culture, becomes stable
                 for a long time. Formation Research focuses on interventions for
                 particularly undesirable lock-in scenarios such as AI-enabled
-                totalitarianism and extreme power concentration.
+                dictatorships and extreme power concentration.
               </p>
             </div>
           </section>
