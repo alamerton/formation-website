@@ -209,10 +209,10 @@ Work on These Problems!
 
 I think there should be more people working on these problems because we have little reassurance that humanity is not going to end up in a long-term lock-in scenario in the near future.
 
-I’m also recruiting for a cofounder, an ML researcher, and a security researcher to work with me on building Formation Research into an impactful research organisation tackling these threat models by conducting technical research. If any of those roles sound like you, please reach out! We can work on solving this problem together.
+I’m also hiring for Formation's first member of technical staff to work with me on building Formation Research into an impactful research organisation tackling these threat models by conducting technical research. If any of those roles sound like you, please reach out! We can work on solving this problem together.
 
 [Expression of interest form](https://tally.so/r/5BLpOE)
 
-[*alfie.lamerton@formationresearch.org*](mailto:alfie.lamerton@formationresearch.org)
+[*alfie@formationresearch.org*](mailto:alfie@formationresearch.org)
 
 [^9dvvfg4c61]: Within the broader AI safety community relative to its importance, as opposed to absolutely. LLM Usage: Claude helped me research the actors identified in the mechanisms sections and write the example pathway scenarios (which were not my specific strengths in writing this doc), and I wrote the rest (which were).

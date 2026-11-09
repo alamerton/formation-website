@@ -67,7 +67,7 @@ Ultimately, the future direction of the organisation will heavily depend on the 
 Join us!
 ========
 
-We are hiring for our founding team, looking for talented ML researchers to help us work on our research agenda and scale the organisation. If that sounds like you, reach out at [alfie.lamerton@formationresearch.org](mailto:alfie.lamerton@formationresearch.org).
+We are hiring for our founding team, looking for talented ML researchers to help us work on our research agenda and scale the organisation. If that sounds like you, reach out at [alfie@formationresearch.org](mailto:alfie@formationresearch.org).
 
 [^12xsqoo50se]: I think it’s so important to talk to people in your specific subject area. 
 
