@@ -23,6 +23,8 @@ export type ResearchItem = {
   paperLink?: string;
   paperLabel?: string;
   openreviewLink?: string;
+  // Further editions, shown after the main link (e.g. a newsletter repost).
+  extraLinks?: { label: string; href: string }[];
 };
 
 const buttonClass =
@@ -196,6 +198,19 @@ const ResearchGrid = ({ items }: { items: ResearchItem[] }) => {
                     {item.linkLabel ?? "Learn More"}
                   </a>
                 )}
+                {item.extraLinks?.map((extra) => (
+                  <TrackedLink
+                    key={extra.href}
+                    eventName="paper_click"
+                    eventProps={{ title: item.title, href: extra.href }}
+                    href={extra.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={buttonClass}
+                  >
+                    {extra.label}
+                  </TrackedLink>
+                ))}
               </div>
             </div>
           </div>

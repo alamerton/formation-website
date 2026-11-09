@@ -58,6 +58,12 @@ const researchItems: ResearchItem[] = [
     link: "https://www.lesswrong.com/posts/ugBoeexGYvNLxZKA7/a-research-agenda-for-secret-loyalties",
     linkLabel: "LessWrong",
     paperLink: "/secret-loyalties-position-paper.pdf",
+    extraLinks: [
+      {
+        label: "Forethought",
+        href: "https://open.substack.com/pub/forethoughtnewsletter/p/a-research-agenda-for-secret-loyalties",
+      },
+    ],
     tags: ["Secret Loyalties"],
   },
   {
