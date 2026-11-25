@@ -33,7 +33,7 @@ type Person = {
 const teamMembers: Person[] = [
   {
     name: "Alfie Lamerton",
-    role: "Founder",
+    role: "Founder and Director",
     bio: "Alfie Lamerton founded Formation Research in 2025. He holds a computer science BSc and artificial intelligence MSc, and has worked as a software engineer, research assistant, and independent researcher. He has participated in several AI safety projects and been awarded several grants for his research.",
     image: alfieImage,
     email: "alfie@formationresearch.org",

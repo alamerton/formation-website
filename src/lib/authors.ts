@@ -19,7 +19,7 @@ export type Author = {
 export const authors: Record<string, Author> = {
   "alfie-lamerton": {
     name: "Alfie Lamerton",
-    role: "Founder, Formation Research",
+    role: "Founder and Director, Formation Research",
     image: alfieImage,
     linkedin: "https://www.linkedin.com/in/alfie-lamerton/",
   },

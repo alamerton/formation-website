@@ -22,6 +22,11 @@ export const metadata = {
   alternates: {
     canonical: "./",
   },
+  // The preview image is the square logo, so ask X/Twitter for the small
+  // square card rather than the wide one, which would crop it.
+  twitter: {
+    card: "summary",
+  },
 };
 
 export default function RootLayout({
