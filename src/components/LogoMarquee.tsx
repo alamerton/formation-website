@@ -226,8 +226,16 @@ const LogoMarquee = ({
       >
         {children}
       </div>
+      {/* Distinct keys make React build a fresh element when switching
+          modes. Without them it reuses the track's element for the static
+          row, keeping the transform set imperatively by applyOffset, so a
+          dragged carousel froze off-centre after the window was widened. */}
       {marquee ? (
-        <div ref={trackRef} className="flex w-max will-change-transform">
+        <div
+          key="marquee"
+          ref={trackRef}
+          className="flex w-max will-change-transform"
+        >
           {Array.from({ length: copies }, (_, index) => (
             <div
               key={index}
@@ -247,6 +255,7 @@ const LogoMarquee = ({
         </div>
       ) : (
         <div
+          key="static"
           className={`flex justify-center items-center px-4 ${staticClassName}`}
         >
           {children}

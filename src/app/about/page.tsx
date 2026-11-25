@@ -17,6 +17,10 @@ import joeImage from "@/images/people/joe.jpg";
 import anthropicLogo from "@/images/anthropic-v2.svg";
 import oxfordLogo from "@/images/University-of-Oxford-scaled.jpg";
 import forethoughtLogo from "@/images/forethought_logo-v2.png";
+import iapsLogo from "@/images/IAPS.webp";
+import govaiLogo from "@/images/govai.png";
+import apolloLogo from "@/images/apollo.png";
+import guidelightLogo from "@/images/guidelight-transparent.png";
 import { SITE_URL } from "@/lib/site";
 
 type Person = {
@@ -30,13 +34,69 @@ type Person = {
   scholar?: string;
 };
 
+type Collaborator = {
+  name: string;
+  href: string;
+  // Leave out until the image is in src/images; the name shows as text instead.
+  logo?: StaticImageData;
+  // Tailwind height for the logo, tuned per image so they look balanced.
+  logoClassName?: string;
+};
+
+// Shown in the "In collaboration with researchers at" carousel, in this order.
+const collaborators: Collaborator[] = [
+  {
+    name: "IAPS",
+    href: "https://www.iaps.ai",
+    logo: iapsLogo,
+    logoClassName: "h-16 w-auto",
+  },
+  {
+    name: "GovAI",
+    href: "https://www.governance.ai",
+    logo: govaiLogo,
+    logoClassName: "h-12 w-auto",
+  },
+  {
+    name: "University of Oxford",
+    href: "https://www.ox.ac.uk",
+    logo: oxfordLogo,
+    logoClassName: "h-16 w-auto",
+  },
+  {
+    name: "Anthropic",
+    href: "https://www.anthropic.com",
+    logo: anthropicLogo,
+    logoClassName: "h-7 w-auto",
+  },
+  {
+    name: "Forethought",
+    href: "https://www.forethought.org",
+    logo: forethoughtLogo,
+    logoClassName: "h-14 w-auto",
+  },
+  {
+    name: "Apollo Research",
+    href: "https://www.apolloresearch.ai",
+    logo: apolloLogo,
+    logoClassName: "h-12 w-auto",
+  },
+  {
+    name: "Guidelight AI Standards",
+    href: "https://guidelight.ai",
+    logo: guidelightLogo,
+    logoClassName: "h-12 w-auto",
+  },
+];
+
 const teamMembers: Person[] = [
   {
     name: "Alfie Lamerton",
     role: "Founder and Director",
-    bio: "Alfie Lamerton founded Formation Research in 2025. He holds a computer science BSc and artificial intelligence MSc, and has worked as a software engineer, research assistant, and independent researcher. He has participated in several AI safety projects and been awarded several grants for his research.",
+    bio: "Alfie Lamerton founded Formation Research in 2025. He holds a computer science BSc and artificial intelligence MSc, and has previously worked as a software engineer, research assistant, and independent researcher. He has participated in several AI safety projects and been awarded several grants for his research.",
     image: alfieImage,
     email: "alfie@formationresearch.org",
+    website: "https://alfielamerton.co.uk/",
     linkedin: "https://www.linkedin.com/in/alfie-lamerton/",
   },
   {
@@ -137,24 +197,6 @@ const PersonLinks = ({
         </svg>
       </a>
     )}
-    {person.linkedin && (
-      <a
-        href={person.linkedin}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={linkedInButtonClass}
-        aria-label="LinkedIn"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-        </svg>
-      </a>
-    )}
     {person.website && (
       <a
         href={person.website}
@@ -176,6 +218,24 @@ const PersonLinks = ({
             strokeWidth={2}
             d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
           />
+        </svg>
+      </a>
+    )}
+    {person.linkedin && (
+      <a
+        href={person.linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={linkedInButtonClass}
+        aria-label="LinkedIn"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
         </svg>
       </a>
     )}
@@ -370,6 +430,25 @@ const AboutPage = () => {
                   />
                 </svg>
               </Link>
+              <Link
+                href="/blog"
+                className="group inline-flex items-center bg-gradient-to-r from-violet-800 to-indigo-900 text-white font-semibold py-3 px-6 rounded hover:opacity-90 transition-opacity duration-200"
+              >
+                Read Our Blog
+                <svg
+                  className="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </Link>
             </div>
           </section>
         </div>
@@ -382,48 +461,28 @@ const AboutPage = () => {
             </p>
           </div>
           <LogoMarquee staticClassName="gap-12 md:gap-20 -ml-4 md:-ml-8">
+            {collaborators.map((org) => (
               <a
-                href="https://www.anthropic.com"
+                key={org.name}
+                href={org.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="opacity-70 hover:opacity-100 transition-opacity duration-200"
+                className="shrink-0 opacity-70 hover:opacity-100 transition-opacity duration-200"
               >
-                <Image
-                  src={anthropicLogo}
-                  alt="Anthropic"
-                  width={249}
-                  height={28}
-                  className="h-7 w-auto"
-                />
+                {org.logo ? (
+                  <Image
+                    src={org.logo}
+                    alt={org.name}
+                    className={org.logoClassName ?? "h-10 w-auto"}
+                  />
+                ) : (
+                  // Placeholder until a logo image is added for this org.
+                  <span className="whitespace-nowrap text-xl font-semibold text-gray-700">
+                    {org.name}
+                  </span>
+                )}
               </a>
-              <a
-                href="https://www.ox.ac.uk"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="opacity-70 hover:opacity-100 transition-opacity duration-200"
-              >
-                <Image
-                  src={oxfordLogo}
-                  alt="University of Oxford"
-                  width={195}
-                  height={64}
-                  className="h-16 w-auto"
-                />
-              </a>
-              <a
-                href="https://www.forethought.org"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="opacity-70 hover:opacity-100 transition-opacity duration-200"
-              >
-                <Image
-                  src={forethoughtLogo}
-                  alt="Forethought"
-                  width={269}
-                  height={56}
-                  className="h-14 w-auto"
-                />
-              </a>
+            ))}
           </LogoMarquee>
         </div>
 
